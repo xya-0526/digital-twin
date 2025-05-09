@@ -7,8 +7,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/prettier',
+    'eslint:recommended'
   ],
   parserOptions: {
     ecmaVersion: 2021,
@@ -19,17 +18,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/multi-word-component-names': 'off',
     'vue/require-default-prop': 'off',
-    'vue/no-v-html': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: false,
-        trailingComma: 'none',
-        arrowParens: 'avoid',
-        printWidth: 100,
-      },
-    ],
+    'vue/no-v-html': 'off'
   },
   overrides: [
     {
