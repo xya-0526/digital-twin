@@ -1,16 +1,16 @@
 <template>
-  <EChart :option="pieOption" :theme="theme" />
+  <Echart :option="pieOption" :theme="theme" />
 </template>
 
 <script setup>
-import EChart from './EChart.vue';
-import { computed } from 'vue';
+import Echart from './echart.vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   data: {
     type: Array,
     required: true,
-    validator: (value) => value.every(item => item.name && item.value)
+    validator: value => value.every(item => item.name && item.value)
   },
   title: {
     type: String,
@@ -20,7 +20,7 @@ const props = defineProps({
     type: String,
     default: 'light'
   }
-});
+})
 
 const pieOption = computed(() => ({
   title: {
@@ -68,5 +68,5 @@ const pieOption = computed(() => ({
       data: props.data
     }
   ]
-}));
+}))
 </script>

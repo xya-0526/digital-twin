@@ -1,5 +1,5 @@
-import axios from "axios";
-import { ElMessage } from "element-plus";
+import axios from 'axios'
+import { ElMessage } from 'element-plus'
 
 const apiUrl = import.meta.env.VITE_API_BASE_URL
 const httpMessages = {
@@ -23,36 +23,40 @@ const httpMessages = {
 }
 
 const request = axios.create({
-  baseURL:  apiUrl,
-  timeout: 1000,
+  baseURL: apiUrl,
+  timeout: 1000
 })
 
-request.interceptors.request.use(function (config) {
-  // 在发送请求之前做些什么
-  return config;
-}, function (error) {
-  // 对请求错误做些什么
-  return Promise.reject(error);
-});
+request.interceptors.request.use(
+  function (config) {
+    // 在发送请求之前做些什么
+    return config
+  },
+  function (error) {
+    // 对请求错误做些什么
+    return Promise.reject(error)
+  }
+)
 
-request.interceptors.response.use(function (response) {
-  
-  ElMessage({
-    message: httpMessages[response.status],
-    type: 'success',
-    duration: 1000
-  })
-  return response;
-}, function (error) {
-  
-  showMassage(error.status)
+request.interceptors.response.use(
+  function (response) {
+    ElMessage({
+      message: httpMessages[response.status],
+      type: 'success',
+      duration: 1000
+    })
+    return response
+  },
+  function (error) {
+    showMassage(error.status)
 
-  return Promise.reject(error);
-});
+    return Promise.reject(error)
+  }
+)
 
 function showMassage(code) {
   ElMessage({
-    message:  httpMessages[code],
+    message: httpMessages[code],
     type: 'error',
     duration: 1000,
     showClose: true
