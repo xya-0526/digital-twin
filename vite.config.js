@@ -4,7 +4,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), ['VITE_', 'NODE_'])
@@ -16,14 +15,14 @@ export default defineConfig(({ mode }) => {
       AutoImport({
         resolvers: [ElementPlusResolver()],
         imports: ['vue', 'vue-router'],
-        dts: 'src/auto-imports.d.ts',
+        dts: 'src/auto-imports.d.js',
         eslintrc: {
           enabled: true,
         },
       }),
       Components({
         resolvers: [ElementPlusResolver()],
-        dts: true,
+        dts: false,
         dirs: ['src/components'],
       }),
     ],

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 
 const apiUrl = import.meta.env.VITE_API_BASE_URL
-const httpErrorMessages = {
+const httpMessages = {
   200: '请求成功',
   201: '资源创建成功',
   202: '请求已接受处理',
@@ -41,7 +41,7 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   function (response) {
     ElMessage({
-      message: httpErrorMessages[response.status],
+      message: httpMessages[response.status],
       type: 'success',
       duration: 1000
     })
@@ -56,7 +56,7 @@ request.interceptors.response.use(
 
 function showMassage(code) {
   ElMessage({
-    message: httpErrorMessages[code],
+    message: httpMessages[code],
     type: 'error',
     duration: 1000,
     showClose: true

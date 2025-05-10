@@ -1,4 +1,3 @@
-import component from 'element-plus/es/components/tree-select/src/tree-select-option.mjs'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -8,74 +7,164 @@ const routes = [
   },
   {
     path: '/national-planning',
-    component: () => import(''),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/national-planning/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'transportation', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'transportation',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   },
   {
     path: '/project-construction',
-    component: () => import('@/views/ProjectConstruction.vue'),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/project-construction/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'transportation', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'transportation',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   },
   {
     path: '/low-carbon-energy',
-    component: () => import(''),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/low-carbon-energy/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'transportation', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'transportation',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   },
   {
     path: '/transportation',
-    component: () => import('@/views/Transportation.vue'),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/transportation/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'road-network', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'road-network',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   },
   {
     path: '/cultural-tourism',
-    component: () => import('@/views/CulturalTourism.vue'),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/cultural-tourism/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'transportation', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'transportation',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   },
   {
     path: '/industrial-economy',
-    component: () => import(''),
+    component: () => import('../view/nationalPlanning/index.vue'),
     redirect: '/industrial-economy/location-conditions',
     children: [
-      { path: 'location-conditions', component: () => import('') },
-      { path: 'spatial-conditions', component: () => import('') },
-      { path: 'ecological-structure', component: () => import('') },
-      { path: 'land-use', component: () => import('') },
-      { path: 'transportation', component: () => import('') }
+      {
+        path: 'location-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'spatial-conditions',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'ecological-structure',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'land-use',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      },
+      {
+        path: 'transportation',
+        component: () => import('../view/nationalPlanning/components/locationConditions.vue')
+      }
     ]
   }
 ]
