@@ -15,7 +15,6 @@ import * as echarts from 'echarts'
 import Point from '@/assets/images/point.svg'
 
 const props = defineProps({
-  // 基础配置
   title: {
     type: String,
     required: true
@@ -33,7 +32,6 @@ const props = defineProps({
     required: true,
     default: () => []
   },
-  // 尺寸配置
   width: {
     type: String,
     default: '100%'
@@ -42,7 +40,6 @@ const props = defineProps({
     type: String,
     default: '200px'
   },
-  // 图表配置
   roseType: {
     type: String,
     default: undefined,
@@ -56,7 +53,6 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  // 交互配置
   showTooltip: {
     type: Boolean,
     default: true
@@ -114,13 +110,15 @@ const updateChart = () => {
       {
         name: props.title,
         type: 'pie',
-        radius: ['45%', '60%'],
+        radius: ['50%', '70%'],
         width: chartWidth,
         roseType: props.roseType,
         padAngle: 2,
         avoidLabelOverlap: true,
         itemStyle: {
-          borderRadius: 1
+          borderRadius: 1,
+          borderWidth: 8,
+          borderColor: 'rgba(133, 208, 106, .1)'
         },
         label: {
           show: true,
@@ -134,18 +132,18 @@ const updateChart = () => {
           },
           minMargin: 5,
           edgeDistance: 10,
-          lineHeight: 15,
+          lineHeight: 25,
           rich: {
             name: {
               fontSize: 12,
               color: 'white',
-              padding: [0, 4]
+              padding: [4, 0]
             },
             value: {
-              fontSize: 12,
+              fontSize: 16,
               color: 'white',
               fontWeight: 'bold',
-              padding: [4, 0]
+              padding: [8, 0]
             }
           }
         },
@@ -164,40 +162,24 @@ const updateChart = () => {
           points[2][0] = isLeft ? params.labelRect.x : params.labelRect.x + params.labelRect.width
           return { labelLinePoints: points }
         },
-        data: props.dataItems.map(item => ({
-          value: item.percentage,
-          name: item.label,
-          itemStyle: {
-            color: item.color,
-            shadowBlur: 10,
-            shadowColor: 'rgba(0, 0, 0, 0.2)'
+        data: props.dataItems.map(item => {
+          return {
+            value: item.percentage,
+            name: item.label,
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: 'rgba(0, 0, 0, 0.2)'
+            }
           }
-        })),
+        }),
         emphasis: {
           scale: true,
           scaleSize: 10,
           itemStyle: {
-            shadowBlur: 20,
+            shadowBlur: 10,
             shadowOffsetX: 0,
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
-        }
-      }
-    ],
-    graphic: [
-      {
-        type: 'circle',
-        left: '32.6%',
-        top: '15.7%',
-        shape: {
-          cx: 0,
-          cy: 0,
-          r: chartWidth * 0.17
-        },
-        silent: true,
-        style: {
-          fill: 'rgba(48, 68, 46, 0.5)',
-          lineWidth: 1
         }
       }
     ],
