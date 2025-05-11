@@ -27,7 +27,7 @@ const populationData = [
       <CircleChart
         title="生态保护红线"
         :centerValue="80"
-        :showLabel="truw"
+        :showLabel="true"
         centerLabel="数据数据"
         :dataItems="ecologicalData"
       />
@@ -36,6 +36,7 @@ const populationData = [
         title="永久基本农田保有量（万亩）"
         :centerValue="80"
         centerLabel="总计人口"
+        legend="right"
         :dataItems="farmlandData"
       />
 
@@ -44,6 +45,7 @@ const populationData = [
         :centerValue="80"
         centerLabel="总计人口"
         :dataItems="populationData"
+        :showLegend="false"
       />
     </div>
   </div>
@@ -57,7 +59,6 @@ const populationData = [
 }
 
 .circle {
-  width: 400px;
   display: flex;
   flex-direction: column;
   gap: 20px;

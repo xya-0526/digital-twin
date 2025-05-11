@@ -1,5 +1,5 @@
 <template>
-  <div class="circle-chart-container" :style="containerStyle">
+  <div class="circle-chart-container">
     <div class="chart-title">
       <img class="title-icon" :src="Point" alt="point" />
       {{ title }}
@@ -32,14 +32,6 @@ const props = defineProps({
     required: true,
     default: () => []
   },
-  width: {
-    type: String,
-    default: '100%'
-  },
-  height: {
-    type: String,
-    default: '200px'
-  },
   roseType: {
     type: String,
     default: undefined,
@@ -60,16 +52,19 @@ const props = defineProps({
   showLabel: {
     type: Boolean,
     default: true
+  },
+  showLegend: {
+    type: Boolean,
+    default: true
+  },
+  legend: {
+    type: String,
+    default: 'bottom'
   }
 })
 
 const chartRef = ref(null)
 let chartInstance = null
-
-const containerStyle = computed(() => ({
-  width: props.width,
-  height: props.height
-}))
 
 const initChart = () => {
   if (!chartRef.value) return
@@ -94,26 +89,27 @@ const updateChart = () => {
     title: {
       text: String(props.centerValue),
       subtext: props.centerLabel,
+      top: '40%',
       left: 'center',
-      top: 'center',
       textStyle: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: 'var(--text-primary)'
+        fontSize: 24,
+        fontWeight: 'normal',
+        color: '#fff'
       },
       subtextStyle: {
         fontSize: 14,
-        color: 'var(--text-secondary)'
+        color: 'rgba(255,255,255,0.6)',
+        padding: [5, 0]
       }
     },
     series: [
       {
         name: props.title,
         type: 'pie',
-        radius: ['50%', '70%'],
+        radius: ['33%', '45%'],
         width: chartWidth,
         roseType: props.roseType,
-        padAngle: 2,
+        padAngle: 1,
         avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 1,
@@ -123,44 +119,43 @@ const updateChart = () => {
         label: {
           show: true,
           position: 'outer',
-          alignTo: 'edge',
+          alignTo: 'none',
           formatter: params => {
             const value = props.showPercentage
               ? params.percent + '%'
               : params.value + (props.valueUnit || '')
             return `{name|${params.name}}\n{value|${value}}`
           },
-          minMargin: 5,
           edgeDistance: 10,
-          lineHeight: 25,
+          lineHeight: 27,
           rich: {
             name: {
-              fontSize: 12,
+              fontSize: 16,
               color: 'white',
               padding: [4, 0]
             },
             value: {
-              fontSize: 16,
+              fontSize: 20,
               color: 'white',
-              fontWeight: 'bold',
-              padding: [8, 0]
+              fontWeight: 'normal',
+              padding: [6, 0]
             }
           }
         },
         labelLine: {
           show: true,
           length: 15,
-          length2: 0,
-          maxSurfaceAngle: 80,
+          length2: 10,
           lineStyle: {
-            color: 'white'
+            color: 'rgba(255,255,255,0.5)',
+            width: 1.2
           }
         },
         labelLayout: params => {
           const isLeft = params.labelRect.x < chartWidth / 2
           const points = params.labelLinePoints
           points[2][0] = isLeft ? params.labelRect.x : params.labelRect.x + params.labelRect.width
-          return { labelLinePoints: points }
+          return { labelLinePoints: points, draggable: true }
         },
         data: props.dataItems.map(item => {
           return {
@@ -200,6 +195,26 @@ const updateChart = () => {
         color: 'var(--text-primary)',
         fontSize: 14
       }
+    },
+    legend: {
+      show: props.showLegend,
+      ...(props.legend === 'right'
+        ? {
+            right: '10%',
+            top: 'middle',
+            orient: 'vertical'
+          }
+        : {
+            bottom: '0%',
+            orient: 'horizontal'
+          }),
+      itemWidth: 24,
+      itemHeight: 12,
+      textStyle: {
+        color: 'rgba(255,255,255,0.6)',
+        fontSize: 14,
+        padding: [0, 0, 0, 6]
+      }
     }
   })
 }
@@ -221,25 +236,31 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 
 <style scoped>
 .circle-chart-container {
+  width: 605px;
+  height: 320px;
   position: relative;
-  background-color: var(--primary-bg);
+  background-color: #142222;
   border: 1px solid var(--border-default);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .chart-title {
-  width: 100%;
-  color: var(--text-primary);
-  font-size: 15px;
-  padding: 2px;
-  background: var(--bg-gradient);
-  border-bottom: 1px solid var(--border-light);
-  border-radius: var(--border-radius);
+  width: 605px;
+  height: 42.51px;
+  border-radius: 8px;
+  opacity: 1;
+  background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
   display: flex;
   align-items: center;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  font-family: 'SourceHanSansCN';
+  border-bottom: 1px solid rgba(69, 102, 85, 1);
 }
 
 .title-icon {
@@ -249,55 +270,19 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 
 .chart-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex: 1;
-  height: calc(100% - 40px);
+  height: calc(100% - 42px);
+  position: relative;
 }
 
 .chart-wrapper {
-  width: 60%;
-  height: 70%;
+  width: 100%;
+  height: 95%;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-}
-
-.data-info {
-  width: 50%;
-  padding: var(--spacing-md) 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.data-item {
+  z-index: 1;
   display: flex;
   align-items: center;
-  margin-bottom: var(--spacing-lg);
-}
-
-.data-color {
-  width: var(--spacing-md);
-  height: var(--spacing-md);
-  margin-right: var(--spacing-sm);
-}
-
-.data-label {
-  color: var(--text-secondary);
-  font-size: var(--font-size-sm);
-  flex: 1;
-}
-
-.data-value {
-  color: var(--text-primary);
-  font-size: var(--font-size-lg);
-  font-weight: bold;
-  min-width: 60px;
-  text-align: right;
-}
-
-.data-unit {
-  font-size: var(--font-size-xs);
-  color: var(--text-secondary);
-  margin-left: var(--spacing-xs);
+  justify-content: center;
 }
 </style>
