@@ -15,9 +15,9 @@ const farmlandData = [
 
 // 常住人口数据
 const populationData = [
-  { label: '数据一', value: 160, percentage: 42.6, unit: '' },
-  { label: '数据二', value: 130, percentage: 37.5, unit: '' },
-  { label: '数据三', value: 90, percentage: 19.9, unit: '' }
+  { label: '数据一', value: 160, percentage: 42.6, unit: 'aa' },
+  { label: '数据二', value: 130, percentage: 37.5, unit: 'bb' },
+  { label: '数据三', value: 90, percentage: 19.9, unit: 'cc' }
 ]
 </script>
 
