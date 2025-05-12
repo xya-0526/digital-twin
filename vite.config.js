@@ -82,7 +82,7 @@ export default defineConfig(({ mode }) => {
           },
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: ({name}) => {
+          assetFileNames: ({ name }) => {
             if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
               return 'static/img/[name]-[hash][extname]';
             }
@@ -110,5 +110,8 @@ export default defineConfig(({ mode }) => {
     esbuild: {
       drop: isProd ? ['console', 'debugger'] : [],
     },
+    build: {
+      outDir: './build'
+    }
   }
 })
