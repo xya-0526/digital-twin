@@ -8,6 +8,26 @@ const salesData = [
   { name: '第三季度', value: 150 },
   { name: '第四季度', value: 210 }
 ]
+// 生态保护红线数据
+const ecologicalData = [
+  { label: '数据一', value: 160, percentage: 42.6, unit: 'xx' },
+  { label: '数据二', value: 130, percentage: 37.5, unit: 'xx' },
+  { label: '数据三', value: 90, percentage: 19.9, unit: 'xx' }
+]
+
+// 永久基本农田保有量数据
+const farmlandData = [
+  { label: '数据一', value: 160, percentage: 42.6, unit: '万人' },
+  { label: '数据二', value: 130, percentage: 37.5, unit: '万人' },
+  { label: '数据三', value: 90, percentage: 19.9, unit: '万人' }
+]
+
+// 常住人口数据
+const populationData = [
+  { label: '数据一', value: 160, percentage: 42.6, unit: 'aa' },
+  { label: '数据二', value: 130, percentage: 37.5, unit: 'bb' },
+  { label: '数据三', value: 90, percentage: 19.9, unit: 'cc' }
+]
 const gaugeData ={
   name: '销售达成率',
   data: 80,
@@ -35,7 +55,6 @@ const gaugeData ={
     theme="dark"
     :horizontal="false"
   />
-  <PieChart />
   <ProgressBar
     :gradient-color="'linear-gradient(to right,#264d35,#ccb23f)'"
     :name="'销售进度'"
@@ -44,6 +63,45 @@ const gaugeData ={
   />
   <radarCarts />
   <gaugeChart :seriesData="gaugeData" />  
+  <div class="location-conditions">
+    <div class="circle">
+      <CircleChart
+        title="生态保护红线"
+        :centerValue="80"
+        :showLabel="true"
+        centerLabel="数据数据"
+        :dataItems="ecologicalData"
+      />
+
+      <CircleChart
+        title="永久基本农田保有量（万亩）"
+        :centerValue="80"
+        centerLabel="总计人口"
+        legend="right"
+        :dataItems="farmlandData"
+      />
+
+      <CircleChart
+        title="常住人口"
+        :centerValue="80"
+        centerLabel="总计人口"
+        :dataItems="populationData"
+        :showLegend="false"
+      />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.location-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.circle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+</style>
