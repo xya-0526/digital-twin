@@ -23,13 +23,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Verify build/admin directory
+      - name: Verify build directory
         run: |
           if [ ! -d "build" ]; then
             echo "::error::Build directory 'build' not found!"
             exit 1
           fi
-          echo "✓ Verified build/admin directory"
+          echo "✓ Verified build directory"
 
       - name: Install tools
         run: |
