@@ -1,9 +1,16 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  icon: {
+    type: String,
+    default: ''
+  }
+})
+</script>
 
 <template>
   <div class="radarCarts">
     <span class="item"></span>
-    <span>1111</span>
+    <img :src="props.icon" alt="">
     <span class="mask">86.5%</span>
   </div>
 </template>
@@ -12,37 +19,29 @@
 .radarCarts {
   position: relative;
   background: transparent;
-  background: linear-gradient(rgba(160, 163, 164, 0.75));
+  background: linear-gradient(rgba(26, 40, 40, 0.85));
 
-  width: 150px;
-  height: 150px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  border: 0.1px solid rgb(160, 163, 164);
-  box-shadow: 25px 25px 75px rgba(160, 163, 164, 0.75);
+  border: 0.1px solid rgba(76, 96, 87, 0.85);
+  /* box-shadow: 25px 25px 75px rgba(160, 163, 164, 0.75); */
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border-radius: 50%;
-    border: 2.5px dotted rgba(160, 163, 164, 0.75);
-    /*  */
-  }
   &::after {
     content: '';
     /* z-index: 100; */
     position: absolute;
-    inset: 11px;
+    inset: 3.5px;
     border-radius: 50%;
-    border: 2.5px solid rgba(160, 163, 164, 0.75);
+    border: 2.5px solidrgba(26, 40, 40, 0.85);
     /* box-shadow: inset -5px -5px 25px rgba(0,0,0,0.75); */
     box-shadow:
-      inset -5px -5px 25px rgba(160, 163, 164, 0.75),
-      inset 5px 5px 35px rgba(160, 163, 164, 0.75);
+      inset -1px -1px 10px rgba(68, 118, 85, 0.85),
+      inset 1px 1px 15px rgba(68, 118, 85, 0.85);
   }
   .item {
     position: absolute;
@@ -54,39 +53,7 @@
     transform-origin: top left;
     /* border-top: 1px dashed #141414; */
     animation: rotate 2s linear infinite;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform-origin: top left;
-      background-color: rgb(144, 202, 117);
-      transform: rotate(-55deg);
-      animation: rotate 5s linear infinite;
-      filter: blur(30px) drop-shadow(20px 20px 10px #faf7f7);
-    }
-  }
-  .mask {
-    position: absolute;
-    z-index: 99;
-    bottom: 0;
-    width: 50%;
-    height: 30%;
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background: linear-gradient(rgba(160, 163, 164,0.75)); */
-  }
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+
   }
 }
 </style>
