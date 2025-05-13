@@ -17,11 +17,11 @@ const props = defineProps({
   },
   width: {
     type: String,
-    default: '100%'
+    default: '450px'
   },
   height: {
     type: String,
-    default: '10px'
+    default: '25px'
   },
   ortherProps: {
     type: Object,
@@ -41,8 +41,8 @@ const progressStyle = computed(() => {
 })
 onMounted(() => {
   const progress = document.querySelector('.el-progress-bar__outer')
-  progress.style.background = 'rgba(17, 26, 27,0.04)'
-  progress.style.border = '0.1px solid rgba(255,255,255,0.5)'
+  progress.style.background = 'rgba(26, 40, 40)'
+  progress.style.border = '0.1px solid rgba(56, 65, 67,0.8)'
 })
 </script>
 
@@ -55,7 +55,7 @@ onMounted(() => {
     <el-progress
       :text-inside="true"
       :style="{ width: progressStyle.width, height: progressStyle.height }"
-      :stroke-width="20"
+      :stroke-width="15"
       :percentage="percentage"
       status="succes"
       :color="progressStyle.gradientColor"
@@ -67,13 +67,17 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .progress-bar {
-  width: 70%;
-  height: 50px;
-  background-color: rgb(17, 26, 27, 0.4);
+  z-index: 100;
+  width: 450px;
+  height: 60px;
+  // background-color: rgb(17, 26, 27, 0.4);
+  overflow: hidden;
   .box {
     display: flex;
+    width: 100%;
+    font-size: 16px;
     justify-content: space-between;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     color: rgb(255, 255, 255);
   }
 }

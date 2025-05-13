@@ -10,11 +10,11 @@ const props = defineProps({
   // 尺寸配置
   width: {
     type: String,
-    default: '50%'
+    default: '600px'
   },
   height: {
     type: String,
-    default: '400px'
+    default: '200px'
   },
 
   // 数据配置
@@ -74,7 +74,7 @@ const chartOption = computed(() => ({
   legend: props.showLegend
     ? {
         data: props.seriesData?.map(s => s.name),
-        top: 30,
+        top: 10,
         right: 10,
         itemGap: 50
       }
@@ -106,7 +106,7 @@ const chartOption = computed(() => ({
       formatter: '{value}%'
     },
     name: '百分比',
-    nameGap: 50,
+    nameGap: 20,
     max: 100
   },
   series: props.seriesData?.map((series, index) => ({
