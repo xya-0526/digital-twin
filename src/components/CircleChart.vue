@@ -1,6 +1,6 @@
 <template>
-  <div class="circle-chart-container">
-    <div class="chart-title">
+  <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
+    <div class="chart-title" :style="{ width: props.width }">
       <img class="title-icon" :src="Point" alt="point" />
       {{ title }}
     </div>
@@ -13,8 +13,17 @@
 <script setup>
 import * as echarts from 'echarts'
 import Point from '@/assets/images/point.svg'
+import { onMounted, ref,watch } from 'vue'
 
 const props = defineProps({
+    width:{
+    type:String,
+    default:''
+  },
+  height: {
+    type:String,
+    default:''
+  },
   title: {
     type: String,
     required: true
@@ -76,6 +85,7 @@ const initChart = () => {
 const handleResize = () => {
   if (chartInstance) {
     chartInstance.resize()
+    initChart()
   }
 }
 
@@ -104,6 +114,7 @@ const updateChart = () => {
     },
     series: [
       {
+        z: 10,
         name: props.title,
         type: 'pie',
         radius: ['33%', '45%'],
@@ -113,8 +124,8 @@ const updateChart = () => {
         avoidLabelOverlap: true,
         itemStyle: {
           borderRadius: 1,
-          borderWidth: 8,
-          borderColor: 'rgba(133, 208, 106, .1)'
+          // borderWidth: 8,
+          // borderColor: 'rgba(133, 208, 106, .1)'
         },
         label: {
           show: true,
@@ -163,7 +174,7 @@ const updateChart = () => {
             name: item.label,
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.2)'
+              shadowColor: 'rgba(0, 0, 0, 0.2)',
             }
           }
         }),
@@ -176,6 +187,29 @@ const updateChart = () => {
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
         }
+      },
+      {
+        z:1,
+        type: 'pie',
+        radius: ['33%', '50%'],
+        width: chartWidth,
+        roseType: props.roseType,
+        padAngle: 1,
+        avoidLabelOverlap: false,
+        data: props.dataItems.map(item => {
+          return {
+            value: item.percentage,
+            name: item.label,
+            itemStyle: {
+              shadowBlur: 10,
+              shadowColor: 'rgba(0, 0, 0, 0.2)',
+              opacity: .5, // 整体透明度设为50%,
+            }
+          }
+        }),
+        label:{
+          show: false
+        },
       }
     ],
     tooltip: {
@@ -279,7 +313,7 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 .chart-wrapper {
   width: 100%;
   height: 95%;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+  /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); */
   z-index: 1;
   display: flex;
   align-items: center;

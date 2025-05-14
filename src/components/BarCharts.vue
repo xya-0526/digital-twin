@@ -1,58 +1,64 @@
 <template>
-  <EChart :option="progressOption" :theme="theme" :width="width" :height="height" />
+  <eChart :width="width" :height="height" :theme="theme" :option="chartOption" />
 </template>
 
 <script setup>
-import EChart from './echart.vue'
-import { computed,defineProps } from 'vue'
+import { computed } from 'vue'
+import eChart from './eChart.vue' // 引入基础图表组件
 
 const props = defineProps({
-  data: {
+  // 尺寸配置
+  width: {
+    type: String,
+    default: '600px'
+  },
+  height: {
+    type: String,
+    default: '200px'
+  },
+
+  // 数据配置
+  xAxisData: {
+    type: Array,
+    required: true
+  },
+  seriesData: {
     type: Array,
     required: true,
-    validator: value => value?.every(item => item.name && item.value)
+    validator: value => value.every(item => item.name && item.data)
   },
-  title: {
-    type: String,
-    default: ''
-  },
-  xAxisName: {
-    type: String,
-    default: ''
-  },
-  yAxisName: {
-    type: String,
-    default: ''
-  },
+
+  // 样式配置
   theme: {
     type: String,
     default: 'light'
   },
-  color: {
-    type: String,
-    default: '#5470c6'
+  colors: {
+    type: Array,
+    default: () => ['#5470c6', '#91cc75', '#fac858', '#ee6666']
   },
-  width: {
-    type: String,
-    default: '100%'
+
+  // 功能配置
+  title: String,
+  showLegend: {
+    type: Boolean,
+    default: true
   },
-  height: {
-    type: String,
-    default: '300px'
+  horizontal: {
+    type: Boolean,
+    default: false
   },
-  maxValue: {
-    type: Number,
-    default: 500 // 进度条最大值，默认为100
-  },
-  itemGap: { // 新增间距控制属性
-    type: Number,
-    default: 40, // 默认间距20px
+  stack: {
+    type: [Boolean, String],
+    default: false
   }
 })
 
-const progressOption = computed(() => ({
+// 生成图表配置
+const chartOption = computed(() => ({
+  backgroundColor: 'rgba(19, 28, 25,0.6)',
   title: {
-    text: props.title,
+    // text: props.title,
     left: 'center',
     textStyle: {
       fontSize: 16,
@@ -60,87 +66,81 @@ const progressOption = computed(() => ({
     }
   },
   tooltip: {
-    trigger: 'item',
-    formatter: ({ name, value }) => 
-      `${name}: ${((value / props.maxValue) * 100).toFixed(1)}%`
+    trigger: 'axis'
+    // axisPointer: {
+    //   type: 'shadow'
+    // }
   },
+  legend: props.showLegend
+    ? {
+        data: props.seriesData?.map(s => s.name),
+        top: 10,
+        right: 10,
+        itemGap: 50
+      }
+    : undefined,
   grid: {
-    left: '15%',
-    right: '15%',
-    top: '20%',
-    bottom: '10%',
+    top: '25%',
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
     containLabel: true
   },
   xAxis: {
-    max: props.maxValue,
-    type: 'value',
-    show: false
+    type: props.horizontal ? 'value' : 'category',
+    data: props.horizontal ? undefined : props.xAxisData,
+    axisLabel: {
+      rotate: 45
+    },
+    axisLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
+    }
   },
   yAxis: {
-    type: 'category',
-    data: props.data?.map(item => item.name),
-    axisLine: { show: false },
-    axisTick: { show: false },
-    axisLabel: { show: false },
-    splitLine: {
-      show: true,
-      lineStyle: {
-        color: 'transparent',
-        width: props.itemGap // 正确的位置应该在这里
-      }
-    }
+    type: props.horizontal ? 'category' : 'value',
+    data: props.horizontal ? props.xAxisData : undefined,
+    axisLabel: {
+      formatter: '{value}%'
+    },
+    name: '百分比',
+    nameGap: 20,
+    max: 100
   },
-  series: [
-    {
-      name: '进度',
-      type: 'bar',
-      data: props.data?.map(item => ({
-        value: item.value,
-        name: item.name,
-        itemStyle: { color: item.color || props.color }
-      })),
-      barWidth: '50%', // 改为固定像素值
-      itemStyle: {
-        color: params => params.data.itemStyle.color,
-        borderRadius: [10, 10, 10, 10]
+  series: props.seriesData?.map((series, index) => ({
+    name: series.name,
+    type: 'bar',
+    data: series.data,
+    barWidth: '15%', // 设置柱状图的宽度
+    stack: props.stack ? (typeof props.stack === 'string' ? props.stack : 'stack') : undefined,
+    itemStyle: {
+      color: {
+        type: 'linear', // 设置渐变类型为线性渐变
+        x: 0, // 渐变的起始位置
+        y: 0, // 渐变的起始位置
+        x2: 0, // 渐变的结束位置
+        y2: 1, // 渐变的结束位置
+        colorStops: [
+          {
+            offset: 0, // 渐变的结束颜色
+            color: series.color || props.colors[index % props.colors.length]
+          },
+          {
+            offset: 1, // 渐变的起始颜色
+            color: series.offsetColor // 透明
+          }
+        ]
       },
+      borderRadius: [50, 50, 0, 0]
+    },
+    ...(props.horizontal && {
       label: {
         show: true,
-        position: ['0%', '-50%'],
-        formatter: ({ name, value }) => {
-          const percent = ((value / props.maxValue) * 100).toFixed(1)
-          return `{name|${name}}{percent|${percent}%}`
-        },
-        rich: {
-          name: {
-            fontSize: 14,
-            align: 'left',
-            width: '50%',
-            padding: [0, 0, 0, 10]
-          },
-          percent: {
-            fontSize: 14,
-            align: 'right',
-            width: '50%',
-            padding: [0, 10, 0, 0]
-          }
-        }
-      },
-      animationDuration: 1500
-    },
-    {
-      type: 'bar',
-      barWidth: '50%',
-      barGap: '-100%',
-      data: props.data?.map(() => props.maxValue),
-      itemStyle: {
-        color: '#f5f5f5',
-        borderRadius: [10, 10, 10, 10]
-      },
-      silent: true,
-      z: -1
-    }
-  ]
+        position: 'right'
+      }
+    })
+  }))
 }))
-
 </script>
