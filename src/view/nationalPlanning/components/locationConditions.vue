@@ -24,31 +24,15 @@ const populationData = [
 <template>
   <div class="location-conditions">
     <div class="circle">
-      <CircleChart
-        title="生态保护红线"
-        :centerValue="80"
-        :showLabel="true"
-        centerLabel="数据数据"
-        :dataItems="ecologicalData"
-      />
+      <CircleChart title="生态保护红线" :centerValue="80" :showLabel="true" centerLabel="数据数据" :dataItems="ecologicalData" />
 
-      <CircleChart
-        title="永久基本农田保有量（万亩）"
-        :centerValue="80"
-        centerLabel="总计人口"
-        legend="right"
-        :dataItems="farmlandData"
-      />
+      <CircleChart title="永久基本农田保有量（万亩）" :centerValue="80" centerLabel="总计人口" legend="right"
+        :dataItems="farmlandData" />
 
-      <CircleChart
-        title="常住人口"
-        :centerValue="80"
-        centerLabel="总计人口"
-        :dataItems="populationData"
-        :showLegend="false"
-      />
+      <CircleChart title="常住人口" :centerValue="80" centerLabel="总计人口" :dataItems="populationData" :showLegend="false" />
     </div>
   </div>
+<AreaButton :width="'5%'" :height="'2.5%'"></AreaButton>
 </template>
 
 <style scoped>
