@@ -37,6 +37,7 @@ const initChart = () => {
 
 const resizeChart = () => {
   chartInstance?.resize()
+  initChart()
 }
 
 onMounted(() => {
