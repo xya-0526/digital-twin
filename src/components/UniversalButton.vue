@@ -1,15 +1,22 @@
 <template>
     <button :style="{
-         width,
-         height, 
-         background: bgColor, 
-         borderRadius: border_radius, 
-         border: Border,
-         boxShadow,
-         color
-         }">
-         <img v-if="image.src" src="" alt="">
-        {{ text }}
+        width,
+        height,
+        background: bgColor,
+        borderRadius: border_radius,
+        border: Border,
+        boxShadow,
+        color
+    }">
+        <span v-if="image.src" :style="{
+            width: image.width,
+            height: image.height,
+        }">
+            <img v-if="image.src" :src="image.src" alt="">
+        </span>
+        <span>
+            {{ text }}
+        </span>
     </button>
 </template>
 <script setup lang="ts">
@@ -19,8 +26,8 @@ defineProps({
         default: {
             src: null,
             alt: '',
-            width: '5%',
-            height: '5%'
+            width: '15%',
+            height: '15%'
         }
     },
     text: {
@@ -33,10 +40,10 @@ defineProps({
     },
     width: {
         type: String,
-        default: '10%'
+        default: '28%'
     }, height: {
         type: String,
-        default: '5%'
+        default: '25%'
     },
 
     border_radius: {
@@ -56,14 +63,26 @@ defineProps({
         default: '#a5a4a4'
     }
 })
-
-
-
 </script>
 <style scoped>
 button {
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
     text-align: center;
-    line-height: 2.5rem;
+    span:first-child {
+        display: flex;
+        margin-right: 0.2vw;
+        align-items: end;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+
 }
 </style>

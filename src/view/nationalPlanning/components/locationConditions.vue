@@ -4,6 +4,7 @@ import CartBoxone from '@/components/cartBoxone.vue'
 import gaugeChart from '@/components/gaugeChart.vue'
 import AeraButton from '@/components/AeraButton.vue'
 import { colProps } from 'element-plus'
+import BottomButton from '@/components/BottomButton.vue'
 
 const salesData = [
   { name: '第一季度', value: 125 },
@@ -80,6 +81,7 @@ const gaugeData ={
   <!-- <div class="header"></div> -->
   <div class="main">
     <AeraButton></AeraButton>
+    <BottomButton></BottomButton>
     <div class="banner">
       <div class="left">
         <div class="one"></div>

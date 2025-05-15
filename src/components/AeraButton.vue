@@ -3,9 +3,7 @@
         <UniversalButton v-for="(i, index) in textArray" :key="index" @click="addActive(index)"
             :color="activeButton == index ? '#fff' : '#a5a4a4'"
             :bgColor="activeButton == index ? 'linear-gradient(180deg, #3a7c4e 0%, #29383b 100%)' : '#253334'"
-            :text="i"
-            :width="'28%'"
-            :height="'20%'">
+            :text="i">
         </UniversalButton>
     </div>
 
@@ -15,7 +13,6 @@
 
 
 <script setup lang="ts">
-import { bg } from 'element-plus/es/locale';
 import UniversalButton from './UniversalButton.vue';
 const textArray = ["示范区", "先行启动区", "水乡客厅"]
 let activeButton = ref(0)
@@ -39,17 +36,19 @@ defineProps({
 
 
 </script>
-<style>
+<style scoped>
 .butBox {
+
     position: absolute;
-    margin-top: 1vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 18%;
-    height: 20%;
+    height: 20vh;
     flex-direction: row;
+    
 }
 </style>
