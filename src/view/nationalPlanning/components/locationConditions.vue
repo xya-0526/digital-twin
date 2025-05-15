@@ -2,6 +2,7 @@
 import ProgressBar from '@/components/ProgressBar.vue'
 import CartBoxone from '@/components/cartBoxone.vue'
 import gaugeChart from '@/components/gaugeChart.vue'
+import AeraButton from '@/components/AeraButton.vue'
 import { colProps } from 'element-plus'
 
 const salesData = [
@@ -76,8 +77,9 @@ const gaugeData ={
       <CircleChart title="常住人口" :centerValue="80" centerLabel="总计人口" :dataItems="populationData" :showLegend="false" />
     </div>
   </div> -->
-  <div class="header"></div>
+  <!-- <div class="header"></div> -->
   <div class="main">
+    <AeraButton></AeraButton>
     <div class="banner">
       <div class="left">
         <div class="one"></div>
