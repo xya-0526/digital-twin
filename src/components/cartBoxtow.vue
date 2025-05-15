@@ -1,10 +1,5 @@
 <script setup>
-import Point from '@/assets/images/point.svg'
 const props = defineProps({
-  title: {
-    type: String,
-    default: ''
-  },
   width: {
     type: String,
     default: ''
@@ -22,12 +17,8 @@ const props = defineProps({
 
 <template>
   <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
-    <div class="chart-title" :style="{ width: props.width }">
-      <img class="title-icon" :src="Point" alt="point" />
-      <span class="title-text">{{ props.title }}</span>
-    </div>
     <div class="chart-content">
-      <div class="chart-wrapper" >
+      <div class="chart-wrappe">
         <slot></slot>
       </div>
     </div>
@@ -46,26 +37,8 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-.chart-title {
-  width: 605px;
-  height: 42.51px;
-  border-radius: 8px;
-  opacity: 1;
-  background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
-  display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 400;
-  font-family: 'SourceHanSansCN';
-  border-bottom: 1px solid rgba(69, 102, 85, 1);
-}
-
-.title-icon {
-  display: inline-block;
-  margin: 5px;
 }
 
 .chart-content {
@@ -76,7 +49,7 @@ const props = defineProps({
   position: relative;
 }
 
-.chart-wrapper {
+.chart-wrappe {
   width: 100%;
   height: 95%;
   /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); */

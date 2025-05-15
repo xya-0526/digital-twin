@@ -1,3 +1,3 @@
-export const Px = (x) => {
-  return (x*5120) / 100
+export const Px = x => {
+  return (x * 5120) / 100
 }

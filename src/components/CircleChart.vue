@@ -1,28 +1,19 @@
 <template>
-  <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
-    <div class="chart-title" :style="{ width: props.width }">
-      <img class="title-icon" :src="Point" alt="point" />
-      {{ title }}
-    </div>
-    <div class="chart-content">
-      <div class="chart-wrapper" ref="chartRef"></div>
-    </div>
-  </div>
+  <div class="chart-wrapper" ref="chartRef" :style="{width: props.width,height: props.height}"></div>
 </template>
 
 <script setup>
 import * as echarts from 'echarts'
-import Point from '@/assets/images/point.svg'
-import { onMounted, ref,watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const props = defineProps({
-    width:{
-    type:String,
-    default:''
+  width: {
+    type: String,
+    default: ''
   },
   height: {
-    type:String,
-    default:''
+    type: String,
+    default: ''
   },
   title: {
     type: String,
@@ -44,7 +35,7 @@ const props = defineProps({
   roseType: {
     type: String,
     default: undefined,
-    validator: value => ['radius', 'area', undefined].includes(value)
+    validator: value => ['radius', 'pie', undefined].includes(value)
   },
   showPercentage: {
     type: Boolean,
@@ -69,7 +60,19 @@ const props = defineProps({
   legend: {
     type: String,
     default: 'bottom'
-  }
+  },
+  isCong:{
+    type: Boolean,
+    default: false
+  },
+  radius: {
+    type: Array,
+    default:() => ['33%', '45%']
+  },
+  center:{
+    type: Array,
+    default: ()=>['50%', '50%']
+    }
 })
 
 const chartRef = ref(null)
@@ -117,17 +120,18 @@ const updateChart = () => {
         z: 10,
         name: props.title,
         type: 'pie',
-        radius: ['33%', '45%'],
+        radius: props.radius,
+        center: props.center,
         width: chartWidth,
         roseType: props.roseType,
         padAngle: 1,
         avoidLabelOverlap: true,
         itemStyle: {
-          borderRadius: 1,
+          borderRadius: 1
           // borderWidth: 8,
           // borderColor: 'rgba(133, 208, 106, .1)'
         },
-        label: {
+        label: props.showPercentage?{
           show: true,
           position: 'outer',
           alignTo: 'none',
@@ -152,8 +156,10 @@ const updateChart = () => {
               padding: [6, 0]
             }
           }
+        }:{
+          show: false
         },
-        labelLine: {
+        labelLine:props.showPercentage? {
           show: true,
           length: 15,
           length2: 10,
@@ -161,20 +167,22 @@ const updateChart = () => {
             color: 'rgba(255,255,255,0.5)',
             width: 1.2
           }
+        }:{
+          show: false
         },
-        labelLayout: params => {
+        labelLayout: props.showPercentage? params => {
           const isLeft = params.labelRect.x < chartWidth / 2
           const points = params.labelLinePoints
           points[2][0] = isLeft ? params.labelRect.x : params.labelRect.x + params.labelRect.width
           return { labelLinePoints: points, draggable: true }
-        },
+        }: {},
         data: props.dataItems.map(item => {
           return {
             value: item.percentage,
             name: item.label,
             itemStyle: {
               shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.2)',
+              shadowColor: 'rgba(0, 0, 0, 0.2)'
             }
           }
         }),
@@ -188,10 +196,11 @@ const updateChart = () => {
           }
         }
       },
-      {
-        z:1,
+      props.isCong?{
+        z: 1,
         type: 'pie',
-        radius: ['33%', '50%'],
+        radius: props.radius,
+        center: props.center,
         width: chartWidth,
         roseType: props.roseType,
         padAngle: 1,
@@ -203,14 +212,14 @@ const updateChart = () => {
             itemStyle: {
               shadowBlur: 10,
               shadowColor: 'rgba(0, 0, 0, 0.2)',
-              opacity: .5, // 整体透明度设为50%,
+              opacity: 0.5 // 整体透明度设为50%,
             }
           }
         }),
-        label:{
+        label: {
           show: false
-        },
-      }
+        }
+      }:{}
     ],
     tooltip: {
       show: true,
@@ -234,12 +243,12 @@ const updateChart = () => {
       show: props.showLegend,
       ...(props.legend === 'right'
         ? {
-            right: '10%',
+            right: '0%',
             top: 'middle',
             orient: 'vertical'
           }
         : {
-            bottom: '0%',
+            bottom: '10%',
             orient: 'horizontal'
           }),
       itemWidth: 24,
@@ -269,50 +278,9 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 </script>
 
 <style scoped>
-.circle-chart-container {
-  width: 605px;
-  height: 320px;
-  position: relative;
-  background-color: #142222;
-  border: 1px solid var(--border-default);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.chart-title {
-  width: 605px;
-  height: 42.51px;
-  border-radius: 8px;
-  opacity: 1;
-  background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 400;
-  font-family: 'SourceHanSansCN';
-  border-bottom: 1px solid rgba(69, 102, 85, 1);
-}
-
-.title-icon {
-  display: inline-block;
-  margin: 5px;
-}
-
-.chart-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100% - 42px);
-  position: relative;
-}
-
 .chart-wrapper {
-  width: 100%;
-  height: 95%;
+  width: 605px;
+  height: 280px;
   /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); */
   z-index: 1;
   display: flex;

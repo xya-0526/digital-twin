@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <div class="radarCarts">
     <span class="item"></span>
-    <img :src="props.icon" alt="">
+    <img :src="props.icon" alt="" />
     <span class="mask">86.5%</span>
   </div>
 </template>
@@ -53,7 +53,6 @@ const props = defineProps({
     transform-origin: top left;
     /* border-top: 1px dashed #141414; */
     animation: rotate 2s linear infinite;
-
   }
 }
 </style>
