@@ -1,4 +1,11 @@
 <script setup>
+import ProgressBar from '@/components/ProgressBar.vue'
+import CartBoxone from '@/components/cartBoxone.vue'
+import gaugeChart from '@/components/gaugeChart.vue'
+import AeraButton from '@/components/AeraButton.vue'
+import { colProps } from 'element-plus'
+import BottomButton from '@/components/BottomButton.vue'
+import ColumnButton from '@/components/ColumnButton.vue'
 const salesData = [
   { name: '第一季度', value: 125 },
   { name: '第二季度', value: 180 },
@@ -39,10 +46,11 @@ const buildingData = [
 const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)','linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)']
 
 </script>
-
 <template>
-  <div class="header"></div>
   <div class="main">
+    <AeraButton></AeraButton>
+    <BottomButton></BottomButton>
+    <ColumnButton></ColumnButton>
     <div class="banner">
       <div class="left">
         <div class="one">
