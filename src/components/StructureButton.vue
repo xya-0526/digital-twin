@@ -38,6 +38,7 @@ const buttonClick = value => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s;
   }
   .test {
     width: 2.1875vw;
