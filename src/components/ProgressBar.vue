@@ -1,5 +1,9 @@
 <script setup>
 const props = defineProps({
+  isMax: {
+    type: Boolean,
+    default: false
+  },
   percentage: {
     type: Number,
     default: 0
@@ -36,13 +40,16 @@ const progressStyle = computed(() => {
     percentage: props.percentage,
     name: props.name,
     description: props.description,
+    isMax: props.isMax,
     ...props.ortherProps
   }
 })
 onMounted(() => {
-  const progress = document.querySelector('.el-progress-bar__outer')
-  progress.style.background = 'rgba(26, 40, 40)'
-  progress.style.border = '0.1px solid rgba(56, 65, 67,0.8)'
+  const progress = document.querySelectorAll('.el-progress-bar__outer')
+  progress.forEach(item => {
+    item.style.background = 'rgba(26, 40, 40)'
+    item.style.border = '0.1px solid rgba(56, 65, 67,0.8)'
+  })
 })
 </script>
 
@@ -50,7 +57,7 @@ onMounted(() => {
   <div class="progress-bar">
     <div class="box" :style="{ width: progressStyle.width, height: progressStyle.height }">
       <div class="name">{{ progressStyle.name }}</div>
-      <div class="description">{{ description }}%</div>
+      <div class="description">{{isMax?'≥':''}}{{ description }}%</div>
     </div>
     <el-progress
       :text-inside="true"
@@ -68,7 +75,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .progress-bar {
   z-index: 100;
-  width: 450px;
+  width: 8.7891vw;
   height: 60px;
   // background-color: rgb(17, 26, 27, 0.4);
   overflow: hidden;
