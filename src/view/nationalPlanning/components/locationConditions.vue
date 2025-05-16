@@ -189,7 +189,6 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
       </div>
     </div>
   </div>
-<AreaButton :width="'5%'" :height="'2.5%'"></AreaButton>
 </template>
 
 <style scoped>
