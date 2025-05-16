@@ -83,6 +83,7 @@ defineProps({
 button {
       
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border: none;

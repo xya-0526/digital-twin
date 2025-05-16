@@ -22,7 +22,7 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
     height: 25.5vh;
     background: #142222;
     left: 68%;
-    top: 74%;
+    top: 72.5%;
     position: absolute;
     display: flex;
     flex-direction: column;
