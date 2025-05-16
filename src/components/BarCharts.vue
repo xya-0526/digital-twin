@@ -25,7 +25,6 @@ const props = defineProps({
   seriesData: {
     type: Array,
     required: true,
-    validator: value => value.every(item => item.name && item.data)
   },
 
   // 样式配置

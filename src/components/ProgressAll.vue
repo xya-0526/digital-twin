@@ -9,7 +9,7 @@ const props = defineProps({
     default: () => ['linear-gradient(to right,#2C5655,#69CB82)','linear-gradient(to right,#2C5655,#69CB82)','linear-gradient(to right,#2C5655,#69CB82)']
   },
   icon: String,
-  progress: Number,
+  progress: String,
   name: String,
   width:{
     type: String,

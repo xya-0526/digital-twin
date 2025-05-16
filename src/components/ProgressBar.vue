@@ -5,15 +5,15 @@ const props = defineProps({
     default: false
   },
   percentage: {
-    type: Number,
-    default: 0
+    type: [String,Number],
+    default: '0'
   },
   name: {
     type: String,
     default: '测试'
   },
   description: {
-    type: String,
+    type: [Number, String],
     default: '30'
   },
   gradientColor: {
@@ -64,7 +64,7 @@ onMounted(() => {
       :style="{ width: progressStyle.width, height: progressStyle.height }"
       :stroke-width="15"
       :percentage="percentage"
-      status="succes"
+      status="success"
       :color="progressStyle.gradientColor"
       :show-text="false"
       class="progress"
