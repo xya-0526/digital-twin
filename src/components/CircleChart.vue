@@ -35,7 +35,6 @@ const props = defineProps({
   roseType: {
     type: String,
     default: undefined,
-    validator: value => ['radius', 'pie', undefined].includes(value)
   },
   showPercentage: {
     type: Boolean,
@@ -72,7 +71,11 @@ const props = defineProps({
   center:{
     type: Array,
     default: ()=>['50%', '50%']
-    }
+    },
+  radiusCong:{
+      type: Array,
+      default:()=>['33%', '50%']
+  }
 })
 
 const chartRef = ref(null)
@@ -91,6 +94,8 @@ const handleResize = () => {
     initChart()
   }
 }
+console.log(props.isCong);
+
 
 const updateChart = () => {
   if (!chartInstance) return
@@ -199,7 +204,7 @@ const updateChart = () => {
       props.isCong?{
         z: 1,
         type: 'pie',
-        radius: props.radius,
+        radius: props.radiusCong,
         center: props.center,
         width: chartWidth,
         roseType: props.roseType,

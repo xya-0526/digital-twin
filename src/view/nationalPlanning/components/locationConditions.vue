@@ -1,4 +1,11 @@
 <script setup>
+import ProgressBar from '@/components/ProgressBar.vue'
+import CartBoxone from '@/components/cartBoxone.vue'
+import gaugeChart from '@/components/gaugeChart.vue'
+import AeraButton from '@/components/AeraButton.vue'
+import { colProps } from 'element-plus'
+import BottomButton from '@/components/BottomButton.vue'
+import ColumnButton from '@/components/ColumnButton.vue'
 const salesData = [
   { name: '第一季度', value: 125 },
   { name: '第二季度', value: 180 },
@@ -39,10 +46,11 @@ const buildingData = [
 const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)','linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)']
 
 </script>
-
 <template>
-  <div class="header"></div>
   <div class="main">
+    <AeraButton></AeraButton>
+    <BottomButton></BottomButton>
+    <ColumnButton></ColumnButton>
     <div class="banner">
       <div class="left">
         <div class="one">
@@ -50,8 +58,12 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
             <div class="test1">示范区国土空间总体规划</div>
           </div>
           <div class="onebanner">
-            <CartBoxone :width="'13.8281vw'" :height="'16.8056vh'"></CartBoxone>
-            <CartBoxone :width="'9.707vw'" :height="'16.8056vh'"></CartBoxone>
+            <CartBoxone :width="'13.8281vw'" :height="'16.8056vh'">
+              <textTitle></textTitle>
+            </CartBoxone>
+            <CartBoxone :width="'9.707vw'" :height="'16.8056vh'">
+              <titleList></titleList>
+            </CartBoxone>
             <CartBoxtow  :width="'7.793vw'" :height="'16.5972vh'">
               <CircleChart
                 :showPercentage="false"
@@ -75,7 +87,9 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               >
             </ProgressAll>
             </CartBoxtow>
-            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'"></CartBoxtow>
+            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'">
+              <ecologyTitle :width="'7.793vw'" :height="'16.5972vh'"></ecologyTitle>
+            </CartBoxtow>
           </div>
         </div>
         <div class="two">
@@ -92,6 +106,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               :dataItems="ecologicalData"
               :width="'7.7734vw'" 
               :height="'16.8056vh'"
+              :isCong="true"
             />
             </CartBoxone>
             <CartBoxone :width="'7.7734vw'" :height="'16.8056vh'"></CartBoxone>
@@ -100,22 +115,31 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
             </CartBoxone>
           </div>
         </div>
-        <div class="three"></div>
+        <div class="three">
+          <div class="titles">
+            <div class="test1">水乡单元详细规划</div>
+          </div>
+          <div class="threebanner">
+            <CartBoxtow :width="'7.793vw'" :height="'11.5083vh'"></CartBoxtow>
+            <CartBoxtow :width="'7.793vw'" :height="'11.5083vh'"></CartBoxtow>
+            <CartBoxtow :width="'7.793vw'" :height="'11.5083vh'"></CartBoxtow>
+          </div>
+        </div>
       </div>
       <div class="right">
         <div class="blist">
           <StructureButton> </StructureButton>
         </div>
         <div class="carts">
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
+          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'" :title="'生态保护红线'">
             <CircleChart
-              title="生态保护红线"
               :centerValue="80"
               :showLabel="true"
               centerLabel="数据数据"
               :dataItems="ecologicalData"
               :width="'10.8164vw'"
               :height="'22.4847vh'"
+              :isCong="true"
             />
           </CartBoxone>
           <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
@@ -127,6 +151,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               :dataItems="farmlandData"
               :width="'10.8164vw'"
               :height="'22.4847vh'"
+              :isCong="true"
             />
           </CartBoxone>
           <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
@@ -188,7 +213,6 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 8.7891vw;
 }
 
 .circle {
@@ -312,6 +336,37 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
       border: 1px solid #2c3534;
       background: var(--backgrouend-tow);
       margin-top: 0.6944vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+       .titles {
+        z-index: 2;
+        width: 23.8086vw;
+        height: 20%;
+        /* opacity: 1; */
+        border-radius: 0.0977vw;
+        border: 1px solid #314347;
+        background: linear-gradient(90deg, #2a5934 0%, #1e3033 100%);
+        .test1 {
+          width: 4.3359vw;
+          height: 100%;
+          z-index: 100;
+          color: #fff;
+          font-size: 0.4883vw;
+          display: flex;
+          align-items: center;
+          margin-left: 0.5859vw;
+        }
+      }
+      .threebanner{
+        width: 23.8086vw;
+        height: 70%;
+        /* background-color: #fff; */
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+      }
     }
   }
   .right {
