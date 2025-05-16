@@ -8,7 +8,8 @@
         borderRadius: border_radius,
         border: Border,
         boxShadow,
-        color
+        color,
+        margin
     }">
         <span v-if="image.src" :style="{
             width: image.width,

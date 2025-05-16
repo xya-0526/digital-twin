@@ -6,6 +6,7 @@ import AeraButton from '@/components/AeraButton.vue'
 import { colProps } from 'element-plus'
 import BottomButton from '@/components/BottomButton.vue'
 import ColumnButton from '@/components/ColumnButton.vue'
+import SeclectBox from '@/components/SeclectBox.vue'
 const salesData = [
   { name: '第一季度', value: 125 },
   { name: '第二季度', value: 180 },
@@ -48,6 +49,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
 </script>
 <template>
   <div class="main">
+    <SeclectBox></SeclectBox>
     <AeraButton></AeraButton>
     <BottomButton></BottomButton>
     <ColumnButton></ColumnButton>
