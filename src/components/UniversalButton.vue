@@ -1,5 +1,7 @@
 <template>
     <button :style="{
+        justifyContent: justifyContent,
+        fontSize: Font_size,
         width,
         height,
         background: bgColor,
@@ -13,8 +15,8 @@
             height: image.height,
         }">
             <img v-if="image.src" :src="image.src" alt="">
-        </span>
-        <span>
+        </span>    
+        <span  :style="{margin}">
             {{ text }}
         </span>
     </button>
@@ -61,12 +63,24 @@ defineProps({
     color: {
         type: String,
         default: '#a5a4a4'
+    },
+    Font_size: {
+        type: String,
+        default: '2rem'
+    },
+    justifyContent: {
+        type: String,
+        default: 'center'
+    },
+    margin:{
+        type: String,
+        default: '0 0 0 0'
     }
 })
 </script>
 <style scoped>
 button {
-    font-size: 2rem;
+      
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,11 +92,13 @@ button {
         margin-right: 0.2vw;
         align-items: end;
     }
+  
 }
 
 img {
-    width: 100%;
-    height: 100%;
+width: 100%;
+height: 100%;
 
 }
+
 </style>

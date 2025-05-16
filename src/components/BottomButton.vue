@@ -9,7 +9,8 @@
          :width="'12.5%'" 
          :boxShadow="''" 
          :height="'25%'" 
-         :bgColor="activeButton == index ? 'linear-gradient(180deg, #348447 0%, #1c272d 100%)' : '#253334'"
+         :bgColor="activeButton == index ? 'linear-gradient(180deg, #348447 0%, #1c272d 100%)' : '#1A282B'"
+         :color="activeButton == index ? '#fff' : '#a5a4a4'"
          @click="addActive(index)"
          >
         </UniversalButton>
@@ -24,7 +25,7 @@ const addActive = (index: number) => {
     // 这里可以添加点击事件的逻辑
     // 比如改变按钮的样式或执行其他操作
 }
-const buttons = [
+const buttons = ref([
 
     {
         text: "区位条件",
@@ -61,7 +62,7 @@ const buttons = [
 
     },
 
-]
+])
 
 
 
@@ -84,5 +85,6 @@ const buttons = [
         padding: 0;
         margin: 0;
     }
+    
 }
 </style>

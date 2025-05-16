@@ -1,4 +1,5 @@
 <template>
+    
     <div class="butBox">
         <UniversalButton v-for="(i, index) in textArray" :key="index" @click="addActive(index)"
             :color="activeButton == index ? '#fff' : '#a5a4a4'"
@@ -14,7 +15,7 @@
 
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
-const textArray = ["示范区", "先行启动区", "水乡客厅"]
+const textArray =ref( ["示范区", "先行启动区", "水乡客厅"])
 let activeButton = ref(0)
 const addActive = (index: number) => {
     console.log(index)
