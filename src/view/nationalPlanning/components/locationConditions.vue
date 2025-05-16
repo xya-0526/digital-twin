@@ -61,7 +61,9 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
             <CartBoxone :width="'13.8281vw'" :height="'16.8056vh'">
               <textTitle></textTitle>
             </CartBoxone>
-            <CartBoxone :width="'9.707vw'" :height="'16.8056vh'"></CartBoxone>
+            <CartBoxone :width="'9.707vw'" :height="'16.8056vh'">
+              <titleList></titleList>
+            </CartBoxone>
             <CartBoxtow  :width="'7.793vw'" :height="'16.5972vh'">
               <CircleChart
                 :showPercentage="false"
@@ -85,7 +87,9 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               >
             </ProgressAll>
             </CartBoxtow>
-            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'"></CartBoxtow>
+            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'">
+              <ecologyTitle :width="'7.793vw'" :height="'16.5972vh'"></ecologyTitle>
+            </CartBoxtow>
           </div>
         </div>
         <div class="two">
@@ -135,6 +139,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               :dataItems="ecologicalData"
               :width="'10.8164vw'"
               :height="'22.4847vh'"
+              :isCong="true"
             />
           </CartBoxone>
           <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
@@ -146,6 +151,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               :dataItems="farmlandData"
               :width="'10.8164vw'"
               :height="'22.4847vh'"
+              :isCong="true"
             />
           </CartBoxone>
           <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">

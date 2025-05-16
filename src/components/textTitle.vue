@@ -30,12 +30,13 @@ const props = defineProps({
   width:100%;
   height: 12.8889vh;
   display: flex;
-  /* background-color: rgb(213, 239, 209);s */
+  font-family: "SourceHanSansCN";
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
   font-size: 0.3789vw;
   color: #FFF;
+  letter-spacing: 5px;
   .title{
     display: flex;
     height: 25%;
@@ -62,7 +63,7 @@ const props = defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 0.3906vw;
   }
   img{
     margin-right: 0.1953vw;
