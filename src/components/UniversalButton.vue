@@ -8,7 +8,8 @@
         borderRadius: border_radius,
         border: Border,
         boxShadow,
-        color
+        color,
+        margin
     }">
         <span v-if="image.src" :style="{
             width: image.width,
@@ -82,6 +83,7 @@ defineProps({
 button {
       
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     border: none;

@@ -146,7 +146,7 @@ header .title {
         align-items: center;
 
         p {
-            /*利用background-clip属性实现文字颜色从绿到白的渐变效果*/
+           
             background-image: linear-gradient(to bottom, #FFFCFF, #a7f6ed);
             background-clip: text;
             -webkit-background-clip: text;

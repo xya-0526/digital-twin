@@ -2,11 +2,12 @@
     <div class="Butbox">
         <UniversalButton
          v-for="(b, index) in buttons"
+         :margin="'0 0 0 0'"
          :key="index" 
          :text="b.text" 
          :image="b.image"
          :border="'1px solid #456766'" 
-         :width="'12.5%'" 
+         :width="'16%'" 
          :boxShadow="''" 
          :height="'25%'" 
          :bgColor="activeButton == index ? 'linear-gradient(180deg, #348447 0%, #1c272d 100%)' : '#1A282B'"
@@ -73,9 +74,9 @@ const buttons = ref([
 .Butbox {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
-    width: 35%;
+    width: 28%;
     height: 15vh;
     top: 95vh;
     left: 50%;
@@ -85,6 +86,5 @@ const buttons = ref([
         padding: 0;
         margin: 0;
     }
-    
 }
 </style>
