@@ -20,10 +20,24 @@ const props = defineProps({
 })
 </script>
 <template>
-  <div class="titleList" :style="{width:props.width,height:props.height}">
-    <div class="list" v-for="item in props.list" :key="item">
-    <el-icon class="icon" color="#8cd3d5"><Tickets /></el-icon>
-    <div class="test">文化和旅游发展专项规划</div>
+  <div
+    class="titleList"
+    :style="{width:props.width,height:props.height}"
+  >
+    <div
+      v-for="item in props.list"
+      :key="item"
+      class="list"
+    >
+      <el-icon
+        class="icon"
+        color="#8cd3d5"
+      >
+        <Tickets />
+      </el-icon>
+      <div class="test">
+        文化和旅游发展专项规划
+      </div>
     </div>
   </div>
 </template>

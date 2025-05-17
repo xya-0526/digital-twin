@@ -44,21 +44,34 @@ const allProps= computed(()=>{
 </script>
 
 <template>
-  <div class="bardiv" :style="{width: allProps.width, height: allProps.height}">
-    <div class="progressbars" v-for="i,index in allProps.data" :key="i"  :style="{width: allProps.width}">
-      <div v-if="i.icon" class="icons" >
-        <radar :icon="i.icon"></radar>
+  <div
+    class="bardiv"
+    :style="{width: allProps.width, height: allProps.height}"
+  >
+    <div
+      v-for="i,index in allProps.data"
+      :key="i"
+      class="progressbars"
+      :style="{width: allProps.width}"
+    >
+      <div
+        v-if="i.icon"
+        class="icons"
+      >
+        <radar :icon="i.icon" />
       </div>
-      <div class="propgresss" :style="{width: i.icon?allProps.progwidth:allProps.width}">
+      <div
+        class="propgresss"
+        :style="{width: i.icon?allProps.progwidth:allProps.width}"
+      >
         <ProgressBar
           :gradient-color="allProps.colors[index]"
           :name="'销售进度'"
           :description="38.5"
           :percentage="38.5"
           :width="i.icon?allProps.progwidth:allProps.width"
-          :isMax="allProps.isMax"
-        >
-      </ProgressBar>
+          :is-max="allProps.isMax"
+        />
       </div>
     </div>
   </div>

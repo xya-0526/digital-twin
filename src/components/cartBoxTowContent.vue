@@ -1,25 +1,28 @@
 <template>
-    <div class="box">
-        <div class="img">
-            <div>
-                <img :src="image.src" alt="">
-            </div>
-            <div>
-                <img src="../assets/images/Slice 6.png" alt="">
-            </div>
-        </div>
-        <div class="text">
-            <p>{{ text }}</p>
-            <div id="count">
-                <span>{{ count / 10 }}</span>
-                <span>{{ count % 10 }}</span>
-                <div>个</div>
-            </div>
-        </div>
-
+  <div class="box">
+    <div class="img">
+      <div>
+        <img
+          :src="image.src"
+          alt=""
+        >
+      </div>
+      <div>
+        <img
+          src="../assets/images/Slice 6.png"
+          alt=""
+        >
+      </div>
     </div>
-
-
+    <div class="text">
+      <p>{{ text }}</p>
+      <div id="count">
+        <span>{{ count / 10 }}</span>
+        <span>{{ count % 10 }}</span>
+        <div>个</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 

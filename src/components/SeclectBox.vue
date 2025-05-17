@@ -1,12 +1,25 @@
 <template>
-    <div class="checkBox">
-        <div id="box" v-for="i in selectArray">
-            <input type="checkbox" :value="i" name=""><span>{{ i }}</span>
-        </div>
-        <UniversalButton text="底图" :bgColor="'#1C3829D6'" :width="'100%'" :height="'15%'" :border_radius="'10px'"
-            :Border="'0px'" :boxShadow="'inset 0 0 13px 0 #64D195F0'"></UniversalButton>
+  <div class="checkBox">
+    <div
+      v-for="i in selectArray"
+      id="box"
+    >
+      <input
+        type="checkbox"
+        :value="i"
+        name=""
+      ><span>{{ i }}</span>
     </div>
-
+    <UniversalButton
+      text="底图"
+      :bg-color="'#1C3829D6'"
+      :width="'100%'"
+      :height="'15%'"
+      :border_radius="'10px'"
+      :Border="'0px'"
+      :box-shadow="'inset 0 0 13px 0 #64D195F0'"
+    />
+  </div>
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';

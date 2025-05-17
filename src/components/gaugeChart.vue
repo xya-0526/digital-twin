@@ -249,7 +249,12 @@ const Echartoption = computed(() => {
 </script>
 
 <template>
-  <echart :width="width" :height="height" :theme="theme" :option="Echartoption" />
+  <echart
+    :width="width"
+    :height="height"
+    :theme="theme"
+    :option="Echartoption"
+  />
 </template>
 
 <style scoped></style>

@@ -11,11 +11,17 @@ const buttonClick = value => {
     <button
       v-for="i in 5"
       :key="i"
-      @click="buttonClick(i)"
       :class="['button', { buttonClick: isActive === i }]"
+      @click="buttonClick(i)"
     >
-      <img src="../assets/images/路径 3.png" alt="" class="icon" />
-      <div class="test">目标定位</div>
+      <img
+        src="../assets/images/路径 3.png"
+        alt=""
+        class="icon"
+      >
+      <div class="test">
+        目标定位
+      </div>
     </button>
   </div>
 </template>

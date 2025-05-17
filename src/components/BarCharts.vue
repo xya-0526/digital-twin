@@ -1,5 +1,10 @@
 <template>
-  <eChart :width="width" :height="height" :theme="theme" :option="chartOption" />
+  <eChart
+    :width="width"
+    :height="height"
+    :theme="theme"
+    :option="chartOption"
+  />
 </template>
 
 <script setup>

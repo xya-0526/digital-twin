@@ -77,62 +77,125 @@ const Cart2Array = [{
 </script>
 <template>
   <div class="main">
-    <SeclectBox></SeclectBox>
-    <AeraButton></AeraButton>
-    <BottomButton></BottomButton>
-    <ColumnButton></ColumnButton>
+    <SeclectBox />
+    <AeraButton />
+    <BottomButton />
+    <ColumnButton />
     <div class="banner">
       <div class="left">
         <div class="one">
           <div class="titles">
-            <div class="test1">示范区国土空间总体规划</div>
+            <div class="test1">
+              示范区国土空间总体规划
+            </div>
           </div>
           <div class="onebanner">
-            <CartBoxone :width="'13.8281vw'" :height="'16.8056vh'">
-              <textTitle></textTitle>
+            <CartBoxone
+              :width="'13.8281vw'"
+              :height="'16.8056vh'"
+            >
+              <textTitle />
             </CartBoxone>
-            <CartBoxone :width="'9.707vw'" :height="'16.8056vh'">
-              <titleList></titleList>
+            <CartBoxone
+              :width="'9.707vw'"
+              :height="'16.8056vh'"
+            >
+              <titleList />
             </CartBoxone>
-            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'">
-              <CircleChart :showPercentage="false" title="生态保护红线" :centerValue="80" :showLegend="true" :legend="'right'"
-                centerLabel="数据数据" :dataItems="ecologicalData" :width="'7.793vw'" :height="'16.5972vh'"
-                :roseType="'pie'" :radius="['35%', '60%']" />
+            <CartBoxtow
+              :width="'7.793vw'"
+              :height="'16.5972vh'"
+            >
+              <CircleChart
+                :show-percentage="false"
+                title="生态保护红线"
+                :center-value="80"
+                :show-legend="true"
+                :legend="'right'"
+                center-label="数据数据"
+                :data-items="ecologicalData"
+                :width="'7.793vw'"
+                :height="'16.5972vh'"
+                :rose-type="'pie'"
+                :radius="['35%', '60%']"
+              />
             </CartBoxtow>
-            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'">
-              <ProgressAll :width="'6.793vw'" :height="'16.5972vh'" :colors="colors">
-              </ProgressAll>
+            <CartBoxtow
+              :width="'7.793vw'"
+              :height="'16.5972vh'"
+            >
+              <ProgressAll
+                :width="'6.793vw'"
+                :height="'16.5972vh'"
+                :colors="colors"
+              />
             </CartBoxtow>
-            <CartBoxtow :width="'7.793vw'" :height="'16.5972vh'">
-              <ecologyTitle :width="'7.793vw'" :height="'16.5972vh'"></ecologyTitle>
+            <CartBoxtow
+              :width="'7.793vw'"
+              :height="'16.5972vh'"
+            >
+              <ecologyTitle
+                :width="'7.793vw'"
+                :height="'16.5972vh'"
+              />
             </CartBoxtow>
           </div>
         </div>
         <div class="two">
           <div class="titles">
-            <div class="test1">先行启动区国土空间总体规划</div>
+            <div class="test1">
+              先行启动区国土空间总体规划
+            </div>
           </div>
           <div class="towbanner">
-            <CartBoxone :width="'7.7734vw'" :height="'16.8056vh'">
-              <CircleChart title="生态保护红线" :centerValue="80" :showLegend="false" centerLabel="数据数据"
-                :dataItems="ecologicalData" :width="'7.7734vw'" :height="'16.8056vh'" :isCong="true" />
+            <CartBoxone
+              :width="'7.7734vw'"
+              :height="'16.8056vh'"
+            >
+              <CircleChart
+                title="生态保护红线"
+                :center-value="80"
+                :show-legend="false"
+                center-label="数据数据"
+                :data-items="ecologicalData"
+                :width="'7.7734vw'"
+                :height="'16.8056vh'"
+                :is-cong="true"
+              />
             </CartBoxone>
-            <CartBoxone :width="'7.7734vw'" :height="'16.8056vh'">
-              <cartBoxOneCentent></cartBoxOneCentent>
+            <CartBoxone
+              :width="'7.7734vw'"
+              :height="'16.8056vh'"
+            >
+              <cartBoxOneCentent />
             </CartBoxone>
-            <CartBoxone :width="'7.7734vw'" :height="'16.8056vh'">
-              <ProgressAll :data="[{ icon: 'icon-1', name: '生态保护红线', value: 80 }, { icon: 'icon-2', name: '生态保护红线', value: 80 }]"
-                :width="'7.7734vw'"></ProgressAll>
+            <CartBoxone
+              :width="'7.7734vw'"
+              :height="'16.8056vh'"
+            >
+              <ProgressAll
+                :data="[{ icon: 'icon-1', name: '生态保护红线', value: 80 }, { icon: 'icon-2', name: '生态保护红线', value: 80 }]"
+                :width="'7.7734vw'"
+              />
             </CartBoxone>
           </div>
         </div>
         <div class="three">
           <div class="titles">
-            <div class="test1">水乡单元详细规划</div>
+            <div class="test1">
+              水乡单元详细规划
+            </div>
           </div>
           <div class="threebanner">
-            <CartBoxtow v-for="i in Cart2Array" :width="'7.793vw'" :height="'11.5083vh'">
-              <cartBoxTowContent :image="i.image" :text="i.text"></cartBoxTowContent>
+            <CartBoxtow
+              v-for="i in Cart2Array"
+              :width="'7.793vw'"
+              :height="'11.5083vh'"
+            >
+              <cartBoxTowContent
+                :image="i.image"
+                :text="i.text"
+              />
             </CartBoxtow>
             <!-- <CartBoxtow :width="'7.793vw'" :height="'11.5083vh'"></CartBoxtow>
             <CartBoxtow :width="'7.793vw'" :height="'11.5083vh'"></CartBoxtow> -->
@@ -141,56 +204,102 @@ const Cart2Array = [{
       </div>
       <div class="right">
         <div class="blist">
-          <StructureButton> </StructureButton>
+          <StructureButton />
         </div>
         <div class="carts">
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'" :title="'生态保护红线'">
-            <CircleChart :centerValue="80" :showLabel="true" centerLabel="数据数据" :dataItems="ecologicalData"
-              :width="'10.8164vw'" :height="'22.4847vh'" :isCong="true" />
+          <CartBoxone
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+            :title="'生态保护红线'"
+          >
+            <CircleChart
+              :center-value="80"
+              :show-label="true"
+              center-label="数据数据"
+              :data-items="ecologicalData"
+              :width="'10.8164vw'"
+              :height="'22.4847vh'"
+              :is-cong="true"
+            />
           </CartBoxone>
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
-            <CircleChart title="永久基本农田保有量（万亩）" :centerValue="80" centerLabel="总计人口" legend="right"
-              :dataItems="farmlandData" :width="'10.8164vw'" :height="'22.4847vh'" :isCong="true" />
+          <CartBoxone
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+          >
+            <CircleChart
+              title="永久基本农田保有量（万亩）"
+              :center-value="80"
+              center-label="总计人口"
+              legend="right"
+              :data-items="farmlandData"
+              :width="'10.8164vw'"
+              :height="'22.4847vh'"
+              :is-cong="true"
+            />
           </CartBoxone>
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
-            <BarCharts :x-axis-data="['一月', '二月', '三月', '四月', '五月']" :series-data="[
-              {
-                name: '线上渠道',
-                data: [120, 200, 150, 80, 70],
-                color: '#5470c6',
-                offsetColor: 'rgba(90, 117, 197,0.1)'
-              },
-              {
-                name: '线下渠道',
-                data: [80, 120, 90, 110, 130],
-                color: '#91cc75',
-                offsetColor: 'rgba(145, 204, 117,0.1)'
-              }
-            ]" theme="dark" :horizontal="false" />
+          <CartBoxone
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+          >
+            <BarCharts
+              :x-axis-data="['一月', '二月', '三月', '四月', '五月']"
+              :series-data="[
+                {
+                  name: '线上渠道',
+                  data: [120, 200, 150, 80, 70],
+                  color: '#5470c6',
+                  offsetColor: 'rgba(90, 117, 197,0.1)'
+                },
+                {
+                  name: '线下渠道',
+                  data: [80, 120, 90, 110, 130],
+                  color: '#91cc75',
+                  offsetColor: 'rgba(145, 204, 117,0.1)'
+                }
+              ]"
+              theme="dark"
+              :horizontal="false"
+            />
           </CartBoxone>
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
-            <gauges></gauges>
+          <CartBoxone
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+          >
+            <gauges />
           </CartBoxone>
-          <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
-            <BarCharts :x-axis-data="['一月', '二月', '三月', '四月', '五月']" :series-data="[
-              {
-                name: '线上渠道',
-                data: [120, 200, 150, 80, 70],
-                color: '#5470c6',
-                offsetColor: 'rgba(90, 117, 197,0.1)'
-              },
-              {
-                name: '线下渠道',
-                data: [80, 120, 90, 110, 130],
-                color: '#91cc75',
-                offsetColor: 'rgba(145, 204, 117,0.1)'
-              }
-            ]" theme="dark" :horizontal="false" />
+          <CartBoxone
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+          >
+            <BarCharts
+              :x-axis-data="['一月', '二月', '三月', '四月', '五月']"
+              :series-data="[
+                {
+                  name: '线上渠道',
+                  data: [120, 200, 150, 80, 70],
+                  color: '#5470c6',
+                  offsetColor: 'rgba(90, 117, 197,0.1)'
+                },
+                {
+                  name: '线下渠道',
+                  data: [80, 120, 90, 110, 130],
+                  color: '#91cc75',
+                  offsetColor: 'rgba(145, 204, 117,0.1)'
+                }
+              ]"
+              theme="dark"
+              :horizontal="false"
+            />
           </CartBoxone>
-          <CartBoxtow :width="'10.8164vw'" :height="'22.4847vh'">
-            <ProgressAll :isMax="true" :progwidth="' 7.7891vw'"
-              :data="[{ icon: 'icon-1', name: '生态保护红线', value: 80 }, { icon: 'icon-2', name: '生态保护红线', value: 80 }, { icon: 'icon-3', name: '生态保护红线', value: 80 }]">
-            </ProgressAll>
+          <CartBoxtow
+            :width="'10.8164vw'"
+            :height="'22.4847vh'"
+          >
+            <ProgressAll
+              :is-max="true"
+              :progwidth="' 7.7891vw'"
+              :data="[{ icon: 'icon-1', name: '生态保护红线', value: 80 }, { icon: 'icon-2', name: '生态保护红线', value: 80 }, { icon: 'icon-3', name: '生态保护红线', value: 80 }]"
+            />
           </CartBoxtow>
         </div>
       </div>

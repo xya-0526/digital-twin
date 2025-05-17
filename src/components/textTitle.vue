@@ -13,12 +13,22 @@ const props = defineProps({
 <template>
   <div class="text">
     <div class="title">
-      <span>"</span><h1 :style="{margin: '0 20px'}">世界级水乡人居文明典范</h1><span>"</span>
+      <span>"</span><h1 :style="{margin: '0 20px'}">
+        世界级水乡人居文明典范
+      </h1><span>"</span>
     </div>
-    <div :style="{ fontWeight:200,color:'rgb(151, 154, 154)'}">共生、共荣、共进、共鸣、共享</div>
+    <div :style="{ fontWeight:200,color:'rgb(151, 154, 154)'}">
+      共生、共荣、共进、共鸣、共享
+    </div>
     <div class="main">
-      <div class="but" v-for="item in 3">
-        <img src="../assets/images/point.svg" alt="">
+      <div
+        v-for="item in 3"
+        class="but"
+      >
+        <img
+          src="../assets/images/point.svg"
+          alt=""
+        >
         <div>超级都市圈</div>
       </div>
     </div>

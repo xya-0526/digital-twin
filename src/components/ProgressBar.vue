@@ -55,9 +55,16 @@ onMounted(() => {
 
 <template>
   <div class="progress-bar">
-    <div class="box" :style="{ width: progressStyle.width, height: progressStyle.height }">
-      <div class="name">{{ progressStyle.name }}</div>
-      <div class="description">{{isMax?'≥':''}}{{ description }}%</div>
+    <div
+      class="box"
+      :style="{ width: progressStyle.width, height: progressStyle.height }"
+    >
+      <div class="name">
+        {{ progressStyle.name }}
+      </div>
+      <div class="description">
+        {{ isMax?'≥':'' }}{{ description }}%
+      </div>
     </div>
     <el-progress
       :text-inside="true"

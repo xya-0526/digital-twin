@@ -1,5 +1,8 @@
 <template>
-  <div ref="chartRef" :style="{ width, height }" />
+  <div
+    ref="chartRef"
+    :style="{ width, height }"
+  />
 </template>
 
 <script setup>
