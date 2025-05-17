@@ -1,0 +1,19 @@
+// rem.scss
+html, body {
+  // 设置默认字体大小
+  font-size: 10px;
+}
+
+// 设置大屏默认高度，不再是100vh
+.screen-container {
+  width: 512rem;  // 5120px / 10
+  height: 144rem;   // 1440px / 10
+  margin: 0 auto;
+  overflow: hidden;
+  transform-origin: left top;
+  // 居中显示
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
