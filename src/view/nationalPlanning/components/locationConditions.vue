@@ -234,7 +234,10 @@ const Cart2Array = [{
               :data-items="farmlandData"
               :width="'10.8164vw'"
               :height="'22.4847vh'"
-              :is-cong="true"
+              :isCong="true"
+              :center="['30%','50%']"
+              :titleLeft="'27%'"
+              :LabelRight="'5%'"
             />
           </CartBoxone>
           <CartBoxone

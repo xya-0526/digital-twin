@@ -7,7 +7,7 @@ const props = defineProps({
   },
   list: {
     type: Array,
-    default: ()=>["","","",'','']
+    default: ()=>["","","",'']
   },
   width:{
     type: String,
