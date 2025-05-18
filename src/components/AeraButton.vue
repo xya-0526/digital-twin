@@ -2,6 +2,9 @@
 
     <div class="butBox">
         <UniversalButton v-for="(i, index) in textArray" :key="index" @click="addActive(index)"
+        :width="'25.9rem'"
+        :height="'7.7rem'"
+        :Font_size="'4rem'"
             :color="activeButton == index ? '#fff' : '#a5a4a4'"
             :bgColor="activeButton == index ? 'linear-gradient(180deg, #3a7c4e 0%, #29383b 100%)' : '#253334'"
             :text="i">
@@ -24,31 +27,18 @@ const addActive = (index: number) => {
     // 比如改变按钮的样式或执行其他操作
 }
 
-defineProps({
-    //   width: {
-    //      type: String,
-    //      default: ''
-    //   },
-    //   height: {
-    //      type: String,
-    //      default: ''
-    //   }
-})
 
 
 </script>
 <style scoped>
 .butBox {
-
     position: absolute;
-    margin-top: 2vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 18%;
-    height: 20vh;
+    left: 210.9rem;
+    width: 89rem;
+    height: 7.7rem;
     flex-direction: row;
 
 }

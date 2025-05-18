@@ -2,14 +2,15 @@
     <div class="Butbox">
         <UniversalButton
          v-for="(b, index) in buttons"
+         :Font_size="'3.6rem'"
          :margin="'0 0 0 0'"
          :key="index" 
          :text="b.text" 
          :image="b.image"
-         :border="'1px solid #456766'" 
-         :width="'16%'" 
+         :border="'0.1rem #456766'" 
+         :width="'25.8rem'"
          :boxShadow="''" 
-         :height="'25%'" 
+         :height="'6.7rem'"
          :bgColor="activeButton == index ? 'linear-gradient(180deg, #348447 0%, #1c272d 100%)' : '#1A282B'"
          :color="activeButton == index ? '#fff' : '#a5a4a4'"
          @click="addActive(index)"
@@ -76,11 +77,11 @@ const buttons = ref([
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: 28%;
-    height: 15vh;
-    top: 95vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 154.2rem;
+    height: 6.7rem;
+    top: 133.4rem; 
+    left: 179.1rem;
+
     flex-direction: row;
     span {
         padding: 0;

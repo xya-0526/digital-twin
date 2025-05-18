@@ -24,7 +24,7 @@ const props = defineProps({
     </div>
    
     <div class="main">
-      <div class="title1" v-for="item in 5">一心</div>
+      <div class="title1" v-for="item in 4">一心</div>
     </div>
    </div>
   </div>
@@ -37,8 +37,8 @@ const props = defineProps({
   height: 100%;
   /* background-color: antiquewhite; */
   font-family: "SourceHanSansCN";
-  padding: 0.3906vw;
-  font-size: 0.3125vw;
+  padding: 1.999rem;
+  font-size: 1.6rem;
   color: #fff;
   .container {
     width: 100%;
@@ -57,20 +57,20 @@ const props = defineProps({
   /* justify-content: center; */
   align-items: center;
   .icon{
-      width: 0.1172vw;
-      height: 0.4167vh;
+      width: 0.6rem;
+      height: 0.6rem;
       background-color: rgb(244, 186, 78);
       border-radius: 50%;
-      margin-right: 0.1953vw;
+      margin-right: 0.9rem;
   }
   .title{
-    width: 2.8906vw;
-    height: 1.25vh;
-    border-radius: 0.1758vw;
+    width: 14.799rem;
+    height: 1.8rem;
+    border-radius: 0.9rem;
     opacity: 1;
     background: linear-gradient(90deg, #2a553a 0%, #73737300 100%);
     line-height: 0px;
-    padding-left: 10px;
+    padding-left: 1rem;
   }
 }
 .main{
@@ -80,9 +80,9 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   .title1{
-    width: 1.7383vw;          
-    height: 2.4306vh;
-    border-radius: 0.3418vw;
+    width: 8.9rem;          
+    height: 3.5rem;
+    border-radius: 1.75rem;
     opacity: 1;
     background: linear-gradient(270deg, #73737300 0%, #366543 100%);
     display: flex;

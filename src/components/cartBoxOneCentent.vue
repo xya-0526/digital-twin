@@ -4,7 +4,7 @@
             <div class="img">
                 <img :src="i.image.src" alt="">
             </div>
-            <UniversalButton :text="i.text" :width="'100%'" :height="'16%'" :-font_size="'1rem'" :border_radius="'20px'" />
+            <UniversalButton :text="i.text" :width="'100%'" :height="'16%'":border_radius="'20px'" :Font_size="'2rem'"></UniversalButton>
         </div>
 
     </div>

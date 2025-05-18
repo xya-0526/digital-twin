@@ -2,16 +2,16 @@
 <div class="Butbox">
      <div class="R"></div>
     <div class="Butbox1">
-        <div class="Butbox2" style="width: 15%; height: 10%;" v-for="(button, index) in buttons">
+        <div class="Butbox2" style="width: 14.5rem; height: 4.7rem;" v-for="(button, index) in buttons">
          <span class="T"></span>
             <UniversalButton
-                :margin="'0 0.5vw 0 0'"
+                :margin="'0 2.6rem 0 0'"
                 :justifyContent="'end'"
-                :Font_size="'1.5rem'"
+                :Font_size="'2.8rem'"
                 :width="'100%'"
                 :height="'100%'"
-                :Border="'1px solid #3c5446'"
-                :border_radius="'40px'"
+                :Border="'0.1rem solid #3c5446'"
+                :border_radius="'4rem'"
                 :key="index"
                 :text="button.text"
                 :image="button.image"
@@ -86,44 +86,42 @@ const buttons=ref([
 <style scoped>
 
 .Butbox{
-    top: 28.5%;
-left: 18%;
-height: 40vh;
-width: 20%;
+top: 28.5%;
+left: 132.9rem;
+height: 67.05rem;
+width: 16.3rem;
 position: absolute;
 }
 .Butbox1{
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 .Butbox2{
+    margin-bottom: 3rem;
     position: relative;
 }
 .T{
 position: absolute;
-width: 30%;
-height: 30%;
+width: 3.2rem;
+height: 1.1rem;
 flex-shrink: 0;
-border-radius: 10px;
+border-radius: 1rem;
 background: #BCE0BF;
 display: inline-block;
 top: 50%;
-left:0;
+left:0;   
 transform: translate(-50%, -50%);
-
 }
 .R{
-border: 3px solid transparent ;
+border: 0.2rem solid transparent ;
 position: absolute;
-left: 41%;
-bottom: -20%;
-width: 1px;
-height: 150%;
+width: 0.1rem;
+height:67.05rem;
 border-image: linear-gradient(to bottom, transparent 0%, #bce9c0 50%, transparent 100%) 1;
 
 }
