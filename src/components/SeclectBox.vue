@@ -5,16 +5,6 @@
         </div>
         <UniversalButton text="底图" :bgColor="'#1C3829D6'" :width="'100%'" :height="'5.6rem'" :border_radius="'10px'"
           :Font_size="'3rem'"  :Border="'0px'" :boxShadow="'inset 0 0 1.3rem 0 #64D195F0'"></UniversalButton>
-    </div>
-    <UniversalButton
-      text="底图"
-      :bg-color="'#1C3829D6'"
-      :width="'100%'"
-      :height="'15%'"
-      :border_radius="'10px'"
-      :Border="'0px'"
-      :box-shadow="'inset 0 0 13px 0 #64D195F0'"
-    />
   </div>
 </template>
 <script setup lang="ts">
