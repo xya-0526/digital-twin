@@ -5,6 +5,7 @@ const props = defineProps({
     default: ''
   }
 })
+console.log(props.icon,111)
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const props = defineProps({
       :src="props.icon"
       alt=""
     >
-    <span class="mask">86.5%</span>
+    <span class="mask"></span>
   </div>
 </template>
 
@@ -56,6 +57,10 @@ const props = defineProps({
     transform-origin: top left;
     /* border-top: 1px dashed #141414; */
     animation: rotate 2s linear infinite;
+  }
+  img{
+    width: 50%;
+    height: 50%;
   }
 }
 </style>

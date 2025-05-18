@@ -15,11 +15,11 @@ const props = defineProps({
   // 尺寸配置
   width: {
     type: String,
-    default: '600px'
+    default: '60.5rem'
   },
   height: {
     type: String,
-    default: '200px'
+    default: '24.5rem'
   },
 
   // 数据配置

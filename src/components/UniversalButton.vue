@@ -1,35 +1,26 @@
 <template>
-  <button
-    :style="{
-      justifyContent: justifyContent,
-      fontSize: Font_size,
-      width,
-      height,
-      background: bgColor,
-      borderRadius: border_radius,
-      border: Border,
-      boxShadow,
-      color,
-      margin
-    }"
-  >
-    <span
-      v-if="image.src"
-      :style="{
-        width: image.width,
-        height: image.height,
-      }"
-    >
-      <img
-        v-if="image.src"
-        :src="image.src"
-        alt=""
-      >
-    </span>    
-    <span :style="{margin}">
-      {{ text }}
-    </span>
-  </button>
+    <button :style="{
+        justifyContent: justifyContent,
+        fontSize: Font_size,
+        width,
+        height,
+        background: bgColor,
+        borderRadius: border_radius,
+        border: Border,
+        boxShadow,
+        color,
+        margin
+    }">
+        <span v-if="image.src" :style="{
+            width: image.width,
+            height: image.height,
+        }">
+            <img v-if="image.src" :src="image.src" alt="">
+        </span>
+        <span :style="{ margin }">
+            {{ text }}
+        </span>
+    </button>
 </template>
 <script setup lang="ts">
 defineProps({
@@ -38,7 +29,7 @@ defineProps({
         default: {
             src: null,
             alt: '',
-            width: '15%',
+            width: "15%",
             height: '15%'
         }
     },
@@ -76,13 +67,13 @@ defineProps({
     },
     Font_size: {
         type: String,
-        default: '2rem'
+        default: ''
     },
     justifyContent: {
         type: String,
         default: 'center'
     },
-    margin:{
+    margin: {
         type: String,
         default: '0 0 0 0'
     }
@@ -90,7 +81,7 @@ defineProps({
 </script>
 <style scoped>
 button {
-      
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -98,18 +89,18 @@ button {
     border: none;
     cursor: pointer;
     text-align: center;
+
     span:first-child {
         display: flex;
-        margin-right: 0.2vw;
+        margin-right: 0.3rem;
         align-items: end;
     }
-  
+
 }
 
 img {
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 
 }
-
 </style>

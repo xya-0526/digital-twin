@@ -1,24 +1,13 @@
 <template>
-  <div class="box">
-    <div
-      v-for="i in Array"
-      class="box_1"
-    >
-      <div class="img">
-        <img
-          :src="i.image.src"
-          alt=""
-        >
-      </div>
-      <UniversalButton
-        :text="i.text"
-        :width="'100%'"
-        :height="'16%'"
-        :-font_size="'1rem'"
-        :border_radius="'20px'"
-      />
+    <div class="box">
+        <div class="box_1" v-for="i in Array">
+            <div class="img">
+                <img :src="i.image.src" alt="">
+            </div>
+            <UniversalButton :color="'#fff'"  :text="i.text" :width="'100%'" :height="'16%'":border_radius="'20px'" :Font_size="'2rem'"></UniversalButton>
+        </div>
+
     </div>
-  </div>
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';

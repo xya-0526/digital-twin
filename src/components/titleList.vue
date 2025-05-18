@@ -9,35 +9,27 @@ const props = defineProps({
     type: Array,
     default: ()=>["","","",'']
   },
-  width:{
+  width: {
     type: String,
     default: '100%'
   },
-  height:{
+  height: {
     type: String,
     default: '100%'
   }
 })
+console.log(props.list)
 </script>
 <template>
-  <div
-    class="titleList"
-    :style="{width:props.width,height:props.height}"
-  >
-    <div
-      v-for="item in props.list"
-      :key="item"
-      class="list"
-    >
-      <el-icon
-        class="icon"
-        color="#8cd3d5"
-      >
-        <Tickets />
+  <div class="titleList" :style="{ width: props.width, height: props.height }">
+    <div class="list" v-for="item in props.list" :key="item?.id">
+      <el-icon class="icon" color="#8cd3d5">
+        <Tickets :style="{
+          width: '1.6rem',
+          height: '2.134rem'
+        }" />
       </el-icon>
-      <div class="test">
-        文化和旅游发展专项规划
-      </div>
+      <div class="test">{{item?.title}}</div>
     </div>
   </div>
 </template>
@@ -51,26 +43,30 @@ const props = defineProps({
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
   .list {
-    width: 8.8281vw;
-    height: 2.2222vh;
+    width: 45.2rem;
+    height: 3.213rem;
     background: linear-gradient(90deg, #1e3227 0%, #73737300 100%);
     display: flex;
     justify-content: start;
     align-items: center;
     color: #fff;
-    border-radius: 0.3125vw;
+    border-radius: 2rem;
+
     .icon {
-     width: 12%;
-     height: 4%;
-     margin-left: 0.3906vw;
+      width: 1.6rem;
+      height: 2.134rem;
+      margin-left: 2rem;
+      margin-right: 0.5rem;
     }
-    .test{
-      font-size: 0.3883vw;
+
+    .test {
+      font-size: 1.852rem;
       font-weight: 350;
       opacity: 1;
       font-family: "SourceHanSansCN";
-      letter-spacing: 0.0586vw;
+      letter-spacing: 0.5rem;
     }
   }
 }

@@ -97,13 +97,6 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@import "@/assets/styles/variables.scss";`,
-        },
-      },
-    },
     optimizeDeps: {
       include: ['vue', 'vue-router', 'axios', 'element-plus'],
     },

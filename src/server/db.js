@@ -9,17 +9,14 @@ export const Demonstrationarea = {
       peculiarity:[
         {
           id:0,
-          icon:'',
           test:'跨省域',
         },
         {
           id:2,
-          icon:'',
           test:'最江南',
         },
         {
           id:3,
-          icon:'',
           test:'超级都市圈',
         }
       ]
@@ -82,11 +79,34 @@ export const AdvanceStartZone = {
 
 export const WaterTownshipUnit = {
   title: '水乡单元详细规划',
-  data:[
-    { title: '规划单元总数', icon: '' ,quantity: 50 , id: 0},
-    { title: '在编规划数量', icon: '' ,quantity: 1 , id: 1},
-    { title: '已规划数量', icon: '' ,quantity: 0 , id: 2}
-  ]
+  data:[{
+  text: "规划单元总数",
+  image: {
+    src: '../src/assets/images/P15.png',
+    alt: ''
+  },
+  count:50
+
+},
+{
+  text: "在编规划数量",
+  image: {
+    src: '../src/assets/images/P13.png',
+    alt: ''
+  },
+  count:1
+
+},
+
+{
+  text: "已批规划数量",
+  image: {
+    src: '../src/assets/images/P12.png',
+    alt: ''
+  },
+  count:0
+},
+]
 }
 
 export const buttonData = {
