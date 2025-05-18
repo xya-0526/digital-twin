@@ -22,7 +22,8 @@ export default function AutoRem() {
  * @returns {number} rem值
  */
 export function PxToRem(px) {
-    return px / (DEFAULT_WIDTH / 512);
+     const windowWidth = window.innerWidth;
+    return px * (windowWidth / 5120);
 }
 
 /**

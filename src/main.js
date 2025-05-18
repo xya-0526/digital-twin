@@ -5,7 +5,6 @@ import route from './routers'
 import AutoRem from './utils/AutoRem'
 
 const app = createApp(App)
-
 app.use(route)
 app.mount('#app')
 
