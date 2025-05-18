@@ -4,6 +4,7 @@
 
 <script setup>
 import * as echarts from 'echarts'
+import { formatter } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
 
 const props = defineProps({
@@ -75,6 +76,18 @@ const props = defineProps({
   radiusCong:{
       type: Array,
       default:()=>['33%', '50%']
+  },
+  titleLeft:{
+    type: String,
+    default:'center'
+  },
+  LabelRight:{
+    type:String,
+    default:'0%'
+  },
+  legendGap:{
+    type: [String, Number],
+    default: 10
   }
 })
 
@@ -105,19 +118,22 @@ const updateChart = () => {
   chartInstance.setOption({
     backgroundColor: 'transparent',
     title: {
-      text: String(props.centerValue),
-      subtext: props.centerLabel,
-      top: '40%',
-      left: 'center',
-      textStyle: {
-        fontSize: 24,
-        fontWeight: 'normal',
-        color: '#fff'
-      },
-      subtextStyle: {
-        fontSize: 14,
-        color: 'rgba(255,255,255,0.6)',
-        padding: [5, 0]
+      text: `{a|${String(props.centerValue)}}\n{b|${ props.centerLabel}}`,
+      y: '40%',
+      x: props.titleLeft,
+      textStyle:{
+        rich:{
+          a:{
+              fontSize: 24,
+              color: '#fff',
+              fontWeight:'400',
+          },
+          b:{
+              fontSize: 16,
+              color: '#fff',
+              padding: [10,-15]
+          }
+        }
       }
     },
     series: [
@@ -136,51 +152,18 @@ const updateChart = () => {
           // borderWidth: 8,
           // borderColor: 'rgba(133, 208, 106, .1)'
         },
-        label: props.showPercentage?{
-          show: true,
-          position: 'outer',
-          alignTo: 'none',
-          formatter: params => {
-            const value = props.showPercentage
-              ? params.percent + '%'
-              : params.value + (props.valueUnit || '')
-            return `{name|${params.name}}\n{value|${value}}`
-          },
-          edgeDistance: 10,
-          lineHeight: 27,
-          rich: {
-            name: {
-              fontSize: 16,
-              color: 'white',
-              padding: [4, 0]
-            },
-            value: {
-              fontSize: 20,
-              color: 'white',
-              fontWeight: 'normal',
-              padding: [6, 0]
-            }
+        label: {
+          normal: {
+            position: 'inside',
+            backgroundColor: 'white',
+            width: 5,
+            height: 5,
+            borderRadius: 5,
+            padding: 1,
+            margin: 1,
+            formatter: ''
           }
-        }:{
-          show: false
         },
-        labelLine:props.showPercentage? {
-          show: true,
-          length: 15,
-          length2: 10,
-          lineStyle: {
-            color: 'rgba(255,255,255,0.5)',
-            width: 1.2
-          }
-        }:{
-          show: false
-        },
-        labelLayout: props.showPercentage? params => {
-          const isLeft = params.labelRect.x < chartWidth / 2
-          const points = params.labelLinePoints
-          points[2][0] = isLeft ? params.labelRect.x : params.labelRect.x + params.labelRect.width
-          return { labelLinePoints: points, draggable: true }
-        }: {},
         data: props.dataItems.map(item => {
           return {
             value: item.percentage,
@@ -210,20 +193,72 @@ const updateChart = () => {
         roseType: props.roseType,
         padAngle: 1,
         avoidLabelOverlap: false,
-        data: props.dataItems.map(item => {
-          return {
-            value: item.percentage,
-            name: item.label,
-            itemStyle: {
-              shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.2)',
-              opacity: 0.5 // 整体透明度设为50%,
-            }
-          }
-        }),
-        label: {
-          show: false
-        }
+        label: props.showPercentage
+              ? {
+                  show: true,
+                  position: 'outer',
+                  alignTo: 'none',
+                  formatter: params => {
+                    const value = props.showPercentage
+                      ? params.percent + '%'
+                      : params.value + (props.valueUnit || '')
+                    return `{name|${params.name}}\n{value|${value}}`
+                  },
+                  edgeDistance: 10,
+                  lineHeight: 27,
+                  rich: {
+                    name: {
+                      opacity: 1 ,
+                      fontSize: 16,
+                      color: '#fff',
+                      padding: [4, 0]
+                    },
+                    value: {
+                      fontSize: 20,
+                      color: '#FFF',
+                      fontWeight: 'normal',
+                      padding: [6, 0],
+                      opacity: 1
+                    }
+                  }
+                }
+              : {
+                  show: false
+                },
+            labelLine: props.showPercentage
+              ? {
+                  show: true,
+                  length: 25,
+                  length2: 20,
+                  lineStyle: {
+                    color: 'rgba(255,255,255,0.5)',
+                    width: 1.2
+                  }
+                }
+              : {
+                  show: false
+                },
+            labelLayout: props.showPercentage
+              ? params => {
+                  const isLeft = params.labelRect.x < chartWidth / 2
+                  const points = params.labelLinePoints
+                  points[2][0] = isLeft
+                    ? params.labelRect.x
+                    : params.labelRect.x + params.labelRect.width
+                  return { labelLinePoints: points, draggable: true }
+                }
+              : {},
+            data: props.dataItems.map(item => {
+              return {
+                value: item.percentage,
+                name: item.label,
+                itemStyle: {
+                  shadowBlur: 10,
+                  shadowColor: 'rgba(0, 0, 0, 0.2)',
+                  opacity: 0.5 // 整体透明度设为50%,
+                }
+              }
+            })
       }:{}
     ],
     tooltip: {
@@ -248,7 +283,7 @@ const updateChart = () => {
       show: props.showLegend,
       ...(props.legend === 'right'
         ? {
-            right: '0%',
+            right: props.LabelRight,
             top: 'middle',
             orient: 'vertical'
           }
@@ -256,12 +291,46 @@ const updateChart = () => {
             bottom: '10%',
             orient: 'horizontal'
           }),
-      itemWidth: 24,
-      itemHeight: 12,
-      textStyle: {
-        color: 'rgba(255,255,255,0.6)',
-        fontSize: 14,
-        padding: [0, 0, 0, 6]
+      itemWidth: 26,
+      itemHeight: 10,
+      itemGap: 10,
+      // textStyle: {
+      //   color: 'rgba(255,255,255,0.6)',
+      //   fontSize: 14,
+      //   padding: [0, 0, 0, 6]
+      // },
+      formatter: function(name){
+        console.log(name);
+        const targetItem = props.dataItems.find(item => item.label === name)
+        const value = targetItem?.value
+        const unit = targetItem?.unit
+        return `{title|${name}+'xxxxxx'}\n{value|${value}}{unit|${unit}}`;
+      },
+      textStyle:{
+        color: '#ffffff',
+        rich:{
+          title:{
+            fontSize: 16,
+            lineHeight:30,// 控制第一行高度
+            padding:[30,0,10,10],
+            verticalAlign:'middle',
+            fontWeight:'200'
+          },
+          value:{
+            fontSize: 24,
+            lineHeight: 24,
+            padding:[30,0,0,10],
+            verticalAlign:'middle',
+            fontWeight:'400'
+          },
+          unit:{
+            fontSize: 24,
+            lineHeight: 24,
+            padding:[30,0,0,10],
+            verticalAlign:'middle',
+            fontWeight:'200'
+          }
+        }
       }
     }
   })

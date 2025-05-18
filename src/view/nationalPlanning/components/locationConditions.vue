@@ -152,6 +152,9 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)','linear-gradi
               :width="'10.8164vw'"
               :height="'22.4847vh'"
               :isCong="true"
+              :center="['30%','50%']"
+              :titleLeft="'27%'"
+              :LabelRight="'5%'"
             />
           </CartBoxone>
           <CartBoxone :width="'10.8164vw'" :height="'22.4847vh'">
