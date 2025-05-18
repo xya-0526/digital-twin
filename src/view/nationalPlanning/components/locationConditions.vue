@@ -77,15 +77,17 @@ const Cart2Array = [{
 </script>
 <template>
   <div class="main">
-    <SeclectBox></SeclectBox>
-    <AeraButton></AeraButton>
-    <BottomButton></BottomButton>
-    <ColumnButton></ColumnButton>
+    <SeclectBox />
+    <AeraButton />
+    <BottomButton />
+    <ColumnButton />
     <div class="banner">
       <div class="left">
         <div class="one">
           <div class="titles">
-            <div class="test1">示范区国土空间总体规划</div>
+            <div class="test1">
+              示范区国土空间总体规划
+            </div>
           </div>
           <div class="onebanner">
             <CartBoxone :width="'70.8rem'" :height="'24.299rem'">
@@ -110,7 +112,9 @@ const Cart2Array = [{
         </div>
         <div class="two">
           <div class="titles">
-            <div class="test1">先行启动区国土空间总体规划</div>
+            <div class="test1">
+              先行启动区国土空间总体规划
+            </div>
           </div>
           <div class="towbanner">
             <CartBoxone :width="'39.799rem'" :height="'24.20064rem'">
@@ -129,7 +133,9 @@ const Cart2Array = [{
         </div>
         <div class="three">
           <div class="titles">
-            <div class="test1">水乡单元详细规划</div>
+            <div class="test1">
+              水乡单元详细规划
+            </div>
           </div>
           <div class="threebanner">
             <CartBoxtow v-for="i in Cart2Array" :width="'39.900vw'" :height="'16.571952rem'">
@@ -142,7 +148,7 @@ const Cart2Array = [{
       </div>
       <div class="right">
         <div class="blist">
-          <StructureButton> </StructureButton>
+          <StructureButton />
         </div>
         <div class="carts">
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="'生态保护红线'">

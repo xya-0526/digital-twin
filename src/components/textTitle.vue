@@ -17,8 +17,14 @@ const props = defineProps({
     </div>
     <div :style="{ fontWeight:200,color:'rgb(151, 154, 154)', marginBottom:'1rem'}">共生、共荣、共进、共鸣、共享</div>
     <div class="main">
-      <div class="but" v-for="item in 3">
-        <img src="../assets/images/point.svg" alt="">
+      <div
+        v-for="item in 3"
+        class="but"
+      >
+        <img
+          src="../assets/images/point.svg"
+          alt=""
+        >
         <div>超级都市圈</div>
       </div>
     </div>

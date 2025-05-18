@@ -8,7 +8,6 @@
         </div>
 
     </div>
-
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';

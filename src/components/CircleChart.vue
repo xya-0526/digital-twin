@@ -1,5 +1,9 @@
 <template>
-  <div class="chart-wrapper" ref="chartRef" :style="{width: props.width,height: props.height}"></div>
+  <div
+    ref="chartRef"
+    class="chart-wrapper"
+    :style="{width: props.width,height: props.height}"
+  />
 </template>
 
 <script setup>

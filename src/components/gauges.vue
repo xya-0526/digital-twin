@@ -10,16 +10,25 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="gauges" :style="{ width: props.width, height: props.height }">
+  <div
+    class="gauges"
+    :style="{ width: props.width, height: props.height }"
+  >
     <div class="title">
-      <div class="testarea" v-for="item in 2" :key="item">
-        <div class="circle"></div>
-        <div class="text">数据一</div>
+      <div
+        v-for="item in 2"
+        :key="item"
+        class="testarea"
+      >
+        <div class="circle" />
+        <div class="text">
+          数据一
+        </div>
       </div>
     </div>
     <div class="main">
-      <gaugeChart></gaugeChart>
-      <gaugeChart></gaugeChart>
+      <gaugeChart />
+      <gaugeChart />
     </div>
   </div>
 </template>

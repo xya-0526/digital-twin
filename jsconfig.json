@@ -8,14 +8,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "preserve",
-    "checkJs": false,
-    "strict": false,
+    "checkJs": true,
+    "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vite/client", "vue/runtime-core"]
   },
-  "include": ["src/**/*.js", "src/**/*.vue"],
+  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

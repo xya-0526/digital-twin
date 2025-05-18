@@ -16,19 +16,26 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="ecologyTitle" :style="{width:props.width,height:props.height}">
-   <div class="container" v-for="item in 2">
-    <div class="titleBox">
-      <div class="icon"></div>
-       <div class="title">生态结构</div>
-    </div>
+  <div
+    class="ecologyTitle"
+    :style="{width:props.width,height:props.height}"
+  >
+    <div
+      v-for="item in 2"
+      class="container"
+    >
+      <div class="titleBox">
+        <div class="icon" />
+        <div class="title">
+          生态结构
+        </div>
+      </div>
    
     <div class="main">
       <div class="title1" v-for="item in 4">一心</div>
     </div>
    </div>
   </div>
-   
 </template>
 
 <style scoped leng="scss">

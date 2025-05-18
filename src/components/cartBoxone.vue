@@ -21,14 +21,24 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
-    <div class="chart-title" :style="{ width: props.width }">
-      <img class="title-icon" :src="Point" alt="point" />
+  <div
+    class="circle-chart-container"
+    :style="{ width: props.width, height: props.height }"
+  >
+    <div
+      class="chart-title"
+      :style="{ width: props.width }"
+    >
+      <img
+        class="title-icon"
+        :src="Point"
+        alt="point"
+      >
       <span class="title-text">{{ props.title }}</span>
     </div>
     <div class="chart-content">
-      <div class="chart-wrapper" >
-        <slot></slot>
+      <div class="chart-wrapper">
+        <slot />
       </div>
     </div>
   </div>

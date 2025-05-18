@@ -9,8 +9,11 @@ const props = defineProps({
 
 <template>
   <div class="radarCarts">
-    <span class="item"></span>
-    <img :src="props.icon" alt="" />
+    <span class="item" />
+    <img
+      :src="props.icon"
+      alt=""
+    >
     <span class="mask">86.5%</span>
   </div>
 </template>
