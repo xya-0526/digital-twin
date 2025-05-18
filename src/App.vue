@@ -5,5 +5,9 @@
 </template>
 
 <style lang="scss">
-@import '@/assets/styles/rem.scss';
+.screen-container {
+  width: 512rem;
+  height: 144rem;
+  position: absolute;
+}
 </style>
