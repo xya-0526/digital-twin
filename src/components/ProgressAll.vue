@@ -92,8 +92,8 @@ const allProps= computed(()=>{
     justify-content: center;
     align-items: center;
     .icons {
-      width: 1.25vw;
-      height: 4.4444vh;
+      width: 6.4rem;
+      height: 6.4rem;
       display: flex;
       margin-right: 0.1563vw;
       margin-left: -20px;

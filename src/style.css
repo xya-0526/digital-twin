@@ -7,10 +7,10 @@
   --backgrouend-tow: #142222a6;
   --backgrouend-one: #0c1319d9;
   --header-brackground: rgb(20, 31, 37);
-
+  
   --text-primary: #fff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-
+  
   /* 边框颜色 */
   --border-default: rgba(255, 255, 255, 0.3);
   --border-light: rgba(255, 255, 255, 0.1);
@@ -38,10 +38,12 @@
   padding: 0;
   box-sizing: border-box;
   /* --border-default*/
+  
 }
 
 html,
 body {
+  font-size: 10px;
   width: 100%;
   height: 100%;
   display: flex;
