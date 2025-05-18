@@ -8,20 +8,9 @@ const buttonClick = value => {
 
 <template>
   <div class="bus">
-    <button
-      v-for="i in 5"
-      :key="i"
-      :class="['button', { buttonClick: isActive === i }]"
-      @click="buttonClick(i)"
-    >
-      <img
-        src="../assets/images/路径 3.png"
-        alt=""
-        class="icon"
-      >
-      <div class="test">
-        目标定位
-      </div>
+    <button v-for="i in 5" :key="i" @click="buttonClick(i)" :class="['button', { buttonClick: isActive === i }]">
+      <img src="../assets/images/路径 3.png" alt="" class="icon" />
+      <div class="test">目标定位</div>
     </button>
   </div>
 </template>
@@ -32,39 +21,43 @@ const buttonClick = value => {
   height: 100%;
   display: flex;
   justify-content: space-around;
+
   .button {
-    width: 4.4691vw;
-    height: 9.2882vh;
-    border-radius: 10px;
+    width: 22.882rem;
+    height: 13.375rem;
+    border-radius: 1rem;
     opacity: 1;
-    border: 1px solid #82c3a1;
+    border: 0.1rem solid #82c3a1;
     background: #1c3829d6;
-    box-shadow: inset 0 0 11px 0 #48a861;
+    box-shadow: inset 0 0 1.1rem 0 #48a861;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
   }
+
   .test {
-    width: 2.1875vw;
-    height: 2.6389vh;
+    width: 11.2rem;
+    /* height: 38.00016rem; */
     opacity: 1;
     color: #ffffff;
-    font-size: 0.5469vw;
+    font-size: 2.8rem;
     font-weight: 400;
     font-family: 'SourceHanSansCN';
     text-align: left;
   }
+
   .icon {
-    width: 0.7287vw;
-    height: 2.6042vh;
+    width: 4.5rem;
+    height: 4.5rem;
     opacity: 1;
     /* background: #e9fdf2; */
   }
 }
+
 .buttonClick {
   background: linear-gradient(180deg, #419156 0%, #1c382900 100%) !important;
-  box-shadow: inset 0 0 11px 0 #48a861 !important;
+  box-shadow: inset 0 0 1.1rem 0 #48a861 !important;
 }
 </style>

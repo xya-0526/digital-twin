@@ -82,14 +82,14 @@ onMounted(() => {
 <style scoped lang="scss">
 .progress-bar {
   z-index: 100;
-  width: 8.7891vw;
-  height: 60px;
+  width: 45.000192rem;
+  height: 6rem;
   // background-color: rgb(17, 26, 27, 0.4);
   overflow: hidden;
   .box {
     display: flex;
     width: 100%;
-    font-size: 16px;
+    font-size: 1.6rem;
     justify-content: space-between;
     // margin-bottom: 25px;
     color: rgb(255, 255, 255);
