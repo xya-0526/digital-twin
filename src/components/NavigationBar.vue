@@ -47,14 +47,12 @@ const getnewtime = (): void => {
         let second = date.getSeconds();
         CurrentYM.value = `${year}.${month < 10 ? "0" + month : month}.${day < 10 ? "0" + day : day}`;
         week.value = weekdays[thDay]
-        console.log(week.value)
         nowtime.value = `${hour < 10 ? "0" + hour : hour}:${minute < 10 ? "0" + minute : minute}:${second < 10 ? "0" + second : second}`;
     }, 1)
 
 }
 const setActive = (value: number) => {
     activeButton.value = value
-    console.log(activeButton.value)
 }
 onMounted(() => {
     getnewtime();
