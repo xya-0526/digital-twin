@@ -36,8 +36,8 @@ console.log(props.list)
 
 <style scoped lang="scss">
 .titleList {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 100%;
   // background-color: red;
   display: flex;
   flex-direction: column;

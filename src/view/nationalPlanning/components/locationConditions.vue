@@ -21,8 +21,9 @@ import {
 } from '@/server/db'
 import P18 from '@/assets/images/P18.svg'
 import P19 from '@/assets/images/P19.svg'
+import { PxToRem } from '@/utils/autoRem'
 const siteIcon = ref([P18, P19])
-const CoverageIcon = []
+const CoverageIcon = ['../src/assets/images/P28.svg','../src/assets/images/P25.svg','../src/assets/images/P27.svg']
 const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)', 'linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)']
 </script>
 <template>
@@ -49,7 +50,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
               <CircleChart :showPercentage="false" :centerValue="Demonstrationarea.data.ecologicalData.total" :showLegend="true" :legend="'right'"
                 centerLabel="数据数据" :dataItems="Demonstrationarea.data.ecologicalData.data" :width="'39.999rem'" :height="'23.8999rem'"
-                :roseType="'pie'" :radius="['35%', '60%']" />
+                :roseType="'pie'" :radius="['50%', '80%']" :isCircle="false" :center="['30%', '50%']" :titleLeft="'23%'" :LabelRight="'5%'"/>
             </CartBoxtow>
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
               <ProgressAll :width="'34.78016rem'" :height="'23.8999rem'" :colors="colors" :data="Demonstrationarea.data.ProportionUse">
@@ -68,8 +69,8 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           </div>
           <div class="towbanner">
             <CartBoxone :width="'39.799rem'" :height="'24.20064rem'" :title="AdvanceStartZone.population.title">
-              <CircleChart title="生态保护红线" :centerValue="AdvanceStartZone.population.ecologicalData.total" :showLegend="false" :centerLabel="AdvanceStartZone.population.ecologicalData.title"
-                :dataItems="AdvanceStartZone.population.ecologicalData.data" :width="'39.799rem'" :height="'24.20064rem'" :isCong="true" />
+              <CircleChart :centerValue="AdvanceStartZone.population.ecologicalData.total" :showLegend="false" :centerLabel="AdvanceStartZone.population.ecologicalData.title"
+                :dataItems="AdvanceStartZone.population.ecologicalData.data" :width="'39.799rem'" :height="'24.20064rem'" :isCong="true" :radius="['45%','60%']" :radiusCong="['45%','65%']"/>
             </CartBoxone>
             <CartBoxone :width="'39.799rem'" :height="'24.20064rem'" :title="AdvanceStartZone.structure.title">
               <cartBoxOneCentent></cartBoxOneCentent>
@@ -102,7 +103,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
         <div class="carts">
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="Ecologicalprotection.title">
             <CircleChart :centerValue="Ecologicalprotection.total" :showLabel="true" :centerLabel="Ecologicalprotection.centerTitle" :dataItems="Ecologicalprotection.data"
-              :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" />
+              :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" :center="['50%', '40%']" :titleTop="'30%'"/>
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
             <CircleChart :centerValue="FarmlandHoldings.total" :centerLabel="FarmlandHoldings.centerTitle" legend="right"
@@ -121,6 +122,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           </CartBoxone>
           <CartBoxtow :width="'60.5rem'" :height="'34.1rem'">
             <ProgressAll :isMax="true" :progwidth="' 39.88rem'"
+              :icon="CoverageIcon"
               :data="Coverage.data">
             </ProgressAll>
           </CartBoxtow>

@@ -10,6 +10,7 @@
 import * as echarts from 'echarts'
 import { formatter } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
+import { PxToRem } from '@/utils/autoRem'
 
 const props = defineProps({
   width: {
@@ -92,8 +93,30 @@ const props = defineProps({
   legendGap:{
     type: [String, Number],
     default: 10
+  },
+  isCircle:{
+    type: Boolean,
+    default: true
+  },
+  titleTop:{
+    type: String,
   }
 })
+
+const colors = [
+  {
+    startColor:'#42A5D5',
+    stopColor: '#53BA9D',
+  },
+  {
+    startColor:'#92D06D',
+    stopColor: '#42D39C'
+  },
+  {
+    startColor:'#C29955',
+    stopColor: '#D2B942'
+  }
+] 
 
 const chartRef = ref(null)
 let chartInstance = null
@@ -123,19 +146,19 @@ const updateChart = () => {
     backgroundColor: 'transparent',
     title: {
       text: `{a|${String(props.centerValue)}}\n{b|${ props.centerLabel}}`,
-      y: '40%',
+      top: props.titleTop?props.titleTop:'center',
       x: props.titleLeft,
       textStyle:{
         rich:{
           a:{
-              fontSize: 24,
+              fontSize: PxToRem(24),
               color: '#fff',
               fontWeight:'400',
           },
           b:{
-              fontSize: 16,
+              fontSize: PxToRem(16),
               color: '#fff',
-              padding: [10,-15]
+              padding: [PxToRem(10),-PxToRem(15)]
           }
         }
       }
@@ -149,40 +172,59 @@ const updateChart = () => {
         center: props.center,
         width: chartWidth,
         roseType: props.roseType,
-        padAngle: 1,
+        padAngle: PxToRem(1),
         avoidLabelOverlap: true,
         itemStyle: {
-          borderRadius: 1
+          borderRadius: PxToRem(1)
           // borderWidth: 8,
           // borderColor: 'rgba(133, 208, 106, .1)'
         },
-        label: {
+        label: props.isCircle?{
           normal: {
             position: 'inside',
             backgroundColor: 'white',
-            width: 5,
-            height: 5,
-            borderRadius: 5,
-            padding: 1,
-            margin: 1,
+            width: PxToRem(5),
+            height: PxToRem(5),
+            borderRadius: PxToRem(5),
+            padding: PxToRem(1),
+            margin: PxToRem(1),
             formatter: ''
           }
+        }:{
+          show: false
         },
-        data: props.dataItems.map(item => {
+        data: props.dataItems.map((item,index) => {
           return {
             value: item.percentage,
             name: item.label,
             itemStyle: {
-              shadowBlur: 10,
-              shadowColor: 'rgba(0, 0, 0, 0.2)'
+              shadowBlur: PxToRem(10),
+              shadowColor: 'rgba(0, 0, 0, 0.2)',
+              color: {
+                type: 'linear',
+                x: 0, // 渐变起始点 x 坐标（0=左，1=右）
+                y: 0, // 渐变起始点 y 坐标（0=上，1=下）
+                x2: 1, // 渐变结束点 x 坐标
+                y2: 0, // 渐变结束点 y 坐标（设置为水平渐变）
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: colors[index].startColor
+                  },
+                  {
+                    offset: 1,
+                    color: colors[index].stopColor 
+                  }
+                ]
+              }
             }
           }
         }),
         emphasis: {
           scale: true,
-          scaleSize: 10,
+          scaleSize: PxToRem(10),
           itemStyle: {
-            shadowBlur: 10,
+            shadowBlur: PxToRem(10),
             shadowOffsetX: 0,
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
@@ -195,7 +237,7 @@ const updateChart = () => {
         center: props.center,
         width: chartWidth,
         roseType: props.roseType,
-        padAngle: 1,
+        padAngle: PxToRem(1),
         avoidLabelOverlap: false,
         label: props.showPercentage
               ? {
@@ -208,20 +250,20 @@ const updateChart = () => {
                       : params.value + (props.valueUnit || '')
                     return `{name|${params.name}}\n{value|${value}}`
                   },
-                  edgeDistance: 10,
-                  lineHeight: 27,
+                  edgeDistance: PxToRem(10),
+                  lineHeight: PxToRem(27),
                   rich: {
                     name: {
                       opacity: 1 ,
-                      fontSize: 16,
+                      fontSize: PxToRem(16),
                       color: '#fff',
-                      padding: [4, 0]
+                      padding: [PxToRem(4), 0]
                     },
                     value: {
-                      fontSize: 20,
+                      fontSize: PxToRem(20),
                       color: '#FFF',
                       fontWeight: 'normal',
-                      padding: [6, 0],
+                      padding: [PxToRem(6), 0],
                       opacity: 1
                     }
                   }
@@ -232,11 +274,11 @@ const updateChart = () => {
             labelLine: props.showPercentage
               ? {
                   show: true,
-                  length: 25,
-                  length2: 20,
+                  length: PxToRem(25),
+                  length2: PxToRem(20),
                   lineStyle: {
                     color: 'rgba(255,255,255,0.5)',
-                    width: 1.2
+                    width: PxToRem(1.2)
                   }
                 }
               : {
@@ -252,14 +294,31 @@ const updateChart = () => {
                   return { labelLinePoints: points, draggable: true }
                 }
               : {},
-            data: props.dataItems.map(item => {
+            data: props.dataItems.map((item,index) => {
               return {
                 value: item.percentage,
                 name: item.label,
                 itemStyle: {
-                  shadowBlur: 10,
-                  shadowColor: 'rgba(0, 0, 0, 0.2)',
-                  opacity: 0.5 // 整体透明度设为50%,
+                      shadowBlur: PxToRem(10),
+                      shadowColor: 'rgba(0, 0, 0, 0.2)',
+                      opacity: 0.5, // 整体透明度设为50
+                      color: {
+                    type: 'linear',
+                    x: 0, // 渐变起始点 x 坐标（0=左，1=右）
+                    y: 0, // 渐变起始点 y 坐标（0=上，1=下）
+                    x2: 1, // 渐变结束点 x 坐标
+                    y2: 0, // 渐变结束点 y 坐标（设置为水平渐变）
+                    colorStops: [
+                      {
+                        offset: 0,
+                        color: colors[index].startColor
+                      },
+                      {
+                        offset: 1,
+                        color: colors[index].stopColor 
+                      }
+                    ]
+                  } 
                 }
               }
             })
@@ -276,11 +335,11 @@ const updateChart = () => {
       },
       backgroundColor: 'var(--bg-gradient)',
       borderColor: 'var(--border-default)',
-      borderWidth: 1,
-      padding: [8, 12],
+      borderWidth: PxToRem(1),
+      padding: [PxToRem(8), PxToRem(12)],
       textStyle: {
         color: 'var(--text-primary)',
-        fontSize: 14
+        fontSize: PxToRem(14)
       }
     },
     legend: {
@@ -295,9 +354,9 @@ const updateChart = () => {
             bottom: '10%',
             orient: 'horizontal'
           }),
-      itemWidth: 26,
-      itemHeight: 10,
-      itemGap: 10,
+      itemWidth: PxToRem(26),
+      itemHeight: PxToRem(10),
+      itemGap: PxToRem(15),
       // textStyle: {
       //   color: 'rgba(255,255,255,0.6)',
       //   fontSize: 14,
@@ -308,29 +367,29 @@ const updateChart = () => {
         const targetItem = props.dataItems.find(item => item.label === name)
         const value = targetItem?.value
         const unit = targetItem?.unit
-        return `{title|${name}+'xxxxxx'}\n{value|${value}}{unit|${unit}}`;
+        return `{title|${name}xxxxxx}\n{value|${value}}{unit|${unit}}`;
       },
       textStyle:{
         color: '#ffffff',
         rich:{
           title:{
-            fontSize: 16,
-            lineHeight:30,// 控制第一行高度
-            padding:[30,0,10,10],
+            fontSize: PxToRem(16),
+            lineHeight:PxToRem(30),// 控制第一行高度
+            padding:[PxToRem(0),0,PxToRem(0),PxToRem(0)],
             verticalAlign:'middle',
             fontWeight:'200'
           },
           value:{
-            fontSize: 24,
-            lineHeight: 24,
-            padding:[30,0,0,10],
+            fontSize: PxToRem(24),
+            lineHeight: PxToRem(24),
+            // padding:[PxToRem(30),0,0,PxToRem(10)],
             verticalAlign:'middle',
             fontWeight:'400'
           },
           unit:{
-            fontSize: 24,
-            lineHeight: 24,
-            padding:[30,0,0,10],
+            fontSize: PxToRem(24),
+            lineHeight: (24),
+            // padding:[PxToRem(30),0,0,PxToRem(10)],
             verticalAlign:'middle',
             fontWeight:'200'
           }
@@ -357,8 +416,8 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 
 <style scoped>
 .chart-wrapper {
-  width: 605px;
-  height: 280px;
+  width: 60.5rem;
+  height: 28rem;
   /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); */
   z-index: 1;
   display: flex;

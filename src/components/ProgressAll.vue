@@ -95,7 +95,7 @@ const allProps= computed(()=>{
       width: 6.4rem;
       height: 6.4rem;
       display: flex;
-      margin-right: 0.1563vw;
+      margin-right: 1rem;
       margin-left: -2rem;
     }
   }

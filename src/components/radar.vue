@@ -25,10 +25,10 @@ console.log(props.icon,111)
   background: transparent;
   background: linear-gradient(rgba(26, 40, 40, 0.85));
 
-  width: 64px;
-  height: 64px;
+  width: 6.4rem;
+  height: 6.4rem;
   border-radius: 50%;
-  border: 0.1px solid rgba(76, 96, 87, 0.85);
+  border: 0.01rem solid rgba(76, 96, 87, 0.85);
   /* box-shadow: 25px 25px 75px rgba(160, 163, 164, 0.75); */
   overflow: hidden;
   display: flex;
@@ -39,13 +39,13 @@ console.log(props.icon,111)
     content: '';
     /* z-index: 100; */
     position: absolute;
-    inset: 3.5px;
+    inset: 0.35rem;
     border-radius: 50%;
-    border: 2.5px solidrgba(26, 40, 40, 0.85);
+    border: 0.25rem solidrgba(26, 40, 40, 0.85);
     /* box-shadow: inset -5px -5px 25px rgba(0,0,0,0.75); */
     box-shadow:
-      inset -1px -1px 10px rgba(68, 118, 85, 0.85),
-      inset 1px 1px 15px rgba(68, 118, 85, 0.85);
+      inset -0.1rem -0.1rem 1rem rgba(68, 118, 85, 0.85),
+      inset 0.1rem 0.1rem 1.5rem rgba(68, 118, 85, 0.85);
   }
   .item {
     position: absolute;

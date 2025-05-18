@@ -165,8 +165,8 @@ export const BlueGgreenspace = {
 export const WaterSurfacerate = {
   title: '河面水面率',
   data:[
-    { title: '数据一', value: 78.5, id: 0},
-    {title: '数据一', value: 6.2, id: 1}
+    { title: '数据一', value: 78.5, id: 0 , icon:'../src/assets/images/P24.svg'},
+    {title: '数据一', value: 6.2, id: 1 , icon:'../src/assets/images/P26.svg'}
   ]
 }
 
