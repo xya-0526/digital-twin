@@ -71,6 +71,7 @@ const props = defineProps({
   font-weight: 400;
   font-family: 'SourceHanSansCN';
   border-bottom: 0.1rem solid rgba(69, 102, 85, 1);
+   font-family: "SourceHanSansCN";
 }
 
 .title-icon {

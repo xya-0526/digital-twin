@@ -28,7 +28,7 @@
 <script setup lang="ts">
 
 import { onMounted, ref, onBeforeUnmount } from 'vue';
-const titles = ref(["国土规划", "国土规划", "国土规划", "国土规划", "国土规划", "国土规划"])
+const titles = ref(["国土规划", "项目建设", "低碳能源", "道路交通", "文化旅游", "产业经济"])
 let nowtime = ref(null);
 let CurrentYM = ref(null)
 let week = ref(null)
