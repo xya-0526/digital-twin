@@ -60,19 +60,18 @@ defineProps({
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 29rem;
+    width: 30rem;
     height: 100%;
 }
 
 .img {
-    transform: translateX();
     margin-bottom: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 12.6rem;
-    height: 10.4rem;
+    /* width: 12.6rem;
+    height: 10.4rem; */
 
     div {
         width: 100%;
@@ -85,19 +84,24 @@ defineProps({
             width: 100%;
             height: 100%;
         }
+
+
     }
 
     div:nth-child(1) {
-        transform: translateY(120%);
-        width: 40%;
-        height: 50%;
+        transform: translateY(7.1rem);
+        width: 5.4rem;
+        height: 6.1rem;
     }
-
+ div:nth-child(2) {
+        /* transform: translateY(0); */
+        width: 12.6rem;
+        height: 10.4rem;
+    }
 }
 
 .text {
     margin-left: 5.5rem;
-    width: 20rem;
     transform: translateX(-20%);
     display: flex;
     flex-direction: column;
@@ -106,11 +110,11 @@ defineProps({
     /* font-size: 2rem; */
 
     p {
-        width: 100%;
+      width: 12rem;
         font-size:2rem;
         color: #ffffff;
-        margin-bottom: 5%;
-        margin-left: 4%;
+        margin-bottom: 6%;
+        margin-left: 1%;
     }
 
     #count {

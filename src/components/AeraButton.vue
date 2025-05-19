@@ -1,14 +1,14 @@
 <template>
 
     <div class="butBox">
-        <UniversalButton v-for="(i, index) in textArray" :key="index" @click="addActive(index)"
+        <UnAeraButton v-for="(i, index) in textArray" :key="index" @click="addActive(index)"
         :width="'25.9rem'"
         :height="'7.7rem'"
         :Font_size="'4rem'"
             :color="activeButton == index ? '#fff' : '#a5a4a4'"
-            :bgColor="activeButton == index ? 'linear-gradient(180deg, #3a7c4e 0%, #29383b 100%)' : '#253334'"
+           :bgimage="activeButton == index ? '../src/assets/images/PK2.svg' : '../src/assets/images/PK1.svg'"
             :text="i">
-        </UniversalButton>
+        </UnAeraButton>
     </div>
 
 
@@ -17,7 +17,7 @@
 
 
 <script setup lang="ts">
-import UniversalButton from './UniversalButton.vue';
+import UnAeraButton from "./UnAeraButton.vue"
 const textArray = ref(["示范区", "先行启动区", "水乡客厅"])
 let activeButton = ref(0)
 const addActive = (index: number) => {
@@ -32,6 +32,7 @@ const addActive = (index: number) => {
 </script>
 <style scoped>
 .butBox {
+    z-index: 2;
     position: absolute;
     display: flex;
     justify-content: space-between;

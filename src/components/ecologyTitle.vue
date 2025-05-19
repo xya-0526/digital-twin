@@ -88,14 +88,16 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   .title1{
-    width: 8.9rem;          
-    height: 3.5rem;
+    border:1px transparent solid;
+    width: 9rem;          
+    height: 3.6rem;
     border-radius: 1.75rem;
     opacity: 1;
     background: linear-gradient(270deg, #73737300 0%, #366543 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border-image:linear-gradient(to right #94AEA3 0%, transparent 100%) 1;  */
   }
 }
 </style>

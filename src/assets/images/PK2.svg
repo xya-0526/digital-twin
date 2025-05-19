@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 260.50683594 77.99993896" class="design-iconfont">
+  <g filter="url(#oqczmady1__filter_79_54)">
+    <path d="M246.03 0.5L14.4796 0.5C6.89968 0.5 0.754883 6.62872 0.754883 14.1889L0.754883 22.2904L6.35824 25.3387L6.35824 51.4193L0.754883 55.9919L0.754883 63.8111C0.754883 71.3713 6.89968 77.5 14.4796 77.5L246.03 77.5C253.61 77.5 259.755 71.3713 259.755 63.8111L259.755 55.9919L254.151 51.4193L254.151 25.3387L259.755 22.2904L259.755 14.1889C259.755 6.62872 253.61 0.5 246.03 0.5Z" stroke="rgba(103, 134, 128, 1)" fill-rule="evenodd" fill="url(#oqczmady1__linear_fill_79_54)"/>
+  </g>
+  <path stroke="rgba(202, 230, 218, 1)" stroke-width="4" stroke-linecap="round" d="M2 30.3076L2 47.739"/>
+  <path stroke="rgba(202, 230, 218, 1)" stroke-width="4" stroke-linecap="round" d="M258.507 29.0657L258.507 46.4971"/>
+  <defs>
+    <linearGradient id="oqczmady1__linear_fill_79_54" x1="130.71826172" y1=".5" x2="130.71826172" y2="77.49993896" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3A7C4E"/>
+      <stop offset="1" stop-color="#29383B"/>
+    </linearGradient>
+    <filter id="oqczmady1__filter_79_54" x=".25488281" y="0" width="259.99951172" height="77.99993896" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="feFloodId_79_54"/>
+      <feBlend in="SourceGraphic" in2="feFloodId_79_54" result="shape_79_54"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha_79_54"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="3.5"/>
+      <feComposite in2="hardAlpha_79_54" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix values="0 0 0 0 0.39215686274509803 0 0 0 0 0.8196078431372549 0 0 0 0 0.5843137254901961 0 0 0 0.94 0"/>
+      <feBlend in2="shape_79_54" result="innerShadow_0_79_54"/>
+    </filter>
+  </defs>
+</svg>

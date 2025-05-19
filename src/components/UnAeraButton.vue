@@ -4,12 +4,11 @@
         fontSize: Font_size,
         width,
         height,
-        background: bgColor,
         borderRadius: border_radius,
-        border: Border,
         boxShadow,
         color,
         margin,
+        backgroundImage:`url(${bgimage})`
     }">
         <span v-if="image.src" :style="{
             width: image.width,
@@ -37,10 +36,6 @@ let x = defineProps({
     text: {
         type: String,
         default: '示范区'
-    },
-    bgColor: {
-        type: String,
-        default: `#253334`
     },
     width: {
         type: String,
@@ -78,11 +73,19 @@ let x = defineProps({
         type: String,
         default: '0 0 0 0'
     },
+    bgimage: {
+        type: String,
+        default: ""
+    }
 })
 
 </script>
 <style scoped>
 button {
+border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -194,7 +194,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       .titles {
         z-index: 2;
         width: 122.0rem;
-        height: 10%;
+        height: 5.2rem;
         /* opacity: 1; */
         border-radius: 0.0977vw;
         border: 0.1rem solid #314347;
@@ -210,6 +210,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           display: flex;
           align-items: center;
           margin-left: 3rem;
+          font-weight: 700;
         }
       }
 
@@ -240,7 +241,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       .titles {
         z-index: 2;
         width: 122.0rem;
-        /* height: 10%; */
+        height: 5.2rem;
         height: 17%;
         /* opacity: 1; */
         border-radius: 0.5rem;
@@ -257,6 +258,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           display: flex;
           align-items: center;
           margin-left: 3rem;
+          font-weight: 700;
         }
       }
 
@@ -287,7 +289,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       .titles {
         z-index: 2;
         width: 122.0rem;
-        height: 22%;
+        height: 5.2rem;
         /* opacity: 1; */
         border-radius: 0.5rem;
         border: 1px solid #314347;
@@ -303,6 +305,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           display: flex;
           align-items: center;
           margin-left: 3rem;
+          font-weight: 700;
         }
       }
 
