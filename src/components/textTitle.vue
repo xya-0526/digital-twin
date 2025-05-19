@@ -77,6 +77,16 @@ const icon =ref( [P16,P9,P17])
     justify-content: center;
     align-items: center;
     font-size: 1.854rem;
+    &::after {
+    content: '';
+    position: absolute;
+    inset: 0.01rem;
+    border-radius: 2.35rem;
+    border: 0.25rem solidrgba(26, 40, 40, 0.85);
+    box-shadow:
+      inset -0.1rem -0.1rem 1rem rgba(68, 118, 85, 0.85),
+      inset 0.1rem 0.1rem 1.5rem rgba(68, 118, 85, 0.85);
+    }
   }
   img{
     margin-right: 1rem;

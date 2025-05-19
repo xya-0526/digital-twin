@@ -10,7 +10,7 @@
 import * as echarts from 'echarts'
 import { formatter } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
-import { PxToRem } from '@/utils/autoRem'
+import { PxToRem } from '@/utils/AutoRem'
 
 const props = defineProps({
   width: {
@@ -356,14 +356,13 @@ const updateChart = () => {
           }),
       itemWidth: PxToRem(26),
       itemHeight: PxToRem(10),
-      itemGap: PxToRem(15),
+      // itemGap: PxToRem(10),
       // textStyle: {
       //   color: 'rgba(255,255,255,0.6)',
       //   fontSize: 14,
       //   padding: [0, 0, 0, 6]
       // },
       formatter: function(name){
-        console.log(name);
         const targetItem = props.dataItems.find(item => item.label === name)
         const value = targetItem?.value
         const unit = targetItem?.unit
@@ -381,14 +380,14 @@ const updateChart = () => {
           },
           value:{
             fontSize: PxToRem(24),
-            lineHeight: PxToRem(24),
+            // lineHeight: PxToRem(24),
             // padding:[PxToRem(30),0,0,PxToRem(10)],
             verticalAlign:'middle',
             fontWeight:'400'
           },
           unit:{
             fontSize: PxToRem(24),
-            lineHeight: (24),
+            // lineHeight: (24),
             // padding:[PxToRem(30),0,0,PxToRem(10)],
             verticalAlign:'middle',
             fontWeight:'200'

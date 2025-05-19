@@ -9,8 +9,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import eChart from './eChart.vue' // 引入基础图表组件
-import { PxToRem } from '@/utils/autoRem'
+import eChart from './echart.vue'
+import { PxToRem } from '@/utils/AutoRem'
 
 const props = defineProps({
   // 尺寸配置
@@ -61,7 +61,7 @@ const props = defineProps({
 
 // 生成图表配置
 const chartOption = computed(() => ({
-  backgroundColor: 'rgba(19, 28, 25,0.6)',
+  backgroundColor:' #142222',
   title: {
     // text: props.title,
     left: 'center',
@@ -81,7 +81,9 @@ const chartOption = computed(() => ({
         data: props.seriesData?.map(s => s.name),
         top: PxToRem(10),
         right: PxToRem(10),
-        itemGap: PxToRem(50)
+        itemGap: PxToRem(40),
+        itemWidth: PxToRem(26),
+        itemHeight: PxToRem(10),
       }
     : undefined,
   grid: {
@@ -144,7 +146,8 @@ const chartOption = computed(() => ({
     ...(props.horizontal && {
       label: {
         show: true,
-        position: 'right'
+        position: 'right',
+        
       }
     })
   }))

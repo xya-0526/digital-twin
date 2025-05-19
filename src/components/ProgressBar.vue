@@ -1,5 +1,5 @@
 <script setup>
-import {PxToRem} from '@/utils/autoRem'
+import {PxToRem} from '@/utils/AutoRem'
 const props = defineProps({
   isMax: {
     type: Boolean,

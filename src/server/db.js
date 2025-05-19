@@ -5,7 +5,7 @@ export const Demonstrationarea = {
     Targeting:{
       title:"目标定位",
       slogan:"世界级水乡人居文明典范",
-      smallSlogan:"共生、共荣、共进、共鸣、共享",
+      smallSlogan:"共生、共融、共进、共鸣、共享",
       peculiarity:[
         {
           id:0,
