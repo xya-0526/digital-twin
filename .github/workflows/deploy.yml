@@ -36,10 +36,10 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: Verify build directory
+      - name: Verify dist directory
         run: |
-          if [ ! -d "build" ]; then
-            echo "::error::Build directory 'build' not found after build!"
+          if [ ! -d "dist" ]; then
+            echo "::error::Build directory 'dist' not found after build!"
             exit 1
           fi
           echo "✓ Build successful"
