@@ -55,6 +55,7 @@ const twocolor = {
 
 <style scoped leng="scss">
 .gauges {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -63,8 +64,10 @@ const twocolor = {
   margin-top: 2rem;
   /* justify-content: space-around; */
   .title {
+    position: absolute;
     width: 80%;
     height: 10%;
+    top: 10%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -88,7 +91,7 @@ const twocolor = {
     width: 80%;
     display: flex;
     justify-content: space-around;
-    margin-top: 1.5rem;
+    margin-top: 5rem;
   }
 }
 </style>
