@@ -17,7 +17,8 @@ import {
   FarmlandHoldings ,
   BlueGgreenspace ,
   Widthgreen ,
-  Coverage
+  Coverage ,
+  WaterSurfacerate
 } from '@/server/db'
 import P18 from '@/assets/images/P18.svg'
 import P19 from '@/assets/images/P19.svg'
@@ -90,7 +91,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
             </div>
           </div>
           <div class="threebanner">
-            <CartBoxtow v-for="i in WaterTownshipUnit.data" :width="'39.900vw'" :height="'16.571952rem'">
+            <CartBoxtow v-for="i in WaterTownshipUnit.data" :width="'40rem'" :height="'14.8rem'">
               <cartBoxTowContent :image="i.image" :text="i.text" :count="i.count"></cartBoxTowContent>
             </CartBoxtow>
           </div>
@@ -107,13 +108,13 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
             <CircleChart :centerValue="FarmlandHoldings.total" :centerLabel="FarmlandHoldings.centerTitle" legend="right"
-              :dataItems="FarmlandHoldings.data" :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" />
+              :dataItems="FarmlandHoldings.data" :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" :center="['35%', '50%']" :titleLeft="'30%'"/>
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="BlueGgreenspace.title">
             <BarCharts :x-axis-data="BlueGgreenspace.data.xAxisdata" 
             :series-data="BlueGgreenspace.data.seriesdata" theme="dark" :horizontal="false" />
           </CartBoxone>
-          <CartBoxone :width="'60.5rem'" :height="'34.1rem'">
+          <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="WaterSurfacerate.title">
             <gauges></gauges>
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="Widthgreen.title">
@@ -302,7 +303,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       }
 
       .threebanner {
-        width: 121.19rem;
+        width: 122rem;
         height: 70%;
         /* background-color: #fff; */
         display: flex;
@@ -334,7 +335,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
 
     .carts {
       width: 100%;
-      height: 85%;
+      height: 90%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
