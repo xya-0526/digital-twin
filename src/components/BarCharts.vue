@@ -9,7 +9,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import eChart from './eChart.vue' // 引入基础图表组件
+import eChart from './echart.vue'
 import { PxToRem } from '@/utils/autoRem'
 
 const props = defineProps({
