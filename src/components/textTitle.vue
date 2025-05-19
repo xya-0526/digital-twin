@@ -16,7 +16,7 @@ const icon =ref( [P16,P9,P17])
     <div class="title">
       <span>"</span><h1 :style="{margin: '0 2rem'}">{{data?.slogan}}</h1><span>"</span>
     </div>
-    <div :style="{ fontWeight:200,color:'rgb(151, 154, 154)', marginBottom:'1rem',marginTop:'3rem'}">{{data?.smallSlogan}}</div>
+    <div :style="{ fontWeight:200,color:'rgb(151, 154, 154)',marginTop:'2rem'}">{{data?.smallSlogan}}</div>
     <div class="main">
       <div
         v-for="item,index in data?.peculiarity"
@@ -42,7 +42,7 @@ const icon =ref( [P16,P9,P17])
   font-family: "SourceHanSansCN";
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   font-size: 1.68rem;
   color: #FFF;
   letter-spacing: 0.5rem;
@@ -50,10 +50,12 @@ const icon =ref( [P16,P9,P17])
     font-size: 2rem;
     display: flex;
     height: 25%;
+    margin-top: 1.6rem;
   }
   span{
     color:rgb(133, 200, 159);
     font-size: 2.98rem;
+    margin-top: 0.5rem;
   }
   .main{
     width:85%;
@@ -61,12 +63,13 @@ const icon =ref( [P16,P9,P17])
     /* background-color: bisque; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
      margin-bottom:2rem;
   }
   .but{
     position: relative;
-    margin-top: 2rem;
+    margin-top: 3.4rem;
+    /* margin-bottom: 2.7rem; */
     width: 17.8rem;
     height: 4.719rem;
     border-radius: 2.35rem;
@@ -77,6 +80,7 @@ const icon =ref( [P16,P9,P17])
     justify-content: center;
     align-items: center;
     font-size: 1.854rem;
+    margin-right: 2.9rem;
     &::after {
     content: '';
     position: absolute;
