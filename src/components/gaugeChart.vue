@@ -1,6 +1,6 @@
 <script setup>
 import icon from '@/assets/images/image.png'
-import { PxToRem } from '@/utils/autoRem'
+import { PxToRem } from '@/utils/AutoRem'
 
 const props = defineProps({
   // 尺寸配置

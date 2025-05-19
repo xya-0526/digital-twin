@@ -10,7 +10,7 @@
 import * as echarts from 'echarts'
 import { formatter } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
-import { PxToRem } from '@/utils/autoRem'
+import { PxToRem } from '@/utils/AutoRem'
 
 const props = defineProps({
   width: {

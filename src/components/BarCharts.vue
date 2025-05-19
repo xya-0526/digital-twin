@@ -10,7 +10,7 @@
 <script setup>
 import { computed } from 'vue'
 import eChart from './echart.vue'
-import { PxToRem } from '@/utils/autoRem'
+import { PxToRem } from '@/utils/AutoRem'
 
 const props = defineProps({
   // 尺寸配置

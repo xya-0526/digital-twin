@@ -21,7 +21,7 @@ import {
 } from '@/server/db'
 import P18 from '@/assets/images/P18.svg'
 import P19 from '@/assets/images/P19.svg'
-import { PxToRem } from '@/utils/autoRem'
+import { PxToRem } from '@/utils/AutoRem'
 const siteIcon = ref([P18, P19])
 const CoverageIcon = ['../src/assets/images/P28.svg','../src/assets/images/P25.svg','../src/assets/images/P27.svg']
 const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)', 'linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)']
