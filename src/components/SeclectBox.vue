@@ -20,8 +20,8 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
     width: 25.9rem;
     height: 37.7rem;
     background: #142222;
-    left: 352rem;
-    top: 102.4rem;
+    right: 130rem;
+    top: 85rem;
     position: absolute;
     display: flex;
     flex-direction: column;

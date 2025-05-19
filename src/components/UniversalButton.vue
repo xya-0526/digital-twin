@@ -29,8 +29,8 @@ defineProps({
         default: {
             src: null,
             alt: '',
-            width: "15%",
-            height: '15%'
+            width: '1rem',
+            height: '1rem'
         }
     },
     text: {
@@ -51,7 +51,7 @@ defineProps({
 
     border_radius: {
         type: String,
-        default: '10px'
+        default: '1rem'
     },
     Border: {
         type: String,
@@ -78,6 +78,7 @@ defineProps({
         default: '0 0 0 0'
     }
 })
+
 </script>
 <style scoped>
 button {
@@ -89,7 +90,12 @@ button {
     border: none;
     cursor: pointer;
     text-align: center;
+span{ 
+display: block;
 
+
+
+}
     span:first-child {
         display: flex;
         margin-right: 0.3rem;
@@ -101,6 +107,5 @@ button {
 img {
     width: 100%;
     height: 100%;
-
 }
 </style>
