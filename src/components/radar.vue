@@ -5,16 +5,13 @@ const props = defineProps({
     default: ''
   }
 })
-console.log(props.icon,111)
+console.log(props.icon, 111)
 </script>
 
 <template>
   <div class="radarCarts">
     <span class="item" />
-    <img
-      :src="props.icon"
-      alt=""
-    >
+    <img :src="props.icon" alt="" />
     <span class="mask"></span>
   </div>
 </template>
@@ -58,7 +55,7 @@ console.log(props.icon,111)
     /* border-top: 1px dashed #141414; */
     animation: rotate 2s linear infinite;
   }
-  img{
+  img {
     width: 50%;
     height: 50%;
   }

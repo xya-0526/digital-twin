@@ -1,5 +1,5 @@
 <script setup>
-import { Tickets } from '@element-plus/icons-vue';
+import { Tickets } from '@element-plus/icons-vue'
 const props = defineProps({
   title: {
     type: String,
@@ -7,7 +7,7 @@ const props = defineProps({
   },
   list: {
     type: Array,
-    default: ()=>["","","",'']
+    default: () => ['', '', '', '']
   },
   width: {
     type: String,
@@ -24,12 +24,14 @@ console.log(props.list)
   <div class="titleList" :style="{ width: props.width, height: props.height }">
     <div class="list" v-for="item in props.list" :key="item?.id">
       <el-icon class="icon" color="#8cd3d5">
-        <Tickets :style="{
-          width: '1.6rem',
-          height: '2.134rem'
-        }" />
+        <Tickets
+          :style="{
+            width: '1.6rem',
+            height: '2.134rem'
+          }"
+        />
       </el-icon>
-      <div class="test">{{item?.title}}</div>
+      <div class="test">{{ item?.title }}</div>
     </div>
   </div>
 </template>
@@ -65,7 +67,7 @@ console.log(props.list)
       font-size: 1.852rem;
       font-weight: 350;
       opacity: 1;
-      font-family: "SourceHanSansCN";
+      font-family: 'SourceHanSansCN';
       letter-spacing: 0.5rem;
     }
   }

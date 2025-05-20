@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import P24 from "../assets/images/P24.png"
-import P20 from "../assets/images/P20.svg"
-import P21 from "../assets/images/P21.svg"
-import P22 from "../assets/images/P22.svg"
-import P23 from "../assets/images/P23.svg"
+import P24 from '../assets/images/P24.png'
+import P20 from '../assets/images/P20.svg'
+import P21 from '../assets/images/P21.svg'
+import P22 from '../assets/images/P22.svg'
+import P23 from '../assets/images/P23.svg'
 const isActive = ref(1)
-console.log(P20,"XXX")
-const buttonClick = value => {  
-
+console.log(P20, 'XXX')
+const buttonClick = value => {
   isActive.value = value
 }
 
@@ -15,7 +14,7 @@ const data = [
   {
     id: 1,
     name: '目标定位',
-    icon: P24,
+    icon: P24
   },
   {
     id: 2,
@@ -42,8 +41,12 @@ const data = [
 
 <template>
   <div class="bus">
-    <button v-for="i in data" :key="i.id" @click="buttonClick(i.id)"
-      :class="['button', { buttonClick: isActive === i.id }]">
+    <button
+      v-for="i in data"
+      :key="i.id"
+      @click="buttonClick(i.id)"
+      :class="['button', { buttonClick: isActive === i.id }]"
+    >
       <img :src="i?.icon" alt="" class="icon" />
       <div class="test">{{ i.name }}</div>
     </button>

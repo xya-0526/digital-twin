@@ -1,9 +1,6 @@
 <script setup>
-import ProgressBar from '@/components/ProgressBar.vue'
 import CartBoxone from '@/components/cartBoxone.vue'
-import gaugeChart from '@/components/gaugeChart.vue'
 import AeraButton from '@/components/AeraButton.vue'
-import { colProps, textProps } from 'element-plus'
 import BottomButton from '@/components/BottomButton.vue'
 import ColumnButton from '@/components/ColumnButton.vue'
 import SeclectBox from '@/components/SeclectBox.vue'
@@ -22,13 +19,11 @@ import {
 } from '@/server/db'
 import P18 from '@/assets/images/P18.svg'
 import P19 from '@/assets/images/P19.svg'
-import { PxToRem } from '@/utils/AutoRem'
+import P28 from '@/assets/images/P28.svg'
+import P25 from '@/assets/images/P25.svg'
+import P27 from '@/assets/images/P27.svg'
 const siteIcon = ref([P18, P19])
-const CoverageIcon = [
-  '../src/assets/images/P28.svg',
-  '../src/assets/images/P25.svg',
-  '../src/assets/images/P27.svg'
-]
+const CoverageIcon = [P28, P25, P27]
 const colors = [
   'linear-gradient(90deg, #503e2a 0%, #cdba55 100%)',
   'linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)',
