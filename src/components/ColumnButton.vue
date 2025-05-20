@@ -16,6 +16,12 @@
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
+import P6 from'@/assets/images/P6.png'
+import P7 from'@/assets/images/P7.png'
+import P8 from'@/assets/images/P8.png'
+import P9 from'@/assets/images/P9.png'
+import P10 from'@/assets/images/P10.png'
+import P11 from'@/assets/images/P11.png'
 import { ref } from 'vue';
 let activeButton = ref(0)
 const addActive = (index: number) => {
@@ -26,29 +32,29 @@ const addActive = (index: number) => {
 }
 const buttons = ref([
     {
-        text: "一心",
-        image: {
-            width: "2.7rem",
-            height: "2.7rem",
-            src: "../src/assets/images/P6.png",
-        }
-    },
-    {
         text: "一点",
         image: {
             width: "2.7rem",
             height: "2.7rem",
-            src: "../src/assets/images/P7.png",
+            src: P6,
+        }
+    },
+    {
+        text: "一心",
+        image: {
+            width: "2.7rem",
+            height: "2.7rem",
+            src: P7,
             alt: '',
         }
 
     },
     {
-        text: "三元",
+        text: "三园",
         image: {
             width: "2.7rem",
             height: "2.7rem",
-            src: "../src/assets/images/P8.png",
+            src:P8,
         }
 
     },
@@ -57,7 +63,7 @@ const buttons = ref([
         image: {
             width: "2.7rem",
             height: "2.7rem",
-            src: "../src/assets/images/P9.png",
+            src: P9,
         }
     },
     {
@@ -65,7 +71,7 @@ const buttons = ref([
         image: {
             width: "2.7rem",
             height: "2.7rem",
-            src: "../src/assets/images/P10.png",
+            src: P10,
         }
 
     },
@@ -75,7 +81,7 @@ const buttons = ref([
         image: {
             width: "2.7rem",
             height: "2.7rem",
-            src: "../src/assets/images/P11.png",
+            src: P11,
         }
 
     },
@@ -87,7 +93,7 @@ const buttons = ref([
 
 <style scoped>
 .Butbox {
-    top: 20.5%;
+    top: 20%;
     left: 128.9rem;
     height: 67.05rem;
     width: 16.3rem;
@@ -105,7 +111,7 @@ const buttons = ref([
 }
 
 .Butbox2 {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     position: relative;
 }
 

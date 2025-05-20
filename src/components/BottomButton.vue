@@ -10,6 +10,11 @@
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
+import P3 from'@/assets/images/P3.png'
+import P5 from'@/assets/images/P5.png'
+import P2 from'@/assets/images/P2.png'
+import P1 from'@/assets/images/P1.png'
+import P4 from'@/assets/images/P4.png'
 let activeButton = ref(0)
 const addActive = (index: number) => {
     console.log(index)
@@ -24,7 +29,7 @@ const buttons = ref([
         image: {
             height: "3.5rem",
             width: "3.5rem",
-            src: "../src/assets/images/P3.png",
+            src: P3,
         }
     },
     {
@@ -32,7 +37,7 @@ const buttons = ref([
         image: {
            height: "3.5rem",
             width: "3.5rem",
-            src: "../src/assets/images/P5.png",
+            src: P5,
             alt: '',
         }
 
@@ -42,7 +47,7 @@ const buttons = ref([
         image: {
            height: "3.5rem",
             width: "3.5rem",
-            src: "../src/assets/images/P2.png",
+            src: P2,
         }
 
     },
@@ -51,7 +56,7 @@ const buttons = ref([
         image: {
            height: "3.5rem",
             width: "3.5rem",
-            src: "../src/assets/images/P1.png",
+            src: P1,
         }
     },
     {
@@ -59,7 +64,7 @@ const buttons = ref([
         image: {
            height: "3.5rem",
             width: "3.5rem",
-            src: "../src/assets/images/P4.png",
+            src: P4,
         }
 
     },
@@ -77,7 +82,7 @@ const buttons = ref([
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 154.2rem;
+    width: 154.6rem;
     height: 6.7rem;
     top: 116rem;
     left: 247.1rem;

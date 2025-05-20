@@ -78,7 +78,7 @@ let x = defineProps({
         default: ""
     }
 })
-
+console.log(x.bgimage,"####")
 </script>
 <style scoped>
 button {

@@ -1,3 +1,7 @@
+
+import P15 from '@/assets/images/P15.svg'
+import P13 from '@/assets/images/P13.svg'
+import P12 from '@/assets/images/P12.svg'
 export const Demonstrationarea = {
   title:"示范区国土空间总体规划",
   data:
@@ -82,7 +86,7 @@ export const WaterTownshipUnit = {
   data:[{
   text: "规划单元总数",
   image: {
-    src: '../src/assets/images/P15.svg',
+    src: P15,
     alt: ''
   },
   count:50
@@ -91,7 +95,7 @@ export const WaterTownshipUnit = {
 {
   text: "在编规划数量",
   image: {
-    src: '../src/assets/images/P13.svg',
+    src:P13,
     alt: ''
   },
   count:1
@@ -101,7 +105,7 @@ export const WaterTownshipUnit = {
 {
   text: "已批规划数量",
   image: {
-    src: '../src/assets/images/P12.svg',
+    src: P12,
     alt: ''
   },
   count:0
