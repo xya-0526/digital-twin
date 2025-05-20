@@ -100,7 +100,7 @@ button {
 
     span:first-child {
         display: flex;
-        margin-right: 0.3rem;
+        margin-right:1rem;
         align-items: end;
     }
 

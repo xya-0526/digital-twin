@@ -80,7 +80,7 @@ const buttons = ref([
     width: 154.2rem;
     height: 6.7rem;
     top: 116rem;
-    left: 240.1rem;
+    left: 247.1rem;
 transform: translate(-50%);
     flex-direction: row;
 

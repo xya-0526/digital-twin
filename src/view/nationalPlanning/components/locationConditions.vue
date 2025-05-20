@@ -14,10 +14,10 @@ import {
   AdvanceStartZone,
   WaterTownshipUnit,
   Ecologicalprotection,
-  FarmlandHoldings ,
-  BlueGgreenspace ,
-  Widthgreen ,
-  Coverage ,
+  FarmlandHoldings,
+  BlueGgreenspace,
+  Widthgreen,
+  Coverage,
   WaterSurfacerate
 } from '@/server/db'
 import P18 from '@/assets/images/P18.svg'
@@ -44,7 +44,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           </div>
           <div class="onebanner">
             <CartBoxone :width="'70.8rem'" :height="'24.299rem'" :title="Demonstrationarea.data.Targeting.title">
-              <textTitle :data="Demonstrationarea.data.Targeting"></textTitle>
+              <textTitle  :data="Demonstrationarea.data.Targeting"></textTitle>
             </CartBoxone>
             <CartBoxone :width="'49.7rem'" :height="'24.299rem'" :title="Demonstrationarea.data.Special.title">
               <titleList :list="Demonstrationarea.data.Special.data"></titleList>
@@ -112,8 +112,9 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
               :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" :center="['50%', '40%']" :titleTop="'30%'" />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
-            <CircleChart :centerValue="FarmlandHoldings.total" :centerLabel="FarmlandHoldings.centerTitle" legend="right"
-              :dataItems="FarmlandHoldings.data" :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" :center="['35%', '50%']" :titleLeft="'30%'"/>
+            <CircleChart :centerValue="FarmlandHoldings.total" :centerLabel="FarmlandHoldings.centerTitle"
+              legend="right" :dataItems="FarmlandHoldings.data" :width="'55.3472rem'" :height="'32.3712rem'"
+              :isCong="true" :center="['35%', '50%']" :titleLeft="'30%'" />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="BlueGgreenspace.title">
             <BarCharts :x-axis-data="BlueGgreenspace.data.xAxisdata" :series-data="BlueGgreenspace.data.seriesdata"
