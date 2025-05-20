@@ -30,25 +30,26 @@ const twocolor = {
 </script>
 
 <template>
-  <div
-    class="gauges"
-    :style="{ width: props.width, height: props.height }"
-  >
+  <div class="gauges" :style="{ width: props.width, height: props.height }">
     <div class="title">
-      <div
-        v-for="item in WaterSurfacerate.data"
-        :key="item.id"
-        class="testarea"
-      >
+      <div v-for="item in WaterSurfacerate.data" :key="item.id" class="testarea">
         <div class="circle" />
         <div class="text">
-          {{item.title}}
+          {{ item.title }}
         </div>
       </div>
     </div>
     <div class="main">
-      <gaugeChart :colors='onecolor' :seriesData="WaterSurfacerate.data[0].value" :icon="WaterSurfacerate.data[0].icon"/>
-      <gaugeChart :colors='twocolor'  :seriesData="WaterSurfacerate.data[1].value" :icon="WaterSurfacerate.data[1].icon"/>
+      <gaugeChart
+        :colors="onecolor"
+        :seriesData="WaterSurfacerate.data[0].value"
+        :icon="WaterSurfacerate.data[0].icon"
+      />
+      <gaugeChart
+        :colors="twocolor"
+        :seriesData="WaterSurfacerate.data[1].value"
+        :icon="WaterSurfacerate.data[1].icon"
+      />
     </div>
   </div>
 </template>
@@ -61,13 +62,14 @@ const twocolor = {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   /* justify-content: space-around; */
   .title {
     position: absolute;
-    width: 80%;
-    height: 10%;
-    top: 10%;
+    width: 100%;
+    /* height: 10%; */
+    font-size: 2rem;
+    top: 7%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -88,7 +90,7 @@ const twocolor = {
     }
   }
   .main {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     margin-top: 5rem;
