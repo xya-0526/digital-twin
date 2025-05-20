@@ -117,7 +117,7 @@ const chartOption = computed(() => ({
     nameTextStyle: {
       fontSize: PxToRem(16),
       align: 'left',
-      padding: [0, 0, 0, -20]
+      padding: [0, 0, 0, -PxToRem(70)]
     },
     nameLocation: 'end',
     nameGap: PxToRem(20),
