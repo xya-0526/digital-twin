@@ -67,6 +67,7 @@ const icon =ref( [P16,P9,P17])
 
   }
   .but{
+    position: relative;
     width: 17.8rem;
     height: 4.719rem;
     border-radius: 2.35rem;
