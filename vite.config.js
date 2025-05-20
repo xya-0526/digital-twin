@@ -43,6 +43,7 @@ export default defineConfig(({ mode }) => {
       host: true,
     },
     build: {
+      assetsInlineLimit: 0,
       outDir: `dist/${env.VITE_APP_ENV || 'production'}`,
       assetsDir: 'static',
       minify: 'terser',
