@@ -240,7 +240,7 @@ background-color: #a5a4a4;
 }
 .active {
     background: linear-gradient(to right, #47A25C, #151C24) !important;
-    font-weight: 7 00;
+    font-weight: 700;
     color:#FFFFFF;
 }
 </style>
