@@ -432,7 +432,7 @@ watch(() => [props.dataItems, props.centerValue, props.centerLabel], updateChart
 <style scoped>
 .chart-wrapper {
   width: 60.5rem;
-  height: 28rem;
+  height: 26rem;
   /* filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6)); */
   z-index: 1;
   display: flex;
