@@ -228,7 +228,9 @@ header .title {
 }
 .active {
   background: linear-gradient(to right, #47a25c, #151c24) !important;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: bold;
+  p {
+    color: #ffffff !important;
+  }
 }
 </style>
