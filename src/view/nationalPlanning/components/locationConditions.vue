@@ -24,8 +24,16 @@ import P18 from '@/assets/images/P18.svg'
 import P19 from '@/assets/images/P19.svg'
 import { PxToRem } from '@/utils/AutoRem'
 const siteIcon = ref([P18, P19])
-const CoverageIcon = ['../src/assets/images/P28.svg', '../src/assets/images/P25.svg', '../src/assets/images/P27.svg']
-const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)', 'linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)']
+const CoverageIcon = [
+  '../src/assets/images/P28.svg',
+  '../src/assets/images/P25.svg',
+  '../src/assets/images/P27.svg'
+]
+const colors = [
+  'linear-gradient(90deg, #503e2a 0%, #cdba55 100%)',
+  'linear-gradient(90deg, #3d4a30 0%, #3fc894 100%)',
+  'linear-gradient(90deg, #1c3d2c 0%, #4ca5cd 100%)'
+]
 </script>
 <template>
   <div class="main">
@@ -43,26 +51,53 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
             </div>
           </div>
           <div class="onebanner">
-            <CartBoxone :width="'70.8rem'" :height="'24.299rem'" :title="Demonstrationarea.data.Targeting.title">
-              <textTitle  :data="Demonstrationarea.data.Targeting"></textTitle>
+            <CartBoxone
+              :width="'70.8rem'"
+              :height="'24.299rem'"
+              :title="Demonstrationarea.data.Targeting.title"
+            >
+              <textTitle :data="Demonstrationarea.data.Targeting"></textTitle>
             </CartBoxone>
-            <CartBoxone :width="'49.7rem'" :height="'24.299rem'" :title="Demonstrationarea.data.Special.title">
+            <CartBoxone
+              :width="'49.7rem'"
+              :height="'24.299rem'"
+              :title="Demonstrationarea.data.Special.title"
+            >
               <titleList :list="Demonstrationarea.data.Special.data"></titleList>
             </CartBoxone>
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
-              <CircleChart :showPercentage="false" :centerValue="Demonstrationarea.data.ecologicalData.total"
-                :showLegend="true" :legend="'right'" centerLabel="数据数据"
-                :dataItems="Demonstrationarea.data.ecologicalData.data" :width="'39.999rem'" :height="'23.8999rem'"
-                :roseType="'pie'" :radius="['50%', '80%']" :isCircle="false" :center="['30%', '50%']" :titleLeft="'23%'"
-                :LabelRight="'5%'" />
+              <CircleChart
+                :showPercentage="false"
+                :centerValue="Demonstrationarea.data.ecologicalData.total"
+                :showLegend="true"
+                :legend="'right'"
+                centerLabel="总计人口"
+                :dataItems="Demonstrationarea.data.ecologicalData.data"
+                :width="'39.999rem'"
+                :height="'23.8999rem'"
+                :roseType="'pie'"
+                :radius="['40%', '70%']"
+                :isCircle="false"
+                :center="['32%', '50%']"
+                :titleLeft="'23%'"
+                :LabelRight="'5%'"
+              />
             </CartBoxtow>
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
-              <ProgressAll :width="'34.78016rem'" :height="'23.8999rem'" :colors="colors"
-                :data="Demonstrationarea.data.ProportionUse">
+              <ProgressAll
+                :width="'34.78016rem'"
+                :height="'18rem'"
+                :colors="colors"
+                :data="Demonstrationarea.data.ProportionUse"
+              >
               </ProgressAll>
             </CartBoxtow>
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
-              <ecologyTitle :width="'39.999rem'" :height="'23.8999rem'" :data="Demonstrationarea.data.structure">
+              <ecologyTitle
+                :width="'39.999rem'"
+                :height="'23.8999rem'"
+                :data="Demonstrationarea.data.structure"
+              >
               </ecologyTitle>
             </CartBoxtow>
           </div>
@@ -74,17 +109,40 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
             </div>
           </div>
           <div class="towbanner">
-            <CartBoxone :width="'39.799rem'" :height="'24.20064rem'" :title="AdvanceStartZone.population.title">
-              <CircleChart :centerValue="AdvanceStartZone.population.ecologicalData.total" :showLegend="false"
+            <CartBoxone
+              :width="'39.799rem'"
+              :height="'24.20064rem'"
+              :title="AdvanceStartZone.population.title"
+            >
+              <CircleChart
+                :centerValue="AdvanceStartZone.population.ecologicalData.total"
+                :showLegend="false"
                 :centerLabel="AdvanceStartZone.population.ecologicalData.title"
-                :dataItems="AdvanceStartZone.population.ecologicalData.data" :width="'39.799rem'"
-                :height="'24.20064rem'" :isCong="true" :radius="['45%', '60%']" :radiusCong="['45%', '65%']" />
+                :dataItems="AdvanceStartZone.population.ecologicalData.data"
+                :width="'39.799rem'"
+                :height="'24.20064rem'"
+                :isCong="true"
+                :radius="['45%', '55%']"
+                :radiusCong="['42%', '58%']"
+              />
             </CartBoxone>
-            <CartBoxone :width="'39.799rem'" :height="'24.20064rem'" :title="AdvanceStartZone.structure.title">
+            <CartBoxone
+              :width="'39.799rem'"
+              :height="'24.20064rem'"
+              :title="AdvanceStartZone.structure.title"
+            >
               <cartBoxOneCentent></cartBoxOneCentent>
             </CartBoxone>
-            <CartBoxone :width="'39.799rem'" :height="'24.20064rem'" :title="AdvanceStartZone.site.title">
-              <ProgressAll :data="AdvanceStartZone.site.data" :icon="siteIcon" :width="'39.799rem'"></ProgressAll>
+            <CartBoxone
+              :width="'39.799rem'"
+              :height="'24.20064rem'"
+              :title="AdvanceStartZone.site.title"
+            >
+              <ProgressAll
+                :data="AdvanceStartZone.site.data"
+                :icon="siteIcon"
+                :width="'39.799rem'"
+              ></ProgressAll>
             </CartBoxone>
           </div>
         </div>
@@ -96,7 +154,11 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
           </div>
           <div class="threebanner">
             <CartBoxtow v-for="i in WaterTownshipUnit.data" :width="'40rem'" :height="'14.8rem'">
-              <cartBoxTowContent :image="i.image" :text="i.text" :count="i.count"></cartBoxTowContent>
+              <cartBoxTowContent
+                :image="i.image"
+                :text="i.text"
+                :count="i.count"
+              ></cartBoxTowContent>
             </CartBoxtow>
           </div>
         </div>
@@ -107,28 +169,57 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
         </div>
         <div class="carts">
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="Ecologicalprotection.title">
-            <CircleChart :centerValue="Ecologicalprotection.total" :showLabel="true"
-              :centerLabel="Ecologicalprotection.centerTitle" :dataItems="Ecologicalprotection.data"
-              :width="'55.3472rem'" :height="'32.3712rem'" :isCong="true" :center="['50%', '40%']" :titleTop="'30%'" />
+            <CircleChart
+              :centerValue="Ecologicalprotection.total"
+              :showLabel="true"
+              :centerLabel="Ecologicalprotection.centerTitle"
+              :dataItems="Ecologicalprotection.data"
+              :width="'55.3472rem'"
+              :height="'32.3712rem'"
+              :isCong="true"
+              :center="['50%', '40%']"
+              :titleTop="'30%'"
+            />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
-            <CircleChart :centerValue="FarmlandHoldings.total" :centerLabel="FarmlandHoldings.centerTitle"
-              legend="right" :dataItems="FarmlandHoldings.data" :width="'55.3472rem'" :height="'32.3712rem'"
-              :isCong="true" :center="['35%', '50%']" :titleLeft="'30%'" />
+            <CircleChart
+              :centerValue="FarmlandHoldings.total"
+              :centerLabel="FarmlandHoldings.centerTitle"
+              legend="right"
+              :dataItems="FarmlandHoldings.data"
+              :width="'55.3472rem'"
+              :height="'32.3712rem'"
+              :isCong="true"
+              :center="['35%', '50%']"
+              :titleLeft="'30%'"
+            />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="BlueGgreenspace.title">
-            <BarCharts :x-axis-data="BlueGgreenspace.data.xAxisdata" :series-data="BlueGgreenspace.data.seriesdata"
-              theme="dark" :horizontal="false" />
+            <BarCharts
+              :x-axis-data="BlueGgreenspace.data.xAxisdata"
+              :series-data="BlueGgreenspace.data.seriesdata"
+              theme="dark"
+              :horizontal="false"
+            />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="WaterSurfacerate.title">
             <gauges></gauges>
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="Widthgreen.title">
-            <BarCharts :x-axis-data="Widthgreen.data.xAxisdata" :series-data="Widthgreen.data.seriesdata" theme="dark"
-              :horizontal="false" />
+            <BarCharts
+              :x-axis-data="Widthgreen.data.xAxisdata"
+              :series-data="Widthgreen.data.seriesdata"
+              theme="dark"
+              :horizontal="false"
+            />
           </CartBoxone>
           <CartBoxtow :width="'60.5rem'" :height="'34.1rem'">
-            <ProgressAll :isMax="true" :progwidth="' 39.88rem'" :icon="CoverageIcon" :data="Coverage.data">
+            <ProgressAll
+              :isMax="true"
+              :progwidth="' 39.88rem'"
+              :icon="CoverageIcon"
+              :data="Coverage.data"
+            >
             </ProgressAll>
           </CartBoxtow>
         </div>
@@ -181,7 +272,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
 
     .one {
       z-index: 1;
-      width: 126.0rem;
+      width: 126rem;
       height: 60rem;
       border-radius: 1。15rem;
       opacity: 1;
@@ -194,7 +285,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
 
       .titles {
         z-index: 2;
-        width: 122.0rem;
+        width: 122rem;
         height: 5.2rem;
         /* opacity: 1; */
         border-radius: 0.0977vw;
@@ -216,7 +307,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       }
 
       .onebanner {
-        width: 122.0rem;
+        width: 122rem;
         height: 85%;
         /* background-color: #fff; */
         display: flex;
@@ -241,7 +332,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
 
       .titles {
         z-index: 2;
-        width: 122.0rem;
+        width: 122rem;
         height: 5.2rem;
         height: 17%;
         /* opacity: 1; */
@@ -264,7 +355,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
       }
 
       .towbanner {
-        width: 122.0rem;
+        width: 122rem;
         height: 85%;
         /* background-color: #fff; */
         display: flex;
@@ -289,7 +380,7 @@ const colors = ['linear-gradient(90deg, #503e2a 0%, #cdba55 100%)', 'linear-grad
 
       .titles {
         z-index: 2;
-        width: 122.0rem;
+        width: 122rem;
         height: 5.2rem;
         /* opacity: 1; */
         border-radius: 0.5rem;
