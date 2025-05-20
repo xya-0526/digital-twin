@@ -1,7 +1,7 @@
 
-import P15 from '@/assets/images/P15.svg'
-import P13 from '@/assets/images/P13.svg'
-import P12 from '@/assets/images/P12.svg'
+import P15 from '../assets/images/P15.svg'
+import P13 from '../assets/images/P13.svg'
+import P12 from '../assets/images/P12.svg'
 export const Demonstrationarea = {
   title:"示范区国土空间总体规划",
   data:

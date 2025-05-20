@@ -10,11 +10,11 @@
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
-import P3 from'@/assets/images/P3.png'
-import P5 from'@/assets/images/P5.png'
-import P2 from'@/assets/images/P2.png'
-import P1 from'@/assets/images/P1.png'
-import P4 from'@/assets/images/P4.png'
+import P3 from'../assets/images/P3.png'
+import P5 from'../assets/images/P5.png'
+import P2 from'../assets/images/P2.png'
+import P1 from'../assets/images/P1.png'
+import P4 from'../assets/images/P4.png'
 let activeButton = ref(0)
 const addActive = (index: number) => {
     console.log(index)

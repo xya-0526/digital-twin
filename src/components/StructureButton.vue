@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import P24 from "@/assets/images/P24.png"
-import P20 from "@/assets/images/P20.svg"
-import P21 from "@/assets/images/P21.svg"
-import P22 from "@/assets/images/P22.svg"
-import P23 from "@/assets/images/P23.svg"
+import P24 from "../assets/images/P24.png"
+import P20 from "../assets/images/P20.svg"
+import P21 from "../assets/images/P21.svg"
+import P22 from "../assets/images/P22.svg"
+import P23 from "../assets/images/P23.svg"
 const isActive = ref(1)
 console.log(P20,"XXX")
 const buttonClick = value => {  

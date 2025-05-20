@@ -16,12 +16,12 @@
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
-import P6 from'@/assets/images/P6.png'
-import P7 from'@/assets/images/P7.png'
-import P8 from'@/assets/images/P8.png'
-import P9 from'@/assets/images/P9.png'
-import P10 from'@/assets/images/P10.png'
-import P11 from'@/assets/images/P11.png'
+import P6 from'../assets/images/P6.png'
+import P7 from'../assets/images/P7.png'
+import P8 from'../assets/images/P8.png'
+import P9 from'../assets/images/P9.png'
+import P10 from'../assets/images/P10.png'
+import P11 from'../assets/images/P11.png'
 import { ref } from 'vue';
 let activeButton = ref(0)
 const addActive = (index: number) => {
