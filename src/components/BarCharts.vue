@@ -1,10 +1,5 @@
 <template>
-  <eChart
-    :width="width"
-    :height="height"
-    :theme="theme"
-    :option="chartOption"
-  />
+  <eChart :width="width" :height="height" :theme="theme" :option="chartOption" />
 </template>
 
 <script setup>
@@ -30,7 +25,7 @@ const props = defineProps({
   },
   seriesData: {
     type: Array,
-    required: true,
+    required: true
   },
 
   // 样式配置
@@ -61,7 +56,7 @@ const props = defineProps({
 
 // 生成图表配置
 const chartOption = computed(() => ({
-  backgroundColor:' #142222',
+  backgroundColor: ' #142222',
   title: {
     // text: props.title,
     left: 'center',
@@ -84,6 +79,9 @@ const chartOption = computed(() => ({
         itemGap: PxToRem(40),
         itemWidth: PxToRem(26),
         itemHeight: PxToRem(10),
+        textStyle: {
+          fontSize: PxToRem(16)
+        }
       }
     : undefined,
   grid: {
@@ -98,7 +96,7 @@ const chartOption = computed(() => ({
     data: props.horizontal ? undefined : props.xAxisData,
     axisLabel: {
       // rotate: 45
-      show:false
+      show: false
     },
     axisLine: {
       show: false
@@ -111,11 +109,22 @@ const chartOption = computed(() => ({
     type: props.horizontal ? 'category' : 'value',
     data: props.horizontal ? props.xAxisData : undefined,
     axisLabel: {
-      formatter: '{value}%'
+      formatter: '{value}%',
+      fontSize: PxToRem(16),
+      color: 'rgba(255, 255, 255, 1)'
     },
     name: '百分比',
+    nameTextStyle: {
+      fontSize: PxToRem(16),
+      align: 'left',
+      padding: [0, 0, 0, -PxToRem(70)]
+    },
+    nameLocation: 'end',
     nameGap: PxToRem(20),
     max: 100
+  },
+  tooltip: {
+    show: false
   },
   series: props.seriesData?.map((series, index) => ({
     name: series.name,
@@ -146,8 +155,7 @@ const chartOption = computed(() => ({
     ...(props.horizontal && {
       label: {
         show: true,
-        position: 'right',
-        
+        position: 'right'
       }
     })
   }))
