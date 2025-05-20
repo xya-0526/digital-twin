@@ -1,44 +1,51 @@
-<script setup>
+<script setup lang="ts">
+import P24 from "../assets/images/P24.png"
+import P20 from "../assets/images/P20.svg"
+import P21 from "../assets/images/P21.svg"
+import P22 from "../assets/images/P22.svg"
+import P23 from "../assets/images/P23.svg"
 const isActive = ref(1)
+console.log(P20,"XXX")
+const buttonClick = value => {  
 
-const buttonClick = value => {
   isActive.value = value
 }
 
-const data =[
+const data = [
   {
     id: 1,
     name: '目标定位',
-    icon: '../src/assets/images/路径 3.png'
+    icon: P24,
   },
   {
     id: 2,
     name: '空间结构',
-    icon: '../src/assets/images/P20.svg'
+    icon: P20
   },
   {
     id: 3,
     name: '生态结构',
-    icon: '../src/assets/images/P21.svg'
+    icon: P21
   },
   {
     id: 4,
     name: '主要交通',
-    icon: '../src/assets/images/P22.svg'
+    icon: P22
   },
   {
     id: 5,
     name: '核心指标',
-    icon: '../src/assets/images/P23.svg'
+    icon: P23
   }
 ]
 </script>
 
 <template>
   <div class="bus">
-    <button v-for="i in data" :key="i.id" @click="buttonClick(i.id)" :class="['button', { buttonClick: isActive === i.id }]">
+    <button v-for="i in data" :key="i.id" @click="buttonClick(i.id)"
+      :class="['button', { buttonClick: isActive === i.id }]">
       <img :src="i?.icon" alt="" class="icon" />
-      <div class="test">{{i.name}}</div>
+      <div class="test">{{ i.name }}</div>
     </button>
   </div>
 </template>

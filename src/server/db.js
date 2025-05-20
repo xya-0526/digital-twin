@@ -1,3 +1,7 @@
+
+import P15 from '../assets/images/P15.svg'
+import P13 from '../assets/images/P13.svg'
+import P12 from '../assets/images/P12.svg'
 export const Demonstrationarea = {
   title: '示范区国土空间总体规划',
   data: {
@@ -100,33 +104,36 @@ export const AdvanceStartZone = {
 
 export const WaterTownshipUnit = {
   title: '水乡单元详细规划',
-  data: [
-    {
-      text: '规划单元总数',
-      image: {
-        src: '../src/assets/images/P15.svg',
-        alt: ''
-      },
-      count: 50
-    },
-    {
-      text: '在编规划数量',
-      image: {
-        src: '../src/assets/images/P13.svg',
-        alt: ''
-      },
-      count: 1
-    },
 
-    {
-      text: '已批规划数量',
-      image: {
-        src: '../src/assets/images/P12.svg',
-        alt: ''
-      },
-      count: 0
-    }
-  ]
+  data:[{
+  text: "规划单元总数",
+  image: {
+    src: P15,
+    alt: ''
+  },
+  count:50
+
+},
+{
+  text: "在编规划数量",
+  image: {
+    src:P13,
+    alt: ''
+  },
+  count:1
+
+},
+
+{
+  text: "已批规划数量",
+  image: {
+    src: P12,
+    alt: ''
+  },
+  count:0
+},
+]
+
 }
 
 export const buttonData = {

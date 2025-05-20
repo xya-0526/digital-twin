@@ -8,7 +8,7 @@
             </button>
             <div class="title">
                 <div id="box1">
-                    <p>长 三 角 生 态 绿 色 一 体 化 发 展 示 范 区</p>
+                    <p id="P1">长 三 角 生 态 绿 色 一 体 化 发 展 示 范 区</p>
                     <p>水乡客厅数字孪生运营平台</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 
 import { onMounted, ref, onBeforeUnmount } from 'vue';
-const titles = ref(["国土规划", "国土规划", "国土规划", "国土规划", "国土规划", "国土规划"])
+const titles = ref(["国土规划", "项目建设", "低碳能源", "道路交通", "文化旅游", "产业经济"])
 let nowtime = ref("");
 let CurrentYM = ref("")
 let week = ref("")
@@ -154,12 +154,16 @@ header .title {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-size: 3rem;
+           
 
         }
-
+    #P1{
+         letter-spacing: 1rem;
+    }
         p:nth-child(2) {
             font-size: 7.2rem;
-            margin-bottom: 1rem
+            margin-bottom: 1rem;
+            letter-spacing: 0.5rem;
         }
     }
 }
@@ -236,5 +240,7 @@ background-color: #a5a4a4;
 }
 .active {
     background: linear-gradient(to right, #47A25C, #151C24) !important;
+    font-weight: 7 00;
+    color:#FFFFFF;
 }
 </style>

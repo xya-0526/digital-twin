@@ -11,24 +11,27 @@
 </template>
 <script setup lang="ts">
 import UniversalButton from './UniversalButton.vue';
+import Slice1 from'@/assets/images/Slice1.svg'
+import Slice2 from'@/assets/images/Slice2.svg'
+import Slice3 from'@/assets/images/Slice3.svg'
 const Array = [{
     text: "一厅三片",
     image: {
-        src: "../src/assets/images/Slice1.svg",
+        src:Slice1,
         alt: ""
     }
 },
 {
     text: "十字双轴",
     image: {
-        src: "../src/assets/images/Slice2.svg",
+        src: Slice2,
         alt: ""
     },
 },
 {
     text: "小镇网格",
     image: {
-        src: "../src/assets/images/Slice3.svg",
+        src: Slice3,
         alt: ""
     }
 }

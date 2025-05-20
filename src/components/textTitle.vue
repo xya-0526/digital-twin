@@ -8,7 +8,8 @@ const props = defineProps({
     type: Object,
   }
 })
-const icon =ref( [P16,P9,P17])
+const icon =ref( [P17,P9,P16])
+console.log(P9)
 </script>
 
 <template>
