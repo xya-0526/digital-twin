@@ -82,7 +82,7 @@ export const WaterTownshipUnit = {
   data:[{
   text: "规划单元总数",
   image: {
-    src: '../src/assets/images/P15.png',
+    src: '../src/assets/images/P15.svg',
     alt: ''
   },
   count:50
@@ -91,7 +91,7 @@ export const WaterTownshipUnit = {
 {
   text: "在编规划数量",
   image: {
-    src: '../src/assets/images/P13.png',
+    src: '../src/assets/images/P13.svg',
     alt: ''
   },
   count:1
@@ -101,7 +101,7 @@ export const WaterTownshipUnit = {
 {
   text: "已批规划数量",
   image: {
-    src: '../src/assets/images/P12.png',
+    src: '../src/assets/images/P12.svg',
     alt: ''
   },
   count:0

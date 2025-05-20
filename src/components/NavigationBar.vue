@@ -17,26 +17,26 @@
             <div class="time">
                 <div id="nowtime">{{ nowtime }}</div>
                 <div id="week">
-                    <div>{{ week }}</div>
+                    <div style="color:#7D848A;">{{ week }}</div>
                     <div>{{ CurrentYM }}</div>
                 </div>
             </div>
-            <div id="setter"></div>
         </section>
+        <div id="setter"></div>
     </div>
 </template>
 <script setup lang="ts">
 
 import { onMounted, ref, onBeforeUnmount } from 'vue';
-const titles = ref(["国土规划", "项目建设", "低碳能源", "道路交通", "文化旅游", "产业经济"])
-let nowtime = ref(null);
-let CurrentYM = ref(null)
-let week = ref(null)
+const titles = ref(["国土规划", "国土规划", "国土规划", "国土规划", "国土规划", "国土规划"])
+let nowtime = ref("");
+let CurrentYM = ref("")
+let week = ref("")
 let intervalId: ReturnType<typeof setInterval> | null = null;
 let activeButton = ref(0)
 const getnewtime = (): void => {
     intervalId = setInterval(() => {
-        const weekdays = [  "Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth() + 1;
@@ -192,28 +192,48 @@ header .title {
         align-items: center;
         color: #ffffff;
 
-        #week{
+        #week {
 
             font-size: 1.8rem;
         }
 
         #nowtime {
             font-size: 4rem;
+            margin-right: 1rem;
         }
     }
 
-    #setter {
-        margin-left: 2rem;
-        width: 3.6rem;
-        height: 3.6rem;
-        background-image: url("../assets/images/SET.png");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        align-self: center;
-    }
+
 }
 
+#setter {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 496.1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-image: url("../assets/images/SET.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: center;
+    z-index: 2;
+
+}
+#setter::after{
+  left: -3.5em;
+  top: 50%;
+  transform: translateY(-50%);
+position: absolute;
+content: "";
+display: block;
+width: 0.1rem;
+height: 4.5rem;
+background-color: #a5a4a4;
+
+
+}
 .active {
     background: linear-gradient(to right, #47A25C, #151C24) !important;
 }
