@@ -1,10 +1,5 @@
 <template>
-  <eChart
-    :width="width"
-    :height="height"
-    :theme="theme"
-    :option="chartOption"
-  />
+  <eChart :width="width" :height="height" :theme="theme" :option="chartOption" />
 </template>
 
 <script setup>
@@ -30,7 +25,7 @@ const props = defineProps({
   },
   seriesData: {
     type: Array,
-    required: true,
+    required: true
   },
 
   // 样式配置
@@ -61,7 +56,7 @@ const props = defineProps({
 
 // 生成图表配置
 const chartOption = computed(() => ({
-  backgroundColor:' #142222',
+  backgroundColor: ' #142222',
   title: {
     // text: props.title,
     left: 'center',
@@ -83,7 +78,7 @@ const chartOption = computed(() => ({
         right: PxToRem(10),
         itemGap: PxToRem(40),
         itemWidth: PxToRem(26),
-        itemHeight: PxToRem(10),
+        itemHeight: PxToRem(10)
       }
     : undefined,
   grid: {
@@ -98,7 +93,7 @@ const chartOption = computed(() => ({
     data: props.horizontal ? undefined : props.xAxisData,
     axisLabel: {
       // rotate: 45
-      show:false
+      show: false
     },
     axisLine: {
       show: false
@@ -111,7 +106,8 @@ const chartOption = computed(() => ({
     type: props.horizontal ? 'category' : 'value',
     data: props.horizontal ? props.xAxisData : undefined,
     axisLabel: {
-      formatter: '{value}%'
+      formatter: '{value}%',
+      fontSize: PxToRem(16)
     },
     name: '百分比',
     nameGap: PxToRem(20),
@@ -146,8 +142,7 @@ const chartOption = computed(() => ({
     ...(props.horizontal && {
       label: {
         show: true,
-        position: 'right',
-        
+        position: 'right'
       }
     })
   }))
