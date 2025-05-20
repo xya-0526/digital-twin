@@ -1,14 +1,10 @@
 <template>
-  <div
-    ref="chartRef"
-    class="chart-wrapper"
-    :style="{width: props.width,height: props.height}"
-  />
+  <div ref="chartRef" class="chart-wrapper" :style="{ width: props.width, height: props.height }" />
 </template>
 
 <script setup>
 import * as echarts from 'echarts'
-import { formatter } from 'element-plus'
+import { LEFT_CHECK_CHANGE_EVENT, formatter } from 'element-plus'
 import { onMounted, ref, watch } from 'vue'
 import { PxToRem } from '@/utils/AutoRem'
 
@@ -40,7 +36,7 @@ const props = defineProps({
   },
   roseType: {
     type: String,
-    default: undefined,
+    default: undefined
   },
   showPercentage: {
     type: Boolean,
@@ -66,57 +62,57 @@ const props = defineProps({
     type: String,
     default: 'bottom'
   },
-  isCong:{
+  isCong: {
     type: Boolean,
     default: false
   },
   radius: {
     type: Array,
-    default:() => ['33%', '45%']
+    default: () => ['35%', '43%']
   },
-  center:{
+  center: {
     type: Array,
-    default: ()=>['50%', '50%']
-    },
-  radiusCong:{
-      type: Array,
-      default:()=>['33%', '50%']
+    default: () => ['50%', '50%']
   },
-  titleLeft:{
+  radiusCong: {
+    type: Array,
+    default: () => ['32%', '46%']
+  },
+  titleLeft: {
     type: String,
-    default:'center'
+    default: 'center'
   },
-  LabelRight:{
-    type:String,
-    default:'0%'
+  LabelRight: {
+    type: String,
+    default: '0%'
   },
-  legendGap:{
+  legendGap: {
     type: [String, Number],
-    default: 10
+    default: 4
   },
-  isCircle:{
+  isCircle: {
     type: Boolean,
     default: true
   },
-  titleTop:{
-    type: String,
+  titleTop: {
+    type: String
   }
 })
 
 const colors = [
   {
-    startColor:'#42A5D5',
-    stopColor: '#53BA9D',
+    startColor: '#42A5D5',
+    stopColor: '#53BA9D'
   },
   {
-    startColor:'#92D06D',
+    startColor: '#92D06D',
     stopColor: '#42D39C'
   },
   {
-    startColor:'#C29955',
+    startColor: '#C29955',
     stopColor: '#D2B942'
   }
-] 
+]
 
 const chartRef = ref(null)
 let chartInstance = null
@@ -134,8 +130,7 @@ const handleResize = () => {
     initChart()
   }
 }
-console.log(props.isCong);
-
+console.log(props.isCong)
 
 const updateChart = () => {
   if (!chartInstance) return
@@ -143,25 +138,42 @@ const updateChart = () => {
   const chartWidth = chartRef.value?.offsetWidth || 400
 
   chartInstance.setOption({
+    textStyle: {
+      fontFamily: 'SourceHanSansCN'
+    },
     backgroundColor: 'transparent',
     title: {
-      text: `{a|${String(props.centerValue)}}\n{b|${ props.centerLabel}}`,
-      top: props.titleTop?props.titleTop:'center',
+      text: `{a|${String(props.centerValue)}}\n{b|${props.centerLabel}}`,
+      top: props.titleTop ? props.titleTop : 'center',
       x: props.titleLeft,
-      textStyle:{
-        rich:{
-          a:{
-              fontSize: PxToRem(24),
-              color: '#fff',
-              fontWeight:'400',
+      textStyle: {
+        rich: {
+          a: {
+            fontSize: PxToRem(24),
+            color: '#fff',
+            fontWeight: '400'
           },
-          b:{
-              fontSize: PxToRem(16),
-              color: '#fff',
-              padding: [PxToRem(10),-PxToRem(15)]
+          b: {
+            fontSize: PxToRem(16),
+            color: '#fff',
+            padding: [PxToRem(10), -PxToRem(15)]
           }
         }
       }
+      // text: props.centerValue,
+      // top: props.titleTop ? props.titleTop : 'center',
+      // x: props.titleLeft,
+      // textStyle: {
+      //   fontSize: PxToRem(24),
+      //   color: '#fff',
+      //   fontWeight: '400'
+      // },
+      // subtext: props.centerLabel,
+      // subtextStyle: {
+      //   fontSize: PxToRem(16),
+      //   color: '#fff',
+      //   padding: [-PxToRem(30), -PxToRem(30)]
+      // }
     },
     series: [
       {
@@ -179,21 +191,23 @@ const updateChart = () => {
           // borderWidth: 8,
           // borderColor: 'rgba(133, 208, 106, .1)'
         },
-        label: props.isCircle?{
-          normal: {
-            position: 'inside',
-            backgroundColor: 'white',
-            width: PxToRem(5),
-            height: PxToRem(5),
-            borderRadius: PxToRem(5),
-            padding: PxToRem(1),
-            margin: PxToRem(1),
-            formatter: ''
-          }
-        }:{
-          show: false
-        },
-        data: props.dataItems.map((item,index) => {
+        label: props.isCircle
+          ? {
+              normal: {
+                position: 'inside',
+                backgroundColor: 'white',
+                width: PxToRem(5),
+                height: PxToRem(5),
+                borderRadius: PxToRem(5),
+                padding: PxToRem(1),
+                margin: PxToRem(1),
+                formatter: ''
+              }
+            }
+          : {
+              show: false
+            },
+        data: props.dataItems.map((item, index) => {
           return {
             value: item.percentage,
             name: item.label,
@@ -213,7 +227,7 @@ const updateChart = () => {
                   },
                   {
                     offset: 1,
-                    color: colors[index].stopColor 
+                    color: colors[index].stopColor
                   }
                 ]
               }
@@ -230,16 +244,17 @@ const updateChart = () => {
           }
         }
       },
-      props.isCong?{
-        z: 1,
-        type: 'pie',
-        radius: props.radiusCong,
-        center: props.center,
-        width: chartWidth,
-        roseType: props.roseType,
-        padAngle: PxToRem(1),
-        avoidLabelOverlap: false,
-        label: props.showPercentage
+      props.isCong
+        ? {
+            z: 1,
+            type: 'pie',
+            radius: props.radiusCong,
+            center: props.center,
+            width: chartWidth,
+            roseType: props.roseType,
+            padAngle: PxToRem(1),
+            avoidLabelOverlap: false,
+            label: props.showPercentage
               ? {
                   show: true,
                   position: 'outer',
@@ -254,7 +269,7 @@ const updateChart = () => {
                   lineHeight: PxToRem(27),
                   rich: {
                     name: {
-                      opacity: 1 ,
+                      opacity: 1,
                       fontSize: PxToRem(16),
                       color: '#fff',
                       padding: [PxToRem(4), 0]
@@ -294,15 +309,15 @@ const updateChart = () => {
                   return { labelLinePoints: points, draggable: true }
                 }
               : {},
-            data: props.dataItems.map((item,index) => {
+            data: props.dataItems.map((item, index) => {
               return {
                 value: item.percentage,
                 name: item.label,
                 itemStyle: {
-                      shadowBlur: PxToRem(10),
-                      shadowColor: 'rgba(0, 0, 0, 0.2)',
-                      opacity: 0.5, // 整体透明度设为50
-                      color: {
+                  shadowBlur: PxToRem(10),
+                  shadowColor: 'rgba(0, 0, 0, 0.2)',
+                  opacity: 0.5, // 整体透明度设为50
+                  color: {
                     type: 'linear',
                     x: 0, // 渐变起始点 x 坐标（0=左，1=右）
                     y: 0, // 渐变起始点 y 坐标（0=上，1=下）
@@ -315,14 +330,15 @@ const updateChart = () => {
                       },
                       {
                         offset: 1,
-                        color: colors[index].stopColor 
+                        color: colors[index].stopColor
                       }
                     ]
-                  } 
+                  }
                 }
               }
             })
-      }:{}
+          }
+        : {}
     ],
     tooltip: {
       show: true,
@@ -347,50 +363,50 @@ const updateChart = () => {
       ...(props.legend === 'right'
         ? {
             right: props.LabelRight,
-            top: 'middle',
+            top: 'center',
             orient: 'vertical'
           }
         : {
-            bottom: '10%',
+            bottom: '5%',
             orient: 'horizontal'
           }),
       itemWidth: PxToRem(26),
       itemHeight: PxToRem(10),
-      // itemGap: PxToRem(10),
+      itemGap: PxToRem(10),
       // textStyle: {
       //   color: 'rgba(255,255,255,0.6)',
       //   fontSize: 14,
       //   padding: [0, 0, 0, 6]
       // },
-      formatter: function(name){
+      formatter: function (name) {
         const targetItem = props.dataItems.find(item => item.label === name)
         const value = targetItem?.value
         const unit = targetItem?.unit
-        return `{title|${name}xxxxxx}\n{value|${value}}{unit|${unit}}`;
+        return `{title|$xxxxxxxxx}\n{value|${value}}{unit|${unit}}`
       },
-      textStyle:{
+      textStyle: {
         color: '#ffffff',
-        rich:{
-          title:{
+        rich: {
+          title: {
             fontSize: PxToRem(16),
-            lineHeight:PxToRem(30),// 控制第一行高度
-            padding:[PxToRem(0),0,PxToRem(0),PxToRem(0)],
-            verticalAlign:'middle',
-            fontWeight:'200'
+            // lineHeight: PxToRem(36), // 控制第一行高度
+            padding: [PxToRem(26), 0, PxToRem(4), PxToRem(0)],
+            verticalAlign: 'middle',
+            fontWeight: '200'
           },
-          value:{
+          value: {
             fontSize: PxToRem(24),
             // lineHeight: PxToRem(24),
-            // padding:[PxToRem(30),0,0,PxToRem(10)],
-            verticalAlign:'middle',
-            fontWeight:'400'
+            padding: [0, 0, 0, PxToRem(0)],
+            verticalAlign: 'middle',
+            fontWeight: '400'
           },
-          unit:{
-            fontSize: PxToRem(24),
-            // lineHeight: (24),
-            // padding:[PxToRem(30),0,0,PxToRem(10)],
-            verticalAlign:'middle',
-            fontWeight:'200'
+          unit: {
+            fontSize: PxToRem(16),
+            // lineHeight: 24,
+            padding: [PxToRem(4), 0, 0, PxToRem(10)],
+            verticalAlign: 'middle',
+            fontWeight: '200'
           }
         }
       }

@@ -1,12 +1,12 @@
 <script setup>
-import {PxToRem} from '@/utils/AutoRem'
+import { PxToRem } from '@/utils/AutoRem'
 const props = defineProps({
   isMax: {
     type: Boolean,
     default: false
   },
   percentage: {
-    type: [String,Number],
+    type: [String, Number],
     default: '0'
   },
   name: {
@@ -56,20 +56,15 @@ onMounted(() => {
 
 <template>
   <div class="progress-bar">
-    <div
-      class="box"
-      :style="{ width: progressStyle.width, height: progressStyle.height }"
-    >
+    <div class="box" :style="{ width: progressStyle.width, height: progressStyle.height }">
       <div class="name">
         {{ progressStyle.name }}
       </div>
-      <div class="description">
-        {{ isMax?'≥':'' }}{{ description }}%
-      </div>
+      <div class="description">{{ isMax ? '≥' : '' }}{{ description }}%</div>
     </div>
     <el-progress
       :text-inside="true"
-      :style="{ width: progressStyle.width, height: progressStyle.height}"
+      :style="{ width: progressStyle.width, height: progressStyle.height }"
       :stroke-width="PxToRem(14)"
       :percentage="percentage"
       status="success"
@@ -87,6 +82,7 @@ onMounted(() => {
   height: 6rem;
   // background-color: rgb(17, 26, 27, 0.4);
   overflow: hidden;
+
   .box {
     display: flex;
     width: 100%;
@@ -94,6 +90,7 @@ onMounted(() => {
     justify-content: space-between;
     // margin-bottom: 25px;
     color: rgb(255, 255, 255);
+    font-size: 2rem;
   }
 }
 </style>
