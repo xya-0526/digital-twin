@@ -1,19 +1,20 @@
-import { debounce } from './tools';
+import { debounce } from './tools'
 
-const DEFAULT_WIDTH = 5120;
+const DEFAULT_WIDTH = 5120
+const windowWidth = window.innerWidth
 
 export default function AutoRem() {
-    /** @param {UIEvent} [_ev] */
-    function setRem(_ev) {
-        const windowWidth = window.innerWidth;
-        const ratio = windowWidth / DEFAULT_WIDTH;
-        const baseFontSize = 10;
-        const newFontSize = baseFontSize * ratio;
-        document.documentElement.style.fontSize = `${newFontSize}px`;
-    }
+  /** @param {UIEvent} [_ev] */
+  function setRem(_ev) {
+    // const windowWidth = window.innerWidth
+    const ratio = windowWidth / DEFAULT_WIDTH
+    const baseFontSize = 10
+    const newFontSize = baseFontSize * ratio
+    document.documentElement.style.fontSize = `${newFontSize}px`
+  }
 
-    setRem();
-    window.addEventListener('resize', debounce(setRem, 500));
+  setRem()
+  window.addEventListener('resize', debounce(setRem, 500))
 }
 
 /**
@@ -22,8 +23,8 @@ export default function AutoRem() {
  * @returns {number} rem值
  */
 export function PxToRem(px) {
-     const windowWidth = window.innerWidth;
-    return px * (windowWidth / 5120);
+  //   const windowWidth = window.innerWidth
+  return px * (windowWidth / 5120)
 }
 
 /**
@@ -32,5 +33,5 @@ export function PxToRem(px) {
  * @returns {number} 像素值
  */
 export function RemToPx(rem) {
-    return rem * (DEFAULT_WIDTH / 512);
+  return rem * (DEFAULT_WIDTH / 512)
 }
