@@ -78,7 +78,10 @@ const chartOption = computed(() => ({
         right: PxToRem(10),
         itemGap: PxToRem(40),
         itemWidth: PxToRem(26),
-        itemHeight: PxToRem(10)
+        itemHeight: PxToRem(10),
+        textStyle: {
+          fontSize: PxToRem(16)
+        }
       }
     : undefined,
   grid: {
@@ -107,11 +110,21 @@ const chartOption = computed(() => ({
     data: props.horizontal ? props.xAxisData : undefined,
     axisLabel: {
       formatter: '{value}%',
-      fontSize: PxToRem(16)
+      fontSize: PxToRem(16),
+      color: 'rgba(255, 255, 255, 1)'
     },
     name: '百分比',
+    nameTextStyle: {
+      fontSize: PxToRem(16),
+      align: 'left',
+      padding: [0, 0, 0, -20]
+    },
+    nameLocation: 'end',
     nameGap: PxToRem(20),
     max: 100
+  },
+  tooltip: {
+    show: false
   },
   series: props.seriesData?.map((series, index) => ({
     name: series.name,

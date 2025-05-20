@@ -68,7 +68,7 @@ const props = defineProps({
   },
   radius: {
     type: Array,
-    default: () => ['33%', '45%']
+    default: () => ['35%', '43%']
   },
   center: {
     type: Array,
@@ -76,7 +76,7 @@ const props = defineProps({
   },
   radiusCong: {
     type: Array,
-    default: () => ['30%', '48%']
+    default: () => ['32%', '46%']
   },
   titleLeft: {
     type: String,
@@ -138,6 +138,9 @@ const updateChart = () => {
   const chartWidth = chartRef.value?.offsetWidth || 400
 
   chartInstance.setOption({
+    textStyle: {
+      fontFamily: 'SourceHanSansCN'
+    },
     backgroundColor: 'transparent',
     title: {
       text: `{a|${String(props.centerValue)}}\n{b|${props.centerLabel}}`,
@@ -157,6 +160,20 @@ const updateChart = () => {
           }
         }
       }
+      // text: props.centerValue,
+      // top: props.titleTop ? props.titleTop : 'center',
+      // x: props.titleLeft,
+      // textStyle: {
+      //   fontSize: PxToRem(24),
+      //   color: '#fff',
+      //   fontWeight: '400'
+      // },
+      // subtext: props.centerLabel,
+      // subtextStyle: {
+      //   fontSize: PxToRem(16),
+      //   color: '#fff',
+      //   padding: [-PxToRem(30), -PxToRem(30)]
+      // }
     },
     series: [
       {
@@ -350,7 +367,7 @@ const updateChart = () => {
             orient: 'vertical'
           }
         : {
-            bottom: '10%',
+            bottom: '5%',
             orient: 'horizontal'
           }),
       itemWidth: PxToRem(26),

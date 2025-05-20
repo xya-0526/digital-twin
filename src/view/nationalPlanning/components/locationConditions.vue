@@ -86,7 +86,7 @@ const colors = [
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
               <ProgressAll
                 :width="'34.78016rem'"
-                :height="'18rem'"
+                :height="'20rem'"
                 :colors="colors"
                 :data="Demonstrationarea.data.ProportionUse"
               >
