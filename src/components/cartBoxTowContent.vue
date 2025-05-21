@@ -11,17 +11,13 @@
     <div class="text">
       <p>{{ text }}</p>
       <div id="count">
-        <footer>
-          <div class="bg">
-            <span>{{ Math.floor(count / 10) }}</span>
-          </div>
-        </footer>
-        <footer>
-          <div class="bg">
-            <span>{{ count % 10 }}</span>
-          </div>
-        </footer>
-        <h6>个</h6>
+        <div class="num">
+          <span>{{ Math.floor(count / 10) }}</span>
+        </div>
+        <div class="num">
+          <span>{{ count % 10 }}</span>
+        </div>
+        <div class="unit">个</div>
       </div>
     </div>
   </div>
@@ -57,7 +53,7 @@ defineProps({
 }
 
 .img {
-  margin-bottom: 10%;
+  margin-bottom: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,32 +110,41 @@ defineProps({
     align-items: center;
     width: 100%;
     height: 100%;
-
-    span {
-      font-weight: 400;
-      border: 0;
-      background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      /* border: 0.2rem solid transparent; */
-      /* border-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%) 1; */
-      /* width: 4.2rem;
-      height: 5.4rem; */
-      width: 100%;
-      height: 100%;
+    gap: 1rem;
+    color: #ffffff;
+    margin-bottom: -0.5rem;
+    margin-top: 0.3rem;
+    .num {
+      width: 4.3rem;
+      height: 5.5rem;
       font-size: 4rem;
+      background-color: #fff;
+      border: 0.3rem solid transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-image:
+        linear-gradient(#142222, #142222),
+        linear-gradient(to top, rgb(44, 86, 85), rgb(105, 203, 130));
+      background-clip: padding-box, border-box;
+      /* 关键属性 */
+      background-origin: border-box;
+      /* 背景起点从边框开始 */
+      border-radius: 1rem;
       text-align: center;
-      line-height: 5rem;
-      display: block;
-      /* align-items: center; */
+      span {
+        background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
+        height: 100%;
+        font-weight: bold;
+      }
     }
-
-    h6 {
-      align-self: flex-end;
-      color: #ffffff;
-      font-size: 1rem;
-      margin-left: 1rem;
+    .unit {
+      font-size: 1.6rem;
+      align-self: end;
     }
   }
 }
@@ -149,7 +154,7 @@ footer {
   width: 3.9rem;
   height: 5.1rem;
   padding: 0.2rem;
-  background: linear-gradient(to bottom, #B2E3CE 0%, #383B40 100%);
+  background: linear-gradient(to bottom, #b2e3ce 0%, #383b40 100%);
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -157,11 +162,10 @@ footer {
 }
 
 .bg {
-border: 0px;
-border-radius: 4px;
-background-color: #142222;
-width: 100%;
-height: 100%;
-
+  border: 0px;
+  border-radius: 4px;
+  background-color: #142222;
+  width: 100%;
+  height: 100%;
 }
 </style>
