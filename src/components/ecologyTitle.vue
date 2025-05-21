@@ -41,16 +41,17 @@ const props = defineProps({
   /* background-color: antiquewhite; */
   font-family: 'SourceHanSansCN';
   padding: 1.999rem;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   color: #fff;
 
   .container {
     width: 100%;
-    height: 50%;
+    height: 42%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: start;
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -74,7 +75,7 @@ const props = defineProps({
     height: 1.8rem;
     border-radius: 0.9rem;
     opacity: 1;
-    background: linear-gradient(90deg, #2a553a 0%, #73737300 100%);
+    background: linear-gradient(270deg, #142222 0%, #2a553a 100%);
     line-height: 0px;
     padding-left: 1rem;
     font-size: 1.8rem;
@@ -83,24 +84,30 @@ const props = defineProps({
 
 .main {
   margin-left: 1rem;
-  width: 80%;
+  width: 95%;
   height: 20%;
   display: flex;
   justify-content: start;
   align-items: center;
+
   .title2 {
-    padding: 0.2rem;
+    padding: 0.1rem;
     width: 9rem;
     height: 3.6rem;
-    border-radius: 1.75rem;
-    background: linear-gradient(to right, #a8a8a8 0%, #73737300 100%);
+    border-radius: var(--border-radius);
+    background: linear-gradient(to right, #898888 0%, #73737300 100%);
+    margin-left: -1rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     .title1 {
       width: 100%;
       height: 100%;
       border-radius: 1.75rem;
       opacity: 1;
-      background: linear-gradient(to left, #73737300 0%, #366543 100%);
+      background: linear-gradient(270deg, #0f0f0f00 20%, #366543 100%);
       display: flex;
       justify-content: center;
       align-items: center;
