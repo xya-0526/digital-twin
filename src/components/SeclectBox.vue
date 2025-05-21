@@ -4,13 +4,14 @@
       <input type="checkbox" :value="i" name="" /><span>{{ i }}</span>
     </div>
     <UniversalButton
+    :margin="'0 0 0 0'"
       text="底图"
       :bgColor="'#1C3829D6'"
       :width="'100%'"
       :height="'5.6rem'"
       :border_radius="'0.996rem'"
       :Font_size="'3rem'"
-      :Border="'0px'"
+      :Border="'0'"
       :boxShadow="'inset 0 0 1.3rem 0 #64D195F0'"
     ></UniversalButton>
   </div>
@@ -23,8 +24,9 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
 
 <style scoped>
 .checkBox {
+    
   border: 0.1rem solid #456655;
-  border-radius: 0.8rem;
+  border-radius: 0.996rem;
   padding-top: 2.6rem;
   color: rgb(202, 200, 200);
   width: 25.9rem;

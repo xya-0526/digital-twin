@@ -128,7 +128,7 @@ defineProps({
       width: 100%;
       height: 100%;
       font-size: 4rem;
-      text-align: center; 
+      text-align: center;
       line-height: 5rem;
       display: block;
       /* align-items: center; */
@@ -137,8 +137,10 @@ defineProps({
     h6 {
       align-self: flex-end;
       color: #FFFFFF;
-      font-size: 1rem;
+      /* font-size: 1rem; */
       margin-left: 1rem;
+      font-size: 1.6rem;
+      font-weight: 200;
     }
   }
 }
@@ -156,10 +158,10 @@ footer {
 }
 
 .bg {
-border: 0px;
-border-radius: 4px;
-background-color: #142222;
-width: 100%;
-height: 100%;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #142222;
+  width: 100%;
+  height: 100%;
 }
 </style>
