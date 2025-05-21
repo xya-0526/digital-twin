@@ -7,10 +7,10 @@
       <UniversalButton
         :color="'#fff'"
         :text="i.text"
-        :width="'100%'"
-        :height="'16%'"
+        :width="'10rem'"
+        :height="'2.8rem'"
         :border_radius="'20px'"
-        :Font_size="'2rem'"
+        :Font_size="'1.6rem'"
       ></UniversalButton>
     </div>
   </div>

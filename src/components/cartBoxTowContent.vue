@@ -2,20 +2,24 @@
   <div class="box">
     <div class="img">
       <div>
-        <img :src="image.src" alt="">
+        <img :src="image.src" alt="" />
       </div>
       <div>
-        <img src="../assets/images/Slice 6.png" alt="">
+        <img src="../assets/images/Slice 6.png" alt="" />
       </div>
     </div>
     <div class="text">
       <p>{{ text }}</p>
       <div id="count">
         <footer>
-          <div class="bg"><span>{{ Math.floor(count / 10) }}</span></div>
+          <div class="bg">
+            <span>{{ Math.floor(count / 10) }}</span>
+          </div>
         </footer>
         <footer>
-          <div class="bg"><span>{{ count % 10 }}</span></div>
+          <div class="bg">
+            <span>{{ count % 10 }}</span>
+          </div>
         </footer>
         <h6>个</h6>
       </div>
@@ -38,9 +42,8 @@ defineProps({
   count: {
     type: Number,
     default: 0
-  },
+  }
 })
-
 </script>
 <style scoped>
 .box {
@@ -73,8 +76,6 @@ defineProps({
       width: 100%;
       height: 100%;
     }
-
-
   }
 
   div:nth-child(1) {
@@ -115,37 +116,47 @@ defineProps({
     height: 100%;
 
     span {
+      border-radius: 4px;
       background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      border: 0.2rem solid transparent;
-      border-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%) 1;
-      width: 4.2rem;
-      height: 5.4rem;
+      /* border: 0.2rem solid transparent; */
+      /* border-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%) 1; */
+      /* width: 4.2rem;
+      height: 5.4rem; */
+      width: 100%;
+      height: 100%;
       font-size: 4rem;
       text-align: center;
-      line-height: 5.2rem;
+      line-height: 5rem;
       display: block;
     }
 
     h6 {
       align-self: flex-end;
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 1rem;
       margin-left: 1rem;
     }
   }
 }
 
-footer{
-  padding:0.2rem;
-background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
-border-radius: 5px;
+footer {
+  width: 4.2rem;
+  height: 5.4rem;
+  padding: 0.2rem;
+  background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.bg{
-border-radius: 5px;
-background-color: #142222;
 
+.bg {
+  border-radius: 4px;
+  background-color: #142222;
+  width: 100%;
+  height: 100%;
 }
 </style>
