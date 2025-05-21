@@ -39,7 +39,7 @@ const props = defineProps({
   width: 100%;
   height: 100%;
   /* background-color: antiquewhite; */
-  font-family: "SourceHanSansCN";
+  font-family: 'SourceHanSansCN';
   padding: 1.999rem;
   font-size: 1.6rem;
   color: #fff;
@@ -52,7 +52,6 @@ const props = defineProps({
     justify-content: space-around;
     align-items: start;
   }
-
 }
 
 .titleBox {
@@ -89,7 +88,6 @@ const props = defineProps({
   display: flex;
   justify-content: start;
   align-items: center;
-
   .title2 {
     padding: 0.2rem;
     width: 9rem;

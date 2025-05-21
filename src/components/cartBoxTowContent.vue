@@ -2,20 +2,24 @@
   <div class="box">
     <div class="img">
       <div>
-        <img :src="image.src" alt="">
+        <img :src="image.src" alt="" />
       </div>
       <div>
-        <img src="../assets/images/Slice 6.png" alt="">
+        <img src="../assets/images/Slice 6.png" alt="" />
       </div>
     </div>
     <div class="text">
       <p>{{ text }}</p>
       <div id="count">
         <footer>
-          <div class="bg"><span>{{ Math.floor(count / 10) }}</span></div>
+          <div class="bg">
+            <span>{{ Math.floor(count / 10) }}</span>
+          </div>
         </footer>
         <footer>
-          <div class="bg"><span>{{ count % 10 }}</span></div>
+          <div class="bg">
+            <span>{{ count % 10 }}</span>
+          </div>
         </footer>
         <h6>个</h6>
       </div>
@@ -38,9 +42,8 @@ defineProps({
   count: {
     type: Number,
     default: 0
-  },
+  }
 })
-
 </script>
 <style scoped>
 .box {
@@ -73,8 +76,6 @@ defineProps({
       width: 100%;
       height: 100%;
     }
-
-
   }
 
   div:nth-child(1) {
