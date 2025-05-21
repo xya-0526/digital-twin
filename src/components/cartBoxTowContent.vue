@@ -17,9 +17,9 @@
     <div class="text">
       <p>{{ text }}</p>
       <div id="count">
-        <span>{{ Math.floor(count / 10) }}</span>
-        <span>{{ count % 10 }}</span>
-        <div>个</div>
+       <footer> <div class="bg"><span>{{ Math.floor(count / 10) }}</span></div></footer>
+        <footer><div class="bg"><span>{{ count % 10 }}</span></div></footer>
+        <h6>个</h6>
       </div>
     </div>
   </div>
@@ -125,7 +125,7 @@ defineProps({
         height: 100%;
 
         span {
-            background-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+            background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -139,12 +139,23 @@ defineProps({
             display: block;
         }
 
-        div {
+        h6{
             align-self: flex-end;
             color: #FFFFFF;
             font-size: 1rem;
-            margin-right: 1%;
+            margin-left: 1rem;
         }
     }
+}
+
+footer{
+  padding:0.2rem;
+background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+border-radius: 5px;
+}
+.bg{
+border-radius: 5px;
+  background-color: #142222;
+
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
     <button :style="{
+        lineHeight:height,
         justifyContent: justifyContent,
         fontSize: Font_size,
         width,

@@ -88,6 +88,7 @@ let x = defineProps({
 </script>
 <style scoped>
 button {
+
   border: none;
   background-position: center;
   background-repeat: no-repeat;
@@ -99,7 +100,7 @@ button {
   border: none;
   cursor: pointer;
   text-align: center;
-
+  line-height:7.7rem;
   span {
     display: block;
   }
@@ -111,8 +112,5 @@ button {
   }
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
+
 </style>

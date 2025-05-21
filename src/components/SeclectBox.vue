@@ -30,7 +30,15 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
     align-items: center;
     justify-content: space-between;
     #box {
-         font-size:2.4rem;
+        line-height: 2.4rem;
+       span{
+height: 2.4rem;
+text-align: center;
+line-height: 2.4rem;
+       }
+
+        font-size:2.4rem;
+        display: flex;
         width: 100%;
         height: 2.4rem;
     }
@@ -44,8 +52,8 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
         appearance: none;
         margin-right: 1rem;
         margin-left: 3.6rem;
-        width:2.15rem;
-        height: 2.15rem;
+        width:2.4rem;
+        height: 2.4rem;
         background-color: transparent;
         border: #58896CFF 0.1rem solid;
     }
