@@ -60,7 +60,7 @@ const colors = [
             >
               <titleList :list="Demonstrationarea.data.Special.data"></titleList>
             </CartBoxone>
-            <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
+            <CartBoxtow :width="'39.999rem'" :height="'24.5rem'">
               <CircleChart
                 :showPercentage="false"
                 :centerValue="Demonstrationarea.data.ecologicalData.total"
@@ -87,7 +87,7 @@ const colors = [
               >
               </ProgressAll>
             </CartBoxtow>
-            <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
+            <CartBoxtow :width="'39.999rem'" :height="'24.5rem'">
               <ecologyTitle
                 :width="'39.999rem'"
                 :height="'24.5rem'"

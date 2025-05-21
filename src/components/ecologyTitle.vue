@@ -94,7 +94,7 @@ const props = defineProps({
     padding: 0.1rem;
     width: 9rem;
     height: 3.6rem;
-    border-radius: var(--border-radius);
+    border-radius: 2rem;
     background: linear-gradient(to right, #898888 0%, #73737300 100%);
     margin-left: -1rem;
 
