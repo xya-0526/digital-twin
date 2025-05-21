@@ -115,7 +115,8 @@ defineProps({
     height: 100%;
 
     span {
-      border-radius: 4px;
+      font-weight: 400;
+      border: 0;
       background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -130,6 +131,7 @@ defineProps({
       text-align: center; 
       line-height: 5rem;
       display: block;
+      /* align-items: center; */
     }
 
     h6 {
@@ -142,10 +144,11 @@ defineProps({
 }
 
 footer {
-  width: 4.2rem;
-  height: 5.4rem;
+  border: 0px;
+  width: 3.9rem;
+  height: 5.1rem;
   padding: 0.2rem;
-  background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+  background: linear-gradient(to bottom, #B2E3CE 0%, #383B40 100%);
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -153,6 +156,7 @@ footer {
 }
 
 .bg {
+border: 0px;
 border-radius: 4px;
 background-color: #142222;
 width: 100%;
