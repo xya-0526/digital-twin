@@ -24,7 +24,7 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
 <style scoped>
 .checkBox {
   border: 0.1rem solid #456655;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius);
   padding-top: 2.6rem;
   color: rgb(202, 200, 200);
   width: 25.9rem;

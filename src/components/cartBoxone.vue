@@ -51,7 +51,7 @@ const props = defineProps({
 .chart-title {
   width: 60.5rem;
   height: 4.251rem;
-  border-radius: 0.8rem;
+  border-radius: var(--border-radius);
   opacity: 1;
   background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
   display: flex;
