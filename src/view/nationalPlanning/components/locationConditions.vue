@@ -172,7 +172,7 @@ const colors = [
               :width="'55.3472rem'"
               :height="'32.3712rem'"
               :isCong="true"
-              :center="['50%', '40%']"
+              :center="['50%', '43%']"
               :titleTop="'30%'"
             />
           </CartBoxone>
@@ -185,7 +185,7 @@ const colors = [
               :width="'55.3472rem'"
               :height="'32.3712rem'"
               :isCong="true"
-              :center="['35%', '50%']"
+              :center="['36%', '49%']"
               :titleLeft="'30%'"
             />
           </CartBoxone>

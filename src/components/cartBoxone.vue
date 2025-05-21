@@ -56,7 +56,7 @@ const props = defineProps({
   background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
   display: flex;
   align-items: center;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: rgba(255, 255, 255, 1);
   font-weight: bold;
   font-family: 'SourceHanSansCN';
@@ -66,8 +66,8 @@ const props = defineProps({
 
 .title-icon {
   display: inline-block;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.8rem;
+  width: 1.8rem;
   margin: 1rem;
 }
 

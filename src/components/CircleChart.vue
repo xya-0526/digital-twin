@@ -162,7 +162,7 @@ const updateChart = () => {
       }
       // text: props.centerValue,
       // top: props.titleTop ? props.titleTop : 'center',
-      // x: props.titleLeft,
+      // x: props.titleLeft
       // textStyle: {
       //   fontSize: PxToRem(24),
       //   color: '#fff',
