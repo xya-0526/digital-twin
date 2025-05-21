@@ -64,7 +64,7 @@ const Echartoption = computed(() => {
         left: 'center', // 水平居中
         top: '35%', // 垂直位置与仪表盘中心对齐
         style: {
-          image: props.icon, // 替换为你的图片路径
+          image: `image://${new URL(props.icon, import.meta.url).href}`, // 替换为你的图片路径
           width: PxToRem(70), // 图片宽度
           height: PxToRem(60) // 图片高度
         },

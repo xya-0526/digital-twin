@@ -260,10 +260,9 @@ const updateChart = () => {
                   position: 'outer',
                   alignTo: 'none',
                   formatter: params => {
-                    const value = props.showPercentage
-                      ? params.percent + '%'
-                      : params.value + (props.valueUnit || '')
-                    return `{name|${params.name}}\n{value|${value}}`
+                    const value = params.percent
+                    const unit = props.showPercentage ? '%' : props.valueUnit || ''
+                    return `{name|${params.name}}\n{value|${value}}{unit|${unit}}`
                   },
                   edgeDistance: PxToRem(10),
                   lineHeight: PxToRem(27),
@@ -272,14 +271,21 @@ const updateChart = () => {
                       opacity: 1,
                       fontSize: PxToRem(16),
                       color: '#fff',
+                      // fontWeight: 'bold',
                       padding: [PxToRem(4), 0]
                     },
                     value: {
                       fontSize: PxToRem(20),
                       color: '#FFF',
-                      fontWeight: 'normal',
+                      fontWeight: 'bold',
                       padding: [PxToRem(6), 0],
                       opacity: 1
+                    },
+                    unit: {
+                      fontSize: PxToRem(14),
+                      color: '#fff',
+                      opacity: 1,
+                      padding: [PxToRem(4), 0, 0, PxToRem(4)]
                     }
                   }
                 }

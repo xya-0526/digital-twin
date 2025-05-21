@@ -58,7 +58,7 @@ const props = defineProps({
   align-items: center;
   font-size: 2.4rem;
   color: rgba(255, 255, 255, 1);
-  font-weight: 400;
+  font-weight: bold;
   font-family: 'SourceHanSansCN';
   border-bottom: 0.1rem solid rgba(69, 102, 85, 1);
   font-family: 'SourceHanSansCN';
