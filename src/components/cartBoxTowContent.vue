@@ -2,23 +2,26 @@
   <div class="box">
     <div class="img">
       <div>
-        <img :src="image.src" alt="" />
+        <img :src="image.src" alt="">
       </div>
       <div>
-        <img src="../assets/images/Slice 6.png" alt="" />
+        <img src="../assets/images/Slice 6.png" alt="">
       </div>
     </div>
     <div class="text">
       <p>{{ text }}</p>
       <div id="count">
-        <span>{{ Math.floor(count / 10) }}</span>
-        <span>{{ count % 10 }}</span>
-        <div>个</div>
+        <footer>
+          <div class="bg"><span>{{ Math.floor(count / 10) }}</span></div>
+        </footer>
+        <footer>
+          <div class="bg"><span>{{ count % 10 }}</span></div>
+        </footer>
+        <h6>个</h6>
       </div>
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
 defineProps({
   text: {
@@ -35,8 +38,9 @@ defineProps({
   count: {
     type: Number,
     default: 0
-  }
+  },
 })
+
 </script>
 <style scoped>
 .box {
@@ -69,6 +73,8 @@ defineProps({
       width: 100%;
       height: 100%;
     }
+
+
   }
 
   div:nth-child(1) {
@@ -76,6 +82,7 @@ defineProps({
     width: 5.4rem;
     height: 6.1rem;
   }
+
   div:nth-child(2) {
     /* transform: translateY(0); */
     width: 12.6rem;
@@ -108,7 +115,7 @@ defineProps({
     height: 100%;
 
     span {
-      background-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+      background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -122,12 +129,23 @@ defineProps({
       display: block;
     }
 
-    div {
+    h6 {
       align-self: flex-end;
-      color: #ffffff;
+      color: #FFFFFF;
       font-size: 1rem;
-      margin-right: 1%;
+      margin-left: 1rem;
     }
   }
+}
+
+footer{
+  padding:0.2rem;
+background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+border-radius: 5px;
+}
+.bg{
+border-radius: 5px;
+background-color: #142222;
+
 }
 </style>
