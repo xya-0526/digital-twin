@@ -48,14 +48,14 @@ const colors = [
           <div class="onebanner">
             <CartBoxone
               :width="'70.8rem'"
-              :height="'24.299rem'"
+              :height="'25rem'"
               :title="Demonstrationarea.data.Targeting.title"
             >
               <textTitle :data="Demonstrationarea.data.Targeting"></textTitle>
             </CartBoxone>
             <CartBoxone
               :width="'49.7rem'"
-              :height="'24.299rem'"
+              :height="'25rem'"
               :title="Demonstrationarea.data.Special.title"
             >
               <titleList :list="Demonstrationarea.data.Special.data"></titleList>
@@ -69,7 +69,7 @@ const colors = [
                 centerLabel="总计人口"
                 :dataItems="Demonstrationarea.data.ecologicalData.data"
                 :width="'39.999rem'"
-                :height="'23.8999rem'"
+                :height="'24.5rem'"
                 :roseType="'pie'"
                 :radius="['40%', '70%']"
                 :isCircle="false"
@@ -78,7 +78,7 @@ const colors = [
                 :LabelRight="'5%'"
               />
             </CartBoxtow>
-            <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
+            <CartBoxtow :width="'39.999rem'" :height="'24.5rem'">
               <ProgressAll
                 :width="'34.78016rem'"
                 :height="'20rem'"
@@ -90,7 +90,7 @@ const colors = [
             <CartBoxtow :width="'39.999rem'" :height="'23.8999rem'">
               <ecologyTitle
                 :width="'39.999rem'"
-                :height="'23.8999rem'"
+                :height="'24.5rem'"
                 :data="Demonstrationarea.data.structure"
               >
               </ecologyTitle>
@@ -268,7 +268,7 @@ const colors = [
     .one {
       z-index: 1;
       width: 126rem;
-      height: 60rem;
+      height: 63rem;
       border-radius: 1.15rem;
       opacity: 1;
       border: 0.1rem solid #2c3534;
