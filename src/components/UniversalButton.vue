@@ -2,31 +2,31 @@
   <button
     :style="{
       lineHeight: height,
-      justifyContent: justifyContent,
-      fontSize: Font_size,
-      width,
-      height,
-      background: bgColor,
-      borderRadius: border_radius,
-      border: Border,
-      boxShadow,
-      color,
+        justifyContent: justifyContent,
+        fontSize: Font_size,
+        width,
+        height,
+        background: bgColor,
+        borderRadius: border_radius,
+        border: Border,
+        boxShadow,
+        color,
       margin
     }"
   >
     <span
       v-if="image.src"
       :style="{
-        width: image.width,
-        height: image.height
-      }"
-    >
-      <img v-if="image.src" :src="image.src" alt="" />
-    </span>
-    <span :style="{ margin }">
-      {{ text }}
-    </span>
-  </button>
+            width: image.width,
+            height: image.height,
+
+        }">
+            <img v-if="image.src" :src="image.src" alt="">
+        </span>
+        <span :style="{ margin }">
+            {{ text }}
+        </span>
+    </button>
 </template>
 <script setup lang="ts">
 let x = defineProps({
@@ -83,7 +83,10 @@ let x = defineProps({
   margin: {
     type: String,
     default: '0 0 0 0'
-  }
+  },
+   lineHeight:{
+    type: String,
+    default: ''}
 })
 </script>
 <style scoped>

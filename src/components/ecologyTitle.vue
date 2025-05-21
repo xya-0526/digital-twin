@@ -3,6 +3,7 @@ const props = defineProps({
   data: {
     type: Object,
     default: () => { }
+    default: () => { }
   },
   width: {
     type: String,
@@ -104,12 +105,13 @@ const props = defineProps({
     .title1 {
       width: 100%;
       height: 100%;
-      border-radius: var(--border-radius);
+      border-radius: 1.75rem;
       opacity: 1;
       background: linear-gradient(270deg, #0f0f0f00 20%, #366543 100%);
       display: flex;
       justify-content: center;
       align-items: center;
+      line-height: 3.6rem;
     }
   }
 }

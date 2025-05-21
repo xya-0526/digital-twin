@@ -22,7 +22,7 @@ const props = defineProps({
 
 <template>
   <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
-    <div class="chart-title" :style="{ width: props.width }">
+    <div class="chart-title" :style="{ width: '100%' }">
       <img class="title-icon" :src="Point" alt="point" />
       <span class="title-text">{{ props.title }}</span>
     </div>
@@ -46,12 +46,14 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .chart-title {
   width: 60.5rem;
   height: 4.251rem;
-  border-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
   opacity: 1;
   background: linear-gradient(180deg, rgb(58, 128, 78) 0%, rgba(20, 34, 34, 0) 100%);
   display: flex;
