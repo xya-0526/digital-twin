@@ -115,17 +115,20 @@ defineProps({
     height: 100%;
 
     span {
+      border-radius: 4px;
       background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      border: 0.2rem solid transparent;
-      border-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%) 1;
-      width: 4.2rem;
-      height: 5.4rem;
+      /* border: 0.2rem solid transparent; */
+      /* border-image: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%) 1; */
+      /* width: 4.2rem;
+      height: 5.4rem; */
+      width: 100%;
+      height: 100%;
       font-size: 4rem;
-      text-align: center;
-      line-height: 5.2rem;
+      text-align: center; 
+      line-height: 5rem;
       display: block;
     }
 
@@ -138,14 +141,21 @@ defineProps({
   }
 }
 
-footer{
-  padding:0.2rem;
-background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
-border-radius: 5px;
+footer {
+  width: 4.2rem;
+  height: 5.4rem;
+  padding: 0.2rem;
+  background: linear-gradient(180deg, #f7ff8d 0%, #99cfb5 100%);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.bg{
-border-radius: 5px;
-background-color: #142222;
 
+.bg {
+border-radius: 4px;
+background-color: #142222;
+width: 100%;
+height: 100%;
 }
 </style>

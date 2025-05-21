@@ -2,6 +2,7 @@
   <div class="Butbox">
     <UniversalButton
       v-for="(b, index) in buttons"
+      :lineHeight="'6.7rem'"
       :Font_size="'3.6rem'"
       :margin="'0 0 0 0'"
       :key="index"

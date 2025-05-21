@@ -78,6 +78,7 @@ const props = defineProps({
     background: linear-gradient(90deg, #2a553a 0%, #73737300 100%);
     line-height: 0px;
     padding-left: 1rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -89,20 +90,17 @@ const props = defineProps({
   justify-content: start;
   align-items: center;
    .title2 {
-    padding: 0.3rem;
+    padding: 0.2rem;
     width: 9rem;
     height: 3.6rem;
     border-radius: 17.5px;
-    background: linear-gradient(to right, #b8b7b7 0%, transparent 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(to right, #898888 0%, #73737300 100%);
     .title1 {
-    width: 9rem;
-    height: 3.6rem;
+    width: 100%;
+    height: 100%;
     border-radius: 17.5px;
     opacity: 1;
-    background: linear-gradient(270deg, #73737300 0%, #366543 100%);
+    background: linear-gradient(to left, #73737300 0%, #366543 100%);
     display: flex;
      justify-content: center;
     align-items: center;
