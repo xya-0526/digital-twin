@@ -74,7 +74,7 @@ const colors = [
                 :radius="['40%', '70%']"
                 :isCircle="false"
                 :center="['32%', '50%']"
-                :titleLeft="'23%'"
+                :titleLeft="'24.5%'"
                 :LabelRight="'5%'"
               />
             </CartBoxtow>
@@ -172,8 +172,8 @@ const colors = [
               :width="'55.3472rem'"
               :height="'32.3712rem'"
               :isCong="true"
-              :center="['50%', '40%']"
-              :titleTop="'30%'"
+              :center="['50%', '43%']"
+              :titleTop="'32%'"
             />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
@@ -185,8 +185,8 @@ const colors = [
               :width="'55.3472rem'"
               :height="'32.3712rem'"
               :isCong="true"
-              :center="['35%', '50%']"
-              :titleLeft="'30%'"
+              :center="['36%', '49%']"
+              :titleLeft="'32%'"
             />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="BlueGgreenspace.title">
@@ -269,7 +269,7 @@ const colors = [
       z-index: 1;
       width: 126rem;
       height: 60rem;
-      border-radius: 1。15rem;
+      border-radius: 1.15rem;
       opacity: 1;
       border: 0.1rem solid #2c3534;
       background: var(--backgrouend-tow);
@@ -282,8 +282,7 @@ const colors = [
         z-index: 2;
         width: 122rem;
         height: 5.2rem;
-        /* opacity: 1; */
-        border-radius: 0.0977vw;
+        border-radius: var(--border-radius);
         border: 0.1rem solid #314347;
         background: linear-gradient(90deg, #2a5934 0%, #1e3033 100%);
         margin-top: 1rem;
@@ -315,7 +314,7 @@ const colors = [
     .two {
       width: 125.8rem;
       height: 34.89994rem;
-      border-radius: 11.5px;
+      border-radius: var(--border-radius);
       opacity: 1;
       border: 1px solid #2c3535;
       background: var(--backgrouend-tow);
@@ -330,7 +329,6 @@ const colors = [
         width: 122rem;
         height: 5.2rem;
         height: 17%;
-        /* opacity: 1; */
         border-radius: 0.5rem;
         border: 0.1rem solid #314347;
         background: linear-gradient(90deg, #2a5934 0%, #1e3033 100%);
@@ -352,7 +350,6 @@ const colors = [
       .towbanner {
         width: 122rem;
         height: 85%;
-        /* background-color: #fff; */
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -377,7 +374,6 @@ const colors = [
         z-index: 2;
         width: 122rem;
         height: 5.2rem;
-        /* opacity: 1; */
         border-radius: 0.5rem;
         border: 1px solid #314347;
         background: linear-gradient(90deg, #2a5934 0%, #1e3033 100%);
@@ -399,7 +395,6 @@ const colors = [
       .threebanner {
         width: 122rem;
         height: 70%;
-        /* background-color: #fff; */
         display: flex;
         justify-content: space-around;
         align-content: center;
@@ -424,7 +419,6 @@ const colors = [
     .blist {
       width: 98%;
       height: 12%;
-      /* background: #1c3829d6; */
     }
 
     .carts {

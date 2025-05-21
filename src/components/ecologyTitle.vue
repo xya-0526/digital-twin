@@ -2,7 +2,7 @@
 const props = defineProps({
   data: {
     type: Object,
-    default: () => { }
+    default: () => {}
   },
   width: {
     type: String,
@@ -27,7 +27,7 @@ const props = defineProps({
 
       <div class="main">
         <div class="title2" v-for="iten in item?.space" :key="iten.id">
-           <span class="title1">{{ iten.title }}</span> 
+          <span class="title1">{{ iten.title }}</span>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ const props = defineProps({
   width: 100%;
   height: 100%;
   /* background-color: antiquewhite; */
-  font-family: "SourceHanSansCN";
+  font-family: 'SourceHanSansCN';
   padding: 1.999rem;
   font-size: 1.6rem;
   color: #fff;
@@ -52,7 +52,6 @@ const props = defineProps({
     justify-content: space-around;
     align-items: start;
   }
-
 }
 
 .titleBox {
@@ -83,29 +82,29 @@ const props = defineProps({
 }
 
 .main {
-  margin-left: 1rem ;
+  margin-left: 1rem;
   width: 80%;
   height: 20%;
   display: flex;
   justify-content: start;
   align-items: center;
-   .title2 {
+  .title2 {
     padding: 0.2rem;
     width: 9rem;
     height: 3.6rem;
-    border-radius: 17.5px;
+    border-radius: var(--border-radius);
     background: linear-gradient(to right, #898888 0%, #73737300 100%);
+
     .title1 {
-    width: 100%;
-    height: 100%;
-    border-radius: 17.5px;
-    opacity: 1;
-    background: linear-gradient(to left, #73737300 0%, #366543 100%);
-    display: flex;
-     justify-content: center;
-    align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      opacity: 1;
+      background: linear-gradient(to left, #73737300 0%, #366543 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
-}
 </style>
-
