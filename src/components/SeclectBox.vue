@@ -9,7 +9,7 @@
       :bgColor="'#1C3829D6'"
       :width="'100%'"
       :height="'5.6rem'"
-      :border_radius="'0.8rem'"
+      :border_radius="'0.996rem 0.996rem 0 0'"
       :Font_size="'3rem'"
       :Border="'0'"
       :boxShadow="'inset 0 0 1.3rem 0 #64D195F0'"
@@ -39,6 +39,7 @@ const selectArray = ['显示行政区划', '2413', '660', '主要交通路网', 
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 
   #box {
     line-height: 2.4rem;
