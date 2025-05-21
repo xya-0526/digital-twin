@@ -24,13 +24,13 @@
   /* 布局尺寸 */
   --screen-width: 5120px;
   --screen-height: 1440px;
-  --content-padding: 0 40px 40px 40px;
+  --content-padding: 0 4rem 4rem 4rem;
 
   /* 阴影 */
-  --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-default: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.3);
 
-  --bg-gradient: linear-gradient(to bottom, #3a804e, rgba(20, 34, 34, 0));
+  --bg-gradient: linear-gradient(to bottom, #3a804e, rgba(2, 34, 34, 0));
 }
 
 * {

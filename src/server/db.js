@@ -1,7 +1,9 @@
-
 import P15 from '../assets/images/P15.svg'
 import P13 from '../assets/images/P13.svg'
 import P12 from '../assets/images/P12.svg'
+import P24 from '../assets/images/P24.svg'
+import P26 from '../assets/images/P26.svg'
+
 export const Demonstrationarea = {
   title: '示范区国土空间总体规划',
   data: {
@@ -105,35 +107,33 @@ export const AdvanceStartZone = {
 export const WaterTownshipUnit = {
   title: '水乡单元详细规划',
 
-  data:[{
-  text: "规划单元总数",
-  image: {
-    src: P15,
-    alt: ''
-  },
-  count:50
+  data: [
+    {
+      text: '规划单元总数',
+      image: {
+        src: P15,
+        alt: ''
+      },
+      count: 50
+    },
+    {
+      text: '在编规划数量',
+      image: {
+        src: P13,
+        alt: ''
+      },
+      count: 1
+    },
 
-},
-{
-  text: "在编规划数量",
-  image: {
-    src:P13,
-    alt: ''
-  },
-  count:1
-
-},
-
-{
-  text: "已批规划数量",
-  image: {
-    src: P12,
-    alt: ''
-  },
-  count:0
-},
-]
-
+    {
+      text: '已批规划数量',
+      image: {
+        src: P12,
+        alt: ''
+      },
+      count: 0
+    }
+  ]
 }
 
 export const buttonData = {
@@ -192,8 +192,8 @@ export const BlueGgreenspace = {
 export const WaterSurfacerate = {
   title: '河面水面率',
   data: [
-    { title: '数据一', value: 78.5, id: 0, icon: '../src/assets/images/P24.svg' },
-    { title: '数据一', value: 6.2, id: 1, icon: '../src/assets/images/P26.svg' }
+    { title: '数据一', value: 78.5, id: 0, icon: P24 },
+    { title: '数据一', value: 6.2, id: 1, icon: P26 }
   ]
 }
 

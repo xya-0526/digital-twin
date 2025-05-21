@@ -6,11 +6,11 @@ const props = defineProps({
   // 尺寸配置
   width: {
     type: String,
-    default: '19.5rem'
+    default: '20rem'
   },
   height: {
     type: String,
-    default: '19.5rem'
+    default: '20rem'
   },
   seriesData: {
     type: Object,
@@ -25,7 +25,7 @@ const props = defineProps({
   colors: {
     type: Object,
     default: () => {
-      return{
+      return {
         axisLineColor: 'rgba(34, 49, 46,0.8)',
         axisTickColor: 'rgba(180, 252, 221,0.2)',
         itemColor: 'rgba(97, 188, 119,0.8)',
@@ -52,7 +52,7 @@ const props = defineProps({
     default: false
   },
   icon: {
-    type: String,
+    type: String
   }
 })
 const Echartoption = computed(() => {
@@ -62,13 +62,13 @@ const Echartoption = computed(() => {
       {
         type: 'image',
         left: 'center', // 水平居中
-        top: '40%', // 垂直位置与仪表盘中心对齐
+        top: '35%', // 垂直位置与仪表盘中心对齐
         style: {
-          image: props.icon, // 替换为你的图片路径
-          width: PxToRem(40), // 图片宽度
-          height: PxToRem(40) // 图片高度
+          image: `image://${new URL(props.icon, import.meta.url).href}`, // 替换为你的图片路径
+          width: PxToRem(70), // 图片宽度
+          height: PxToRem(60) // 图片高度
         },
-        z: 101, // 确保图片在最上层
+        z: 111, // 确保图片在最上层
         // 微调位置（根据宽高偏移中心点）
         position: [-PxToRem(20), -PxToRem(20)] // 左移和上移宽高的一半（这里宽高40，各移-20）
       }
@@ -76,10 +76,10 @@ const Echartoption = computed(() => {
     series: [
       {
         type: 'gauge',
-        radius: '60%',
-        z: 11,
+        radius: '80%',
+        z: 1,
         center: ['50%', '50%'],
-        startAngle: 270,
+        startAngle: 220,
         endAngle: -110,
         min: 0,
         max: 100,
@@ -101,10 +101,10 @@ const Echartoption = computed(() => {
       },
       {
         type: 'gauge',
-        radius: '55%',
-        z: 10,
+        radius: '78%',
+        z: 2,
         center: ['50%', '50%'],
-        startAngle: 270,
+        startAngle: 220,
         endAngle: -110,
         min: 0,
         max: 100,
@@ -123,8 +123,8 @@ const Echartoption = computed(() => {
           distance: PxToRem(8),
           length: 1, // 隐藏原始刻度线
           symbol: 'circle', // 设置为圆点
-          symbolSize: 6, // 点的大小
-          splitNumber: 12,
+          symbolSize: PxToRem(4), // 点的大小
+          splitNumber: PxToRem(20),
           lineStyle: {
             color: props.colors.axisTickColor
           }
@@ -135,16 +135,17 @@ const Echartoption = computed(() => {
         detail: { show: false }
       },
       {
+        //环
         type: 'gauge',
-        radius: '60%',
-        z: 103,
+        radius: '80%',
+        z: 3,
         center: ['50%', '50%'],
-        startAngle: 270,
+        startAngle: 220,
         endAngle: -110,
         min: 0,
         max: 100,
         itemStyle: { color: props.colors.itemColor },
-        progress: { show: true, width: 5 },
+        progress: { show: true, width: PxToRem(5) },
         pointer: {
           show: false
         },
@@ -155,16 +156,16 @@ const Echartoption = computed(() => {
         splitLine: { show: false },
         axisLabel: { show: false },
         detail: { show: false },
-        data: [{ value: props.seriesData}]
+        data: [{ value: props.seriesData }]
       },
       // 主仪表盘（中间层：进度条、指针）
       {
         type: 'gauge',
         z: 102,
         center: ['50%', '50%'],
-        radius: '60%',
-        startAngle: 270,
-        endAngle: -110,
+        radius: '78%',
+        startAngle: 220,
+        endAngle: 250,
         min: 0,
         max: 100,
         splitNumber: 12,
@@ -178,7 +179,7 @@ const Echartoption = computed(() => {
             colorStops: [
               {
                 offset: 0,
-                color: props.colors.startColor// 起始颜色
+                color: props.colors.startColor // 起始颜色
               },
               {
                 offset: 1,
@@ -189,7 +190,7 @@ const Echartoption = computed(() => {
         },
         progress: {
           show: true,
-          width: PxToRem(500),
+          width: PxToRem(300),
           zIndex: 100 // 进度条层级
         },
         axisLine: {
@@ -207,15 +208,15 @@ const Echartoption = computed(() => {
         pointer: { show: false },
         title: { show: false },
         detail: { show: false },
-        data: [{ value:props.seriesData }]
+        data: [{ value: props.seriesData }]
       },
       // 数值标签（最上层）
       {
         type: 'gauge',
-        radius: '60%',
+        radius: '75%',
         z: 200, // 最高层级
         center: ['50%', '50%'],
-        startAngle: 270,
+        startAngle: 220,
         endAngle: -110,
         min: 0,
         max: 100,
@@ -241,7 +242,7 @@ const Echartoption = computed(() => {
           },
           rich: {
             value: {
-              fontSize: PxToRem(30),
+              fontSize: PxToRem(40),
               fontWeight: 400,
               color: '#fff',
               fontFamily: 'SourceHanSansCN'
@@ -263,12 +264,7 @@ const Echartoption = computed(() => {
 </script>
 
 <template>
-  <echart
-    :width="width"
-    :height="height"
-    :theme="theme"
-    :option="Echartoption"
-  />
+  <echart :width="width" :height="height" :theme="theme" :option="Echartoption" />
 </template>
 
 <style scoped></style>

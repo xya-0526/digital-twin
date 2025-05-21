@@ -16,10 +16,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div
-    class="circle-chart-container"
-    :style="{ width: props.width, height: props.height }"
-  >
+  <div class="circle-chart-container" :style="{ width: props.width, height: props.height }">
     <div class="chart-content">
       <div class="chart-wrappe">
         <slot />

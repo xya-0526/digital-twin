@@ -60,7 +60,9 @@ onMounted(() => {
       <div class="name">
         {{ progressStyle.name }}
       </div>
-      <div class="description">{{ isMax ? '≥' : '' }}{{ description }}%</div>
+      <div class="description">
+        {{ isMax ? '≥' : '' }}{{ description }}<span class="pencentage">%</span>
+      </div>
     </div>
     <el-progress
       :text-inside="true"
@@ -91,6 +93,11 @@ onMounted(() => {
     // margin-bottom: 25px;
     color: rgb(255, 255, 255);
     font-size: 2rem;
+    .pencentage {
+      font-size: 1.4rem;
+      color: #cccccc;
+      margin-left: 0.6rem;
+    }
   }
 }
 </style>

@@ -5,12 +5,12 @@
  * @returns {(ev: UIEvent) => void} 防抖后的函数
  */
 export function debounce(fn, delay = 500) {
-    /** @type {number|null} */
-    let timeout = null;
-    return /** @this {Window} */ function (ev) {
-        if (timeout) clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            fn.call(this, ev);
-        }, delay);
-    };
+  /** @type {number|null} */
+  let timeout = null
+  return /** @this {Window} */ function (ev) {
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      fn.call(this, ev)
+    }, delay)
+  }
 }
