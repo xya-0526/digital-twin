@@ -74,7 +74,7 @@ const colors = [
                 :radius="['40%', '70%']"
                 :isCircle="false"
                 :center="['32%', '50%']"
-                :titleLeft="'23%'"
+                :titleLeft="'24.5%'"
                 :LabelRight="'5%'"
               />
             </CartBoxtow>
@@ -173,7 +173,7 @@ const colors = [
               :height="'32.3712rem'"
               :isCong="true"
               :center="['50%', '43%']"
-              :titleTop="'30%'"
+              :titleTop="'32%'"
             />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="FarmlandHoldings.title">
@@ -186,7 +186,7 @@ const colors = [
               :height="'32.3712rem'"
               :isCong="true"
               :center="['36%', '49%']"
-              :titleLeft="'30%'"
+              :titleLeft="'32%'"
             />
           </CartBoxone>
           <CartBoxone :width="'60.5rem'" :height="'34.1rem'" :title="BlueGgreenspace.title">
